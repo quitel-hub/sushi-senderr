@@ -1,0 +1,365 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Lojalitetsprogram",
+    "subtitle": "Få 10% rabatt på din neste bestilling ved å fylle ut skjemaet."
+  },
+  "tabs": {
+    "registration": "Gjesteformular",
+    "owner": "Administratorpanel",
+    "admin": "Admin-panel"
+  },
+  "discountBadge": {
+    "title": "10% rabatt",
+    "subtitle": "for hver ny registrering"
+  },
+  "languages": {
+    "switcherLabel": "Språk",
+    "en": "Engelsk",
+    "de": "Tysk",
+    "nl": "Nederlandsk",
+    "da": "Dansk",
+    "pl": "Polsk",
+    "ru": "Russisk",
+    "fr": "Fransk",
+    "es": "Spansk",
+    "it": "Italiensk",
+    "pt": "Portugisisk",
+    "sv": "Svensk",
+    "no": "Norsk",
+    "fi": "Finsk",
+    "cs": "Tjekkisk",
+    "hu": "Ungarsk",
+    "el": "Gresk",
+    "uk": "Ukrainsk",
+    "bg": "Bulgarsk",
+    "ro": "Rumensk",
+    "hr": "Kroatisk",
+    "sk": "Slovakisk",
+    "sl": "Slovensk"
+  },
+  "registration": {
+    "cardTitle": "Fyll ut dine detaljer og få rabatt",
+    "fields": {
+      "firstName": "Fornavn",
+      "lastName": "Etternavn",
+      "phone": "Telefon",
+      "country": "Land",
+      "email": "E-post",
+      "birthDate": "Fødselsdato",
+      "city": "By",
+      "preferredFood": "Favorittruller eller ønsker",
+      "feedback": "Dine ønsker til oss",
+      "street": "Gate",
+      "postalCode": "Postnummer"
+    },
+    "placeholders": {
+      "firstName": "f.eks. Anna",
+      "lastName": "f.eks. Hansen",
+      "phone": "Skriv inn telefonnummer",
+      "country": "Velg land",
+      "email": "eksempel@mail.com",
+      "birthDate": "",
+      "city": "f.eks. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Fortell oss hva du elsker så vi kan tilpasse tilbud",
+      "feedback": "Del hva som skal legges til eller forbedres",
+      "street": "f.eks. Damrak 1",
+      "postalCode": "f.eks. 1012 LP"
+    },
+    "hints": {
+      "phone": "Velg ditt land og skriv inn det fullstendige mobilnummeret for SMS.",
+      "feedback": "Vi leser hver melding for å forbedre din opplevelse."
+    },
+    "actions": {
+      "reset": "Tilbakestill",
+      "submit": "Få rabatt",
+      "submitting": "Sender..."
+    },
+    "status": {
+      "duplicate": "Du er allerede registrert.",
+      "success": "Takk for registreringen! Din 10% rabatt er klar.",
+      "error": "Noe gikk galt. Prøv igjen."
+    },
+    "errors": {
+      "phoneInvalid": "Ugyldig telefonnummerformat",
+      "phoneTooShort": "Vennligst skriv inn et fullstendig telefonnummer"
+    },
+    "success": {
+      "phoneValid": "✓ Telefonnummer er gyldig"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januar",
+        "february": "Februar",
+        "march": "Mars",
+        "april": "April",
+        "may": "Mai",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "August",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "Desember"
+      },
+      "previousYears": "Forrige {{count}} år",
+      "nextYears": "Neste {{count}} år",
+      "backToYears": "Tilbake til år",
+      "backToMonths": "Tilbake til måneder",
+      "placeholder": "Velg dato"
+    },
+    "sections": {
+      "address": "Adresseinformasjon"
+    }
+  },
+  "owner": {
+    "title": "Administratorpanel",
+    "auth": {
+      "title": "Administratorpanel",
+      "fields": {
+        "email": "E-post",
+        "accessCode": "Tilgangskode",
+        "password": "Passord"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Skriv inn din tilgangskode",
+        "password": "Skriv inn ditt passord"
+      },
+      "actions": {
+        "login": "Logg inn på panel",
+        "logging": "Logger inn..."
+      },
+      "welcome": "Velkommen, {{name}}!",
+      "logout": "Logg ut"
+    },
+    "unauthorized": {
+      "title": "Tilgang nektet",
+      "message": "Du kan ikke få tilgang til denne siden. Kun administratorer kan komme inn her.",
+      "subtitle": "Administratorpanelet er kun tilgjengelig for autoriserte brukere.",
+      "backToForm": "Tilbake til gjesteformular"
+    },
+    "token": {
+      "label": "Skriv inn den hemmelige token for å administrere kringkasting",
+      "placeholder": "Eier token",
+      "saved": "Token lagret.",
+      "cleared": "Token slettet.",
+      "actions": {
+        "reset": "Tilbakestill",
+        "save": "Lagre token"
+      }
+    },
+    "broadcast": {
+      "title": "Opprett Messenger-kringkasting",
+      "fields": {
+        "title": "Tittel",
+        "body": "Meldingstekst"
+      },
+      "placeholder": {
+        "title": "f.eks. Het Rull Helg",
+        "body": "Melding som sendes til alle kunder"
+      },
+      "hint": "Meldingen sendes til alle som fylte ut skjemaet.",
+      "actions": {
+        "reset": "Tilbakestill",
+        "submit": "Send kringkasting",
+        "submitting": "Sender..."
+      }
+    },
+    "customers": {
+      "title": "Kunder",
+      "empty": "Ingen registreringer ennå eller ugyldig token.",
+      "refresh": "Oppdater",
+      "refreshing": "Oppdaterer...",
+      "columns": {
+        "name": "Navn",
+        "contacts": "Kontakter",
+        "country": "Land",
+        "city": "By",
+        "code": "Promokode",
+        "createdAt": "Registrert"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Frisk",
+      "delicious": "Deilig",
+      "premium": "Premium",
+      "traditional": "Tradisjonell",
+      "loyaltyProgram": "Lojalitetsprogram",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin Panel Innlogging",
+      "subtitle": "Skriv inn påloggingsdata for å få tilgang til administrasjonspanelet",
+      "email": "Admin E-post",
+      "emailPlaceholder": "Skriv inn admin e-post",
+      "accessCode": "Tilgangskode",
+      "accessCodePlaceholder": "Skriv inn tilgangskode",
+      "password": "Passord",
+      "passwordPlaceholder": "Skriv inn passord",
+      "login": "🚀 Logg inn på Panel",
+      "loggingIn": "Logger inn...",
+      "invalidCredentials": "❌ Ugyldige påloggingsdata. Tilgang nektet.",
+      "loginError": "❌ Innloggingsfeil. Vennligst prøv igjen.",
+      "warning": "⚠️ Tilgang er begrenset til autoriserte administratorer kun",
+      "logout": "Logg ut",
+      "sessionExpired": "Økt utløpt. Vennligst logg inn igjen."
+    }
+  }
+}

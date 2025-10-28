@@ -1,0 +1,1113 @@
+import React, { useMemo, useState, useEffect, useCallback, type FormEvent } from "react";
+import dayjs from "dayjs";
+import { useTranslation } from "react-i18next";
+
+import "./App.css";
+import "./i18n/config";
+import { ParticleTextEffect } from "./components/ParticleTextEffect";
+import { LavaLamp } from "./components/ui/fluid-blob";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import SimpleCountrySelector from "./components/SimpleCountrySelector";
+import SimplePhoneInput from "./components/SimplePhoneInput";
+import DatePicker from "./components/DatePicker";
+import NetherlandsAddressValidator from "./components/NetherlandsAddressValidator";
+import { InteractiveHoverButton } from "./components/ui/interactive-hover-button";
+import ThankYouPage from "./components/ThankYouPage";
+import { DataExporter } from "./components/DataExporter";
+import { EnhancedAdminPanel } from "./components/EnhancedAdminPanel";
+
+type TabKey = "registration" | "owner";
+
+type RegistrationFormState = {
+  firstName: string;
+  lastName: string;
+  country: string;
+  phoneNumber: string;
+  email: string;
+  birthDate: string;
+  city: string;
+  street: string;
+  postalCode: string;
+  preferredFood: string;
+  feedback: string;
+};
+
+type BroadcastFormState = {
+  title: string;
+  body: string;
+};
+
+type StatusState = {
+  type: "success" | "error";
+  message: string;
+  details?: string;
+};
+
+type Customer = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  country?: string | null;
+  phoneNumber: string;
+  email?: string | null;
+  birthDate?: string | null;
+  city?: string | null;
+  street?: string | null;
+  postalCode?: string | null;
+  preferredFood?: string | null;
+  feedback?: string | null;
+  discountCode: string;
+  createdAt: string;
+};
+
+type OwnerAuthState = {
+  email: string;
+  accessCode: string;
+  password: string;
+  name: string;
+};
+
+type OwnerProfile = {
+  id: string;
+  email: string;
+  name: string;
+  lastLogin?: string;
+  createdAt: string;
+};
+
+type LoginSession = {
+  id: string;
+  deviceInfo?: string;
+  ipAddress?: string;
+  location?: string;
+  userAgent?: string;
+  browser?: string;
+  os?: string;
+  device?: string;
+  country?: string;
+  city?: string;
+  latitude?: number;
+  longitude?: number;
+  isSuccessful: boolean;
+  loginAt: string;
+};
+
+type DeviceInfo = {
+  browser: string;
+  browserName: string;
+  browserVersion: string;
+  os: string;
+  osName: string;
+  osVersion: string;
+  device: string;
+  deviceType: string;
+  deviceModel: string;
+  location: string;
+  country: string;
+  city: string;
+  region: string;
+  latitude: number | null;
+  longitude: number | null;
+  timezone: string;
+  isp: string;
+  ipAddress: string;
+  userAgent: string;
+  // Дополнительные технические данные
+  countryCode?: string;
+  regionCode?: string;
+  postal?: string;
+  currency?: string;
+  currencyName?: string;
+  languages?: string;
+  countryPopulation?: number;
+  countryArea?: number;
+  countryCapital?: string;
+  continent?: string;
+  isEu?: boolean;
+  callingCode?: string;
+  utcOffset?: string;
+  connectionType?: string;
+  screenResolution?: string;
+  colorDepth?: number;
+  pixelRatio?: number;
+  language?: string;
+  platform?: string;
+  cookieEnabled?: boolean;
+  doNotTrack?: string;
+};
+
+const defaultRegistrationState: RegistrationFormState = {
+  firstName: "",
+  lastName: "",
+  country: "UA",
+  phoneNumber: "",
+  email: "",
+  birthDate: "",
+  city: "",
+  street: "",
+  postalCode: "",
+  preferredFood: "",
+  feedback: "",
+};
+
+const defaultBroadcastState: BroadcastFormState = {
+  title: "",
+  body: "",
+};
+
+const defaultOwnerAuthState: OwnerAuthState = {
+  email: "",
+  accessCode: "",
+  password: "",
+  name: "",
+};
+
+function App() {
+  const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState<TabKey>("registration");
+  const [registrationState, setRegistrationState] = useState(defaultRegistrationState);
+  const [registrationStatus, setRegistrationStatus] = useState<StatusState | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [addressValidation, setAddressValidation] = useState({ isValid: false, errors: [] as string[] });
+
+  const [broadcastState, setBroadcastState] = useState(defaultBroadcastState);
+  const [broadcastStatus, setBroadcastStatus] = useState<StatusState | null>(null);
+  const [isBroadcasting, setIsBroadcasting] = useState(false);
+  const [customers, setCustomers] = useState<Customer[]>([]);
+  const [isLoadingCustomers, setIsLoadingCustomers] = useState(false);
+
+  // Новые состояния для аутентификации владельца
+  const [ownerAuthState, setOwnerAuthState] = useState(defaultOwnerAuthState);
+  const [ownerProfile, setOwnerProfile] = useState<OwnerProfile | null>(null);
+  const [isOwnerAuthenticating, setIsOwnerAuthenticating] = useState(false);
+  const [ownerAuthStatus, setOwnerAuthStatus] = useState<StatusState | null>(null);
+  const [showUnauthorizedPage, setShowUnauthorizedPage] = useState(false);
+  const [currentDeviceInfo, setCurrentDeviceInfo] = useState<DeviceInfo | null>(null);
+  const [loginSessions, setLoginSessions] = useState<LoginSession[]>([]);
+  const [isLoadingSessions, setIsLoadingSessions] = useState(false);
+  const [isAutoSyncing, setIsAutoSyncing] = useState(false);
+  const [lastSyncTime, setLastSyncTime] = useState<Date | null>(null);
+  const [syncInterval, setSyncInterval] = useState<NodeJS.Timeout | null>(null);
+  const [previousCustomerCount, setPreviousCustomerCount] = useState(0);
+  const [newCustomersCount, setNewCustomersCount] = useState(0);
+  const [isMonitoringConnections, setIsMonitoringConnections] = useState(false);
+  const [connectionMonitorInterval, setConnectionMonitorInterval] = useState<NodeJS.Timeout | null>(null);
+  const [showThankYouPage, setShowThankYouPage] = useState(false);
+  const [registeredCustomer, setRegisteredCustomer] = useState<{
+    firstName: string;
+    lastName: string;
+    discountCode: string;
+    email?: string;
+    phoneNumber: string;
+  } | null>(null);
+
+  const isOwnerAuthed = useMemo(() => ownerProfile !== null, [ownerProfile]);
+
+  function handleRegistrationChange<K extends keyof RegistrationFormState>(key: K, value: RegistrationFormState[K]) {
+    console.log('App: Изменение поля регистрации:', { key, value });
+    setRegistrationState((prev) => ({ ...prev, [key]: value }));
+  }
+
+  async function handleRegistrationSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setRegistrationStatus(null);
+
+    console.log('App: Отправка формы регистрации:', registrationState);
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registrationState),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setRegistrationStatus({ type: "success", message: result.message });
+        
+        // Сохраняем данные зарегистрированного клиента для страницы благодарности
+        setRegisteredCustomer({
+          firstName: registrationState.firstName,
+          lastName: registrationState.lastName,
+          discountCode: result.discountCode,
+          email: registrationState.email,
+          phoneNumber: registrationState.phoneNumber,
+        });
+        
+        // Показываем страницу благодарности
+        setShowThankYouPage(true);
+        
+        // Сбрасываем форму
+        setRegistrationState(defaultRegistrationState);
+        
+        // Автоматически обновляем список клиентов если владелец авторизован
+        if (isOwnerAuthed && ownerProfile?.email) {
+          await loadCustomers(ownerProfile.email);
+        }
+      } else {
+        setRegistrationStatus({ type: "error", message: result.message ?? t("registration.status.error") });
+      }
+    } catch (error) {
+      console.error(error);
+      setRegistrationStatus({ type: "error", message: t("registration.status.error") });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+
+  // Функции для новой системы аутентификации владельца
+  function handleOwnerAuthChange<K extends keyof OwnerAuthState>(key: K, value: OwnerAuthState[K]) {
+    setOwnerAuthState((prev) => ({ ...prev, [key]: value }));
+  }
+
+  async function handleOwnerLogin() {
+    setIsOwnerAuthenticating(true);
+    setOwnerAuthStatus(null);
+    setShowUnauthorizedPage(false);
+
+    // Проверяем учетные данные на клиентской стороне
+    const validCredentials = {
+      email: "sushi.master.admin.2024@secure-icon.com",
+      accessCode: "SUSHI-MASTER-2024-X9K7",
+      password: "SushiMaster2024!@#$%^&*()_+{}|:<>?[]\\;',./"
+    };
+
+    if (
+      ownerAuthState.email !== validCredentials.email ||
+      ownerAuthState.accessCode !== validCredentials.accessCode ||
+      ownerAuthState.password !== validCredentials.password
+    ) {
+      // Показываем страницу ошибки при неверных данных
+      setShowUnauthorizedPage(true);
+      setOwnerAuthState(defaultOwnerAuthState);
+      setIsOwnerAuthenticating(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/owner/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: ownerAuthState.email,
+          accessCode: ownerAuthState.accessCode,
+          password: ownerAuthState.password,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setOwnerProfile(result.owner);
+        setCurrentDeviceInfo(result.deviceInfo);
+        localStorage.setItem("ownerEmail", ownerAuthState.email);
+        setOwnerAuthStatus({ type: "success", message: result.message });
+        setOwnerAuthState(defaultOwnerAuthState);
+        await loadCustomers(ownerAuthState.email);
+        await loadLoginSessions();
+      } else {
+        // Показываем страницу ошибки при неверных данных
+        setShowUnauthorizedPage(true);
+        setOwnerAuthState(defaultOwnerAuthState);
+      }
+    } catch (error) {
+      console.error(error);
+      setShowUnauthorizedPage(true);
+      setOwnerAuthState(defaultOwnerAuthState);
+    } finally {
+      setIsOwnerAuthenticating(false);
+    }
+  }
+
+  function handleOwnerLogout() {
+    stopAutoSync();
+    stopConnectionMonitoring();
+    setOwnerProfile(null);
+    setOwnerAuthState(defaultOwnerAuthState);
+    setOwnerAuthStatus(null);
+    setCustomers([]);
+    setLoginSessions([]);
+    setCurrentDeviceInfo(null);
+    setLastSyncTime(null);
+    setShowUnauthorizedPage(false);
+    localStorage.removeItem("ownerEmail");
+  }
+
+  function handleBackToGuestForm() {
+    setShowUnauthorizedPage(false);
+    setOwnerAuthState(defaultOwnerAuthState);
+    setActiveTab("registration");
+  }
+
+  function handleCloseThankYouPage() {
+    setShowThankYouPage(false);
+    setRegisteredCustomer(null);
+  }
+
+  const loadCustomers = useCallback(async (token: string) => {
+    setIsLoadingCustomers(true);
+    try {
+      const response = await fetch("/api/customers", {
+        headers: {
+          "x-owner-token": token,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Не удалось получить список покупателей");
+      }
+
+      const data: Customer[] = await response.json();
+      
+      // Проверяем на новые регистрации
+      if (previousCustomerCount > 0 && data.length > previousCustomerCount) {
+        const newCount = data.length - previousCustomerCount;
+        setNewCustomersCount(prev => prev + newCount);
+      }
+      
+      setPreviousCustomerCount(data.length);
+      setCustomers(data);
+    } catch (error) {
+      console.error(error);
+      setBroadcastStatus({ type: "error", message: "Не удалось загрузить покупателей." });
+    } finally {
+      setIsLoadingCustomers(false);
+    }
+  }, [previousCustomerCount]);
+
+  const loadLoginSessions = useCallback(async () => {
+    setIsLoadingSessions(true);
+    try {
+      const response = await fetch("/api/owner/login-sessions", {
+        headers: {
+          "x-owner-token": ownerProfile?.email || "",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Не удалось получить историю входов");
+      }
+
+      const data: LoginSession[] = await response.json();
+      setLoginSessions(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoadingSessions(false);
+    }
+  }, [ownerProfile?.email]);
+
+  // Функция автоматической синхронизации
+  const performAutoSync = useCallback(async () => {
+    if (!isOwnerAuthed || !ownerProfile?.email || isAutoSyncing) return;
+    
+    setIsAutoSyncing(true);
+    try {
+      // Синхронизируем клиентов (только если не загружается вручную)
+      if (!isLoadingCustomers) {
+        await loadCustomers(ownerProfile.email);
+      }
+      // Синхронизируем историю входов (только если не загружается вручную)
+      if (!isLoadingSessions) {
+        await loadLoginSessions();
+      }
+      setLastSyncTime(new Date());
+    } catch (error) {
+      console.error("Ошибка автоматической синхронизации:", error);
+    } finally {
+      setIsAutoSyncing(false);
+    }
+  }, [isOwnerAuthed, ownerProfile?.email, isAutoSyncing, isLoadingCustomers, isLoadingSessions, loadCustomers, loadLoginSessions]);
+
+  // Запуск автоматической синхронизации
+  const startAutoSync = useCallback(() => {
+    if (syncInterval) {
+      clearInterval(syncInterval);
+    }
+    
+    const interval = setInterval(() => {
+      void performAutoSync();
+    }, 1000); // Каждую секунду
+    
+    setSyncInterval(interval);
+  }, [syncInterval, performAutoSync]);
+
+  // Остановка автоматической синхронизации
+  const stopAutoSync = useCallback(() => {
+    if (syncInterval) {
+      clearInterval(syncInterval);
+      setSyncInterval(null);
+    }
+  }, [syncInterval]);
+
+  // Функция для мониторинга подключений в реальном времени
+  const startConnectionMonitoring = useCallback(() => {
+    if (connectionMonitorInterval) {
+      clearInterval(connectionMonitorInterval);
+    }
+    
+    const interval = setInterval(async () => {
+      try {
+        // Обновляем информацию о текущем устройстве
+        const response = await fetch("/api/owner/current-device", {
+          headers: {
+            "x-owner-token": ownerProfile?.email || "",
+          },
+        });
+        
+        if (response.ok) {
+          const deviceInfo = await response.json();
+          setCurrentDeviceInfo(deviceInfo);
+        }
+        
+        // Обновляем историю входов
+        await loadLoginSessions();
+      } catch (error) {
+        console.error("Ошибка мониторинга подключений:", error);
+      }
+    }, 2000); // Каждые 2 секунды
+    
+    setConnectionMonitorInterval(interval);
+    setIsMonitoringConnections(true);
+  }, [connectionMonitorInterval, ownerProfile?.email, loadLoginSessions]);
+
+  // Остановка мониторинга подключений
+  const stopConnectionMonitoring = useCallback(() => {
+    if (connectionMonitorInterval) {
+      clearInterval(connectionMonitorInterval);
+      setConnectionMonitorInterval(null);
+    }
+    setIsMonitoringConnections(false);
+  }, [connectionMonitorInterval]);
+
+  // Автоматическая загрузка профиля владельца при загрузке страницы
+  useEffect(() => {
+    const savedOwnerEmail = localStorage.getItem("ownerEmail");
+    if (savedOwnerEmail && !ownerProfile) {
+      // Проверяем, что сохраненный email соответствует авторизованному администратору
+      if (savedOwnerEmail === "sushi.master.admin.2024@secure-icon.com") {
+        setOwnerProfile({
+          id: "admin-001",
+          email: savedOwnerEmail,
+          name: "Главный администратор",
+          lastLogin: new Date().toISOString(),
+          createdAt: new Date().toISOString(),
+        });
+        void loadCustomers(savedOwnerEmail);
+        void loadLoginSessions();
+      } else {
+        // Если email не соответствует авторизованному администратору, очищаем localStorage
+        localStorage.removeItem("ownerEmail");
+      }
+    }
+  }, [ownerProfile, loadCustomers, loadLoginSessions]);
+
+  // Управление автоматической синхронизацией
+  useEffect(() => {
+    if (isOwnerAuthed) {
+      // Запускаем автоматическую синхронизацию при входе
+      startAutoSync();
+    } else {
+      // Останавливаем при выходе
+      stopAutoSync();
+    }
+
+    // Очистка интервала при размонтировании компонента
+    return () => {
+      stopAutoSync();
+    };
+  }, [isOwnerAuthed, startAutoSync, stopAutoSync]);
+
+  async function handleBroadcastSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsBroadcasting(true);
+    setBroadcastStatus(null);
+
+    try {
+      const response = await fetch("/api/broadcast", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-owner-token": ownerProfile?.email || "",
+        },
+        body: JSON.stringify(broadcastState),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Отображаем детальный отчет о рассылке
+        const summary = result.summary;
+        const message = summary 
+          ? `${result.message} Отправлено: ${summary.sent}, Не удалось: ${summary.failed}`
+          : result.message;
+        
+        setBroadcastStatus({ 
+          type: "success", 
+          message,
+          details: summary ? `Детали: ${summary.sent} успешно, ${summary.failed} ошибок` : undefined
+        });
+        setBroadcastState(defaultBroadcastState);
+        if (ownerProfile?.email) {
+          await loadCustomers(ownerProfile.email);
+        }
+      } else {
+        setBroadcastStatus({ type: "error", message: result.message ?? "Не удалось отправить рассылку." });
+      }
+    } catch (error) {
+      console.error(error);
+      setBroadcastStatus({ type: "error", message: "Ошибка соединения. Попробуйте еще раз." });
+    } finally {
+      setIsBroadcasting(false);
+    }
+  }
+
+  return (
+    <div className="app">
+      <LanguageSwitcher />
+      <LavaLamp className="z-0" />
+      
+      {/* Страница благодарности */}
+      {showThankYouPage && registeredCustomer && (
+        <ThankYouPage
+          customerData={registeredCustomer}
+          onClose={handleCloseThankYouPage}
+        />
+      )}
+      
+      <div className="app__container">
+        <ParticleTextEffect className="shadow-[0_28px_60px_rgba(0,84,107,0.25)]" />
+        <div className="main-panel">
+          <div className="main-panel__content">
+        <header className="header">
+          <div>
+            <h1 className="header__title header__title--static">{t("app.title")}</h1>
+            <p className="header__subtitle">{t("app.subtitle")}</p>
+          </div>
+        </header>
+
+        <div className="tabs">
+          <button
+            className={`tab ${activeTab === "registration" ? "tab--active" : ""}`}
+            onClick={() => setActiveTab("registration")}
+          >
+            {t("tabs.registration")}
+          </button>
+          <button className={`tab ${activeTab === "owner" ? "tab--active" : ""}`} onClick={() => {
+            setActiveTab("owner");
+            setShowUnauthorizedPage(false);
+          }}>
+            {t("tabs.owner")}
+          </button>
+        </div>
+
+        {activeTab === "registration" ? (
+          <section className="card card--registration">
+            <h2 className="card__title">{t("registration.cardTitle")}</h2>
+
+            <form className="form" onSubmit={handleRegistrationSubmit}>
+              <div className="form__split">
+                <div className="form__row">
+                  <label className="form__label" htmlFor="firstName">
+                    {t("registration.fields.firstName")}
+                  </label>
+                  <input
+                    id="firstName"
+                    className="form__input"
+                    placeholder={t("registration.placeholders.firstName")}
+                    value={registrationState.firstName}
+                    onChange={(event) => handleRegistrationChange("firstName", event.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="form__row">
+                  <label className="form__label" htmlFor="lastName">
+                    {t("registration.fields.lastName")}
+                  </label>
+                  <input
+                    id="lastName"
+                    className="form__input"
+                    placeholder={t("registration.placeholders.lastName")}
+                    value={registrationState.lastName}
+                    onChange={(event) => handleRegistrationChange("lastName", event.target.value)}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form__split">
+                <div className="form__row">
+                  <label className="form__label" htmlFor="country">
+                    {t("registration.fields.country")}
+                  </label>
+                  <SimpleCountrySelector
+                    value={registrationState.country}
+                    onChange={(countryCode) => handleRegistrationChange("country", countryCode)}
+                    placeholder={t("registration.placeholders.country")}
+                  />
+                </div>
+
+                <div className="form__row">
+                  <label className="form__label" htmlFor="phoneNumber">
+                    {t("registration.fields.phone")}
+                  </label>
+                  <SimplePhoneInput
+                    value={registrationState.phoneNumber}
+                    onChange={(phoneNumber) => handleRegistrationChange("phoneNumber", phoneNumber)}
+                    countryCode={registrationState.country}
+                    placeholder={t("registration.placeholders.phone")}
+                    required
+                  />
+                  <span className="form__hint">{t("registration.hints.phone")}</span>
+                </div>
+              </div>
+
+              <div className="form__split">
+                <div className="form__row">
+                  <label className="form__label" htmlFor="email">
+                    {t("registration.fields.email")}
+                  </label>
+                  <input
+                    id="email"
+                    className="form__input"
+                    placeholder={t("registration.placeholders.email")}
+                    value={registrationState.email}
+                    onChange={(event) => handleRegistrationChange("email", event.target.value)}
+                    type="email"
+                  />
+                </div>
+              </div>
+
+              <div className="form__split">
+                <div className="form__row">
+                  <label className="form__label" htmlFor="birthDate">
+                    {t("registration.fields.birthDate")}
+                  </label>
+                  <DatePicker
+                    value={registrationState.birthDate}
+                    onChange={(date) => handleRegistrationChange("birthDate", date)}
+                    placeholder={t("registration.placeholders.birthDate")}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form__address-section">
+                <h3 className="form__section-title">{t("registration.sections.address")}</h3>
+                
+                <div className="form__split">
+                  <div className="form__row">
+                    <label className="form__label" htmlFor="city">
+                      {t("registration.fields.city")}
+                    </label>
+                    <input
+                      id="city"
+                      className="form__input"
+                      placeholder={t("registration.placeholders.city")}
+                      value={registrationState.city}
+                      onChange={(event) => handleRegistrationChange("city", event.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="form__row">
+                    <label className="form__label" htmlFor="street">
+                      {t("registration.fields.street")}
+                    </label>
+                    <input
+                      id="street"
+                      className="form__input"
+                      placeholder={t("registration.placeholders.street")}
+                      value={registrationState.street}
+                      onChange={(event) => handleRegistrationChange("street", event.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="form__row">
+                    <label className="form__label" htmlFor="postalCode">
+                      {t("registration.fields.postalCode")}
+                    </label>
+                    <input
+                      id="postalCode"
+                      className="form__input"
+                      placeholder={t("registration.placeholders.postalCode")}
+                      value={registrationState.postalCode}
+                      onChange={(event) => handleRegistrationChange("postalCode", event.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <NetherlandsAddressValidator
+                  city={registrationState.city}
+                  street={registrationState.street}
+                  postalCode={registrationState.postalCode}
+                  onValidationChange={setAddressValidation}
+                />
+
+                {addressValidation.errors.length > 0 && (
+                  <div className="form__hint form__hint--error">
+                    {addressValidation.errors.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="form__row">
+                <label className="form__label" htmlFor="preferredFood">
+                  {t("registration.fields.preferredFood")}
+                </label>
+                <textarea
+                  id="preferredFood"
+                  className="form__textarea"
+                  placeholder={t("registration.placeholders.preferredFood")}
+                  value={registrationState.preferredFood}
+                  onChange={(event) => handleRegistrationChange("preferredFood", event.target.value)}
+                />
+              </div>
+
+              {registrationStatus && (
+                <div className={`status status--${registrationStatus.type}`}>
+                  <span className="status__message">{registrationStatus.message}</span>
+                </div>
+              )}
+
+              <div className="form__actions">
+                <button className="button button--turquoise" type="reset" onClick={() => setRegistrationState(defaultRegistrationState)}>
+                  {t("registration.actions.reset")}
+                </button>
+                <InteractiveHoverButton 
+                  text={t("registration.actions.submit")}
+                  className="button button--purple"
+                  type="submit" 
+                  disabled={isSubmitting}
+                />
+              </div>
+            </form>
+          </section>
+        ) : (
+          <section className="owner-section">
+            {isOwnerAuthed ? (
+              <EnhancedAdminPanel />
+            ) : showUnauthorizedPage ? (
+              <div className="card card--unauthorized">
+                <div className="unauthorized-page">
+                  <div className="unauthorized-icon">🚫</div>
+                  <h2 className="card__title">{t("owner.unauthorized.title")}</h2>
+                  <p className="unauthorized-message">
+                    {t("owner.unauthorized.message")}
+                  </p>
+                  <p className="unauthorized-subtitle">
+                    {t("owner.unauthorized.subtitle")}
+                  </p>
+                  <div className="unauthorized-actions">
+                    <InteractiveHoverButton 
+                      text={t("owner.unauthorized.backToForm")}
+                      className="button button--purple"
+                      onClick={handleBackToGuestForm}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="card card--owner">
+                <h2 className="card__title">{t("owner.auth.title")}</h2>
+                
+                <div className="owner-auth">
+                  <form className="form" onSubmit={(e) => e.preventDefault()}>
+                    <div className="form__row">
+                      <label className="form__label" htmlFor="ownerEmail">
+                        {t("owner.auth.fields.email")}
+                      </label>
+                      <input
+                        id="ownerEmail"
+                        className="form__input"
+                        type="email"
+                        placeholder={t("owner.auth.placeholders.email")}
+                        value={ownerAuthState.email}
+                        onChange={(event) => handleOwnerAuthChange("email", event.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="form__row">
+                      <label className="form__label" htmlFor="ownerAccessCode">
+                        {t("owner.auth.fields.accessCode")}
+                      </label>
+                      <input
+                        id="ownerAccessCode"
+                        className="form__input"
+                        type="password"
+                        placeholder={t("owner.auth.placeholders.accessCode")}
+                        value={ownerAuthState.accessCode}
+                        onChange={(event) => handleOwnerAuthChange("accessCode", event.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="form__row">
+                      <label className="form__label" htmlFor="ownerPassword">
+                        {t("owner.auth.fields.password")}
+                      </label>
+                      <input
+                        id="ownerPassword"
+                        className="form__input"
+                        type="password"
+                        placeholder={t("owner.auth.placeholders.password")}
+                        value={ownerAuthState.password}
+                        onChange={(event) => handleOwnerAuthChange("password", event.target.value)}
+                        required
+                      />
+                    </div>
+
+                    {ownerAuthStatus && (
+                      <div className={`status status--${ownerAuthStatus.type}`}>
+                        <span className="status__message">{ownerAuthStatus.message}</span>
+                      </div>
+                    )}
+
+                    <div className="form__actions">
+                      <InteractiveHoverButton 
+                        text={isOwnerAuthenticating ? t("owner.auth.actions.logging") : t("owner.auth.actions.login")}
+                        className="button button--purple"
+                        onClick={handleOwnerLogin}
+                        disabled={isOwnerAuthenticating}
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            ) : (
+              <div className="card card--owner">
+                <div className="owner-profile">
+                  <h2 className="card__title">
+                    {t("owner.auth.welcome", { name: ownerProfile?.name || "Адміністратор" })}
+                  </h2>
+                  {ownerProfile && (
+                    <div className="owner-info">
+                      <p>Email: {ownerProfile.email}</p>
+                      {ownerProfile.lastLogin && (
+                        <p>Останній вхід: {new Date(ownerProfile.lastLogin).toLocaleString()}</p>
+                      )}
+                      {currentDeviceInfo && (
+                        <details className="device-info">
+                          <summary className="device-info__summary" title="Натисніть, щоб розгорнути детальну інформацію">
+                            <div className="device-info__header">
+                              <span className="device-info__title">🔗 Поточне підключення</span>
+                              <span className="device-info__expand-icon">▼</span>
+                            </div>
+                            <span className="device-info__preview">
+                              {currentDeviceInfo.browser} • {currentDeviceInfo.os} • {currentDeviceInfo.country}
+                            </span>
+                            <span className="device-info__hint">Натисніть для перегляду всіх деталей</span>
+                          </summary>
+                          
+                          <div className="device-info__content">
+                            <div className="device-info__section">
+                              <h5>🌐 Браузер та ОС:</h5>
+                              <div className="device-info__grid">
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Браузер:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.browser}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Версія браузера:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.browserVersion}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Операційна система:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.os}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Версія ОС:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.osVersion}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="device-info__section">
+                              <h5>📱 Пристрій:</h5>
+                              <div className="device-info__grid">
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Тип пристрою:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.deviceType}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Модель:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.deviceModel}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Повна назва пристрою:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.device}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="device-info__section">
+                              <h5>📍 Місцезнаходження:</h5>
+                              <div className="device-info__grid">
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Повна адреса:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.location}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Країна:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.country}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Місто:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.city}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Регіон/Область:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.region}</span>
+                                </div>
+                                {currentDeviceInfo.latitude && currentDeviceInfo.longitude && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Координати:</span>
+                                    <span className="device-info__value">
+                                      {currentDeviceInfo.latitude.toFixed(4)}, {currentDeviceInfo.longitude.toFixed(4)}
+                                    </span>
+                                  </div>
+                                )}
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Часовий пояс:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.timezone}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">IP адреса:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.ipAddress}</span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Провайдер/ISP:</span>
+                                  <span className="device-info__value">{currentDeviceInfo.isp}</span>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div className="device-info__section">
+                              <h5>🔍 Технічні деталі:</h5>
+                              <div className="device-info__grid">
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Тип підключення:</span>
+                                  <span className="device-info__value">
+                                    {currentDeviceInfo.ipAddress === '::1' || currentDeviceInfo.ipAddress === '127.0.0.1' || currentDeviceInfo.ipAddress === 'localhost' 
+                                      ? 'Локальна розробка' 
+                                      : currentDeviceInfo.ipAddress.startsWith('192.168.') || currentDeviceInfo.ipAddress.startsWith('10.') || currentDeviceInfo.ipAddress.startsWith('172.')
+                                        ? 'Приватна мережа'
+                                        : 'Публічний інтернет'
+                                    }
+                                  </span>
+                                </div>
+                                <div className="device-info__item">
+                                  <span className="device-info__label">Версія IP:</span>
+                                  <span className="device-info__value">
+                                    {currentDeviceInfo.ipAddress.includes(':') ? 'IPv6' : 'IPv4'}
+                                  </span>
+                                </div>
+                                {currentDeviceInfo.countryCode && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Код країни:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.countryCode}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.regionCode && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Код регіону:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.regionCode}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.postal && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Поштовий індекс:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.postal}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.currency && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Валюта:</span>
+                                    <span className="device-info__value">
+                                      {currentDeviceInfo.currency} {currentDeviceInfo.currencyName && `(${currentDeviceInfo.currencyName})`}
+                                    </span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.languages && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Мови:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.languages}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.continent && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Континент:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.continent}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.isEu !== undefined && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">ЄС:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.isEu ? 'Так' : 'Ні'}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.callingCode && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Телефонний код:</span>
+                                    <span className="device-info__value">+{currentDeviceInfo.callingCode}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.utcOffset && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">UTC зміщення:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.utcOffset}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.countryPopulation && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Населення країни:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.countryPopulation.toLocaleString()}</span>
+                                  </div>
+                                )}
+                                {currentDeviceInfo.countryCapital && (
+                                  <div className="device-info__item">
+                                    <span className="device-info__label">Столиця:</span>
+                                    <span className="device-info__value">{currentDeviceInfo.countryCapital}</span>
+                                  </div>
+                                )}
+                              </div>
+                              <details className="user-agent-details">
+                                <summary>User-Agent (натисніть для перегляду)</summary>
+                                <code className="user-agent-code">{currentDeviceInfo.userAgent}</code>
+                              </details>
+                            </div>
+                          </div>
+                        </details>
+                      )}
+                    </div>
+                  )}
+                  <button className="button button--turquoise" onClick={handleOwnerLogout}>
+                    {t("owner.auth.logout")}
+                  </button>
+                </div>
+              </div>
+            )}
+          </section>
+        )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;

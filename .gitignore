@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Logs
+*.log
+backend.log
+frontend.log
+frontend/frontend.log
+
+# Database
+prisma/dev.db
+prisma/dev.db-journal
+prisma/prisma/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+generated/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

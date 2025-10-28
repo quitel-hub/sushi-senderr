@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — 忠诚计划",
+    "subtitle": "填写表格，下次订单享受10%折扣。"
+  },
+  "tabs": {
+    "registration": "客人表格",
+    "owner": "管理员面板",
+    "admin": "管理面板"
+  },
+  "discountBadge": {
+    "title": "10% 折扣",
+    "subtitle": "每次新注册"
+  },
+  "languages": {
+    "switcherLabel": "语言",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی"
+  },
+  "registration": {
+    "cardTitle": "填写您的详细信息并获得折扣",
+    "fields": {
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "phone": "电话",
+      "country": "国家",
+      "email": "电子邮件",
+      "birthDate": "出生日期",
+      "city": "城市",
+      "preferredFood": "喜欢的卷或愿望",
+      "feedback": "您对我们的愿望",
+      "street": "街道",
+      "postalCode": "邮政编码"
+    },
+    "placeholders": {
+      "firstName": "例如 安娜",
+      "lastName": "例如 伊万诺娃",
+      "phone": "输入电话号码",
+      "country": "选择国家",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "例如 Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "告诉我们您喜欢什么，这样我们可以定制优惠",
+      "feedback": "分享要添加或改进的内容",
+      "street": "例如 Damrak 1",
+      "postalCode": "例如 1012 LP"
+    },
+    "hints": {
+      "phone": "选择您的国家并输入完整的手机号码用于Messenger。",
+      "feedback": "我们阅读每条消息以改善您的体验。"
+    },
+    "actions": {
+      "reset": "重置",
+      "submit": "获得折扣",
+      "submitting": "提交中..."
+    },
+    "status": {
+      "duplicate": "您已经注册了。",
+      "success": "感谢注册！您的10%折扣已准备就绪。",
+      "error": "出了点问题。请重试。"
+    },
+    "errors": {
+      "phoneInvalid": "无效的电话号码格式",
+      "phoneTooShort": "请输入完整的电话号码"
+    },
+    "success": {
+      "phoneValid": "✓ 电话号码有效"
+    },
+    "datePicker": {
+      "months": {
+        "january": "一月",
+        "february": "二月",
+        "march": "三月",
+        "april": "四月",
+        "may": "五月",
+        "june": "六月",
+        "july": "七月",
+        "august": "八月",
+        "september": "九月",
+        "october": "十月",
+        "november": "十一月",
+        "december": "十二月"
+      },
+      "previousYears": "前{{count}}年",
+      "nextYears": "后{{count}}年",
+      "backToYears": "返回年份",
+      "backToMonths": "返回月份",
+      "placeholder": "选择日期"
+    },
+    "sections": {
+      "address": "地址信息"
+    }
+  },
+  "owner": {
+    "title": "管理员面板",
+    "auth": {
+      "title": "管理员面板",
+      "fields": {
+        "email": "电子邮件",
+        "accessCode": "访问代码",
+        "password": "密码"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "输入您的访问代码",
+        "password": "输入您的密码"
+      },
+      "actions": {
+        "login": "登录面板",
+        "logging": "登录中..."
+      },
+      "welcome": "欢迎，{{name}}！",
+      "logout": "退出"
+    },
+    "unauthorized": {
+      "title": "访问被拒绝",
+      "message": "您无法访问此页面。只有管理员可以进入这里。",
+      "subtitle": "管理员面板仅对授权用户开放。",
+      "backToForm": "返回客人表格"
+    },
+    "token": {
+      "label": "输入秘密令牌来管理广播",
+      "placeholder": "业主令牌",
+      "saved": "令牌已保存。",
+      "cleared": "令牌已清除。",
+      "actions": {
+        "reset": "重置",
+        "save": "保存令牌"
+      }
+    },
+    "broadcast": {
+      "title": "创建Messenger广播",
+      "fields": {
+        "title": "标题",
+        "body": "消息文本"
+      },
+      "placeholder": {
+        "title": "例如 热卷周末",
+        "body": "将发送给所有客户的消息"
+      },
+      "hint": "消息将发送给所有填写表格的人。",
+      "actions": {
+        "reset": "重置",
+        "submit": "发送广播",
+        "submitting": "发送中..."
+      }
+    },
+    "customers": {
+      "title": "客户",
+      "empty": "还没有注册或令牌无效。",
+      "refresh": "刷新",
+      "refreshing": "更新中...",
+      "columns": {
+        "name": "姓名",
+        "contacts": "联系方式",
+        "country": "国家",
+        "city": "城市",
+        "code": "促销代码",
+        "createdAt": "已注册"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "寿司",
+      "fresh": "新鲜",
+      "delicious": "美味",
+      "premium": "高级",
+      "traditional": "传统的",
+      "loyaltyProgram": "忠诚计划",
+      "sushiIcon": "寿司图标"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 管理员面板登录",
+      "subtitle": "输入凭据以访问管理面板",
+      "email": "管理员邮箱",
+      "emailPlaceholder": "输入管理员邮箱",
+      "accessCode": "访问代码",
+      "accessCodePlaceholder": "输入访问代码",
+      "password": "密码",
+      "passwordPlaceholder": "输入密码",
+      "login": "🚀 登录面板",
+      "loggingIn": "登录中...",
+      "invalidCredentials": "❌ 无效凭据。访问被拒绝。",
+      "loginError": "❌ 登录错误。请重试。",
+      "warning": "⚠️ 访问仅限于授权管理员",
+      "logout": "退出",
+      "sessionExpired": "会话已过期。请重新登录。"
+    }
+  }
+}

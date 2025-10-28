@@ -1,0 +1,365 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Loyaliteitsprogramma",
+    "subtitle": "Krijg 10% korting op je volgende bestelling door het formulier in te vullen."
+  },
+  "tabs": {
+    "registration": "Gastenformulier",
+    "owner": "Beheerderspaneel",
+    "admin": "Beheerderspaneel"
+  },
+  "discountBadge": {
+    "title": "10% korting",
+    "subtitle": "voor elke nieuwe registratie"
+  },
+  "languages": {
+    "switcherLabel": "Taal",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "da": "Dansk",
+    "pl": "Polski",
+    "ru": "Русский",
+    "fr": "Français",
+    "es": "Español",
+    "it": "Italiano",
+    "pt": "Português",
+    "sv": "Svenska",
+    "no": "Norsk",
+    "fi": "Suomi",
+    "cs": "Čeština",
+    "hu": "Magyar",
+    "el": "Ελληνικά",
+    "uk": "Oekraïens",
+    "bg": "Bulgaars",
+    "ro": "Roemeens",
+    "hr": "Kroatisch",
+    "sk": "Slowaaks",
+    "sl": "Sloveens"
+  },
+  "registration": {
+    "cardTitle": "Vul je gegevens in en krijg korting",
+    "fields": {
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "phone": "Telefoon",
+      "country": "Land",
+      "email": "Email",
+      "birthDate": "Geboortedatum",
+      "city": "Stad",
+      "preferredFood": "Favoriete rolls of wensen",
+      "feedback": "Jouw wensen voor ons",
+      "street": "Straat",
+      "postalCode": "Postcode"
+    },
+    "placeholders": {
+      "firstName": "Bijv. Anna",
+      "lastName": "Bijv. Jansen",
+      "phone": "7XXXXXXXXXX",
+      "country": "Kies land",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "bijv. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Schrijf je favoriete rolls of voedselvoorkeuren",
+      "feedback": "Deel wat toe te voegen of te verbeteren",
+      "street": "bijv. Damrak 1",
+      "postalCode": "bijv. 1012 LP"
+    },
+    "hints": {
+      "phone": "Geef je mobiele nummer op voor Messenger met acties.",
+      "feedback": "We lezen elk bericht om je ervaring te verbeteren."
+    },
+    "actions": {
+      "reset": "Wissen",
+      "submit": "Korting krijgen",
+      "submitting": "Verzenden..."
+    },
+    "status": {
+      "duplicate": "Je bent al geregistreerd.",
+      "success": "Bedankt voor je registratie! Je 10% korting is klaar.",
+      "error": "Er ging iets mis. Probeer het opnieuw."
+    },
+    "errors": {
+      "phoneInvalid": "Ongeldig telefoonnummerformaat",
+      "phoneTooShort": "Voer een volledig telefoonnummer in"
+    },
+    "success": {
+      "phoneValid": "✓ Telefoonnummer is geldig"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januari",
+        "february": "Februari",
+        "march": "Maart",
+        "april": "April",
+        "may": "Mei",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "Augustus",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "December"
+      },
+      "previousYears": "Vorige {{count}} jaar",
+      "nextYears": "Volgende {{count}} jaar",
+      "backToYears": "Terug naar jaren",
+      "backToMonths": "Terug naar maanden",
+      "placeholder": "Selecteer datum"
+    },
+    "sections": {
+      "address": "Adresgegevens"
+    }
+  },
+  "owner": {
+    "title": "Beheerderspaneel",
+    "auth": {
+      "title": "Beheerderspaneel",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Toegangscode",
+        "password": "Wachtwoord"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Voer uw toegangscode in",
+        "password": "Voer uw wachtwoord in"
+      },
+      "actions": {
+        "login": "Inloggen op paneel",
+        "logging": "Inloggen..."
+      },
+      "welcome": "Welkom, {{name}}!",
+      "logout": "Uitloggen"
+    },
+    "unauthorized": {
+      "title": "Toegang geweigerd",
+      "message": "U kunt deze pagina niet bezoeken. Alleen beheerders kunnen hier binnen.",
+      "subtitle": "Het beheerderspaneel is alleen beschikbaar voor geautoriseerde gebruikers.",
+      "backToForm": "Terug naar gastenformulier"
+    },
+    "token": {
+      "label": "Voer de geheime token in om uitzendingen te beheren",
+      "placeholder": "Eigenaar token",
+      "saved": "Token opgeslagen.",
+      "cleared": "Token gewist.",
+      "actions": {
+        "reset": "Resetten",
+        "save": "Token opslaan"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger uitzending maken",
+      "fields": {
+        "title": "Titel",
+        "body": "Bericht tekst"
+      },
+      "placeholder": {
+        "title": "Bijv. \"Hot Roll Weekend\"",
+        "body": "Bericht dat naar alle klanten wordt gestuurd"
+      },
+      "hint": "Het bericht wordt naar iedereen gestuurd die het formulier heeft ingevuld.",
+      "actions": {
+        "reset": "Wissen",
+        "submit": "Uitzending versturen",
+        "submitting": "Verzenden..."
+      }
+    },
+    "customers": {
+      "title": "Klanten",
+      "empty": "Nog geen registraties of token ongeldig.",
+      "refresh": "Vernieuwen",
+      "refreshing": "Vernieuwen...",
+      "columns": {
+        "name": "Naam",
+        "contacts": "Contacten",
+        "country": "Land",
+        "city": "Stad",
+        "code": "Promocode",
+        "createdAt": "Geregistreerd"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Vers",
+      "delicious": "Heerlijk",
+      "premium": "Premium",
+      "traditional": "Traditioneel",
+      "loyaltyProgram": "Loyaliteitsprogramma",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin Panel Inloggen",
+      "subtitle": "Voer inloggegevens in om toegang te krijgen tot het beheerpaneel",
+      "email": "Admin E-mail",
+      "emailPlaceholder": "Voer admin e-mail in",
+      "accessCode": "Toegangscode",
+      "accessCodePlaceholder": "Voer toegangscode in",
+      "password": "Wachtwoord",
+      "passwordPlaceholder": "Voer wachtwoord in",
+      "login": "🚀 Inloggen op Panel",
+      "loggingIn": "Inloggen...",
+      "invalidCredentials": "❌ Ongeldige inloggegevens. Toegang geweigerd.",
+      "loginError": "❌ Inlogfout. Probeer het opnieuw.",
+      "warning": "⚠️ Toegang is beperkt tot geautoriseerde beheerders alleen",
+      "logout": "Uitloggen",
+      "sessionExpired": "Sessie verlopen. Log opnieuw in."
+    }
+  }
+}

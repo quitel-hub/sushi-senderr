@@ -1,0 +1,381 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Sadakat Programı",
+    "subtitle": "Formu doldurarak bir sonraki siparişinizde %15 indirim kazanın."
+  },
+  "tabs": {
+    "registration": "Misafir Formu",
+    "owner": "Yönetici Paneli",
+    "admin": "Yönetici paneli"
+  },
+  "discountBadge": {
+    "title": "%15 indirim",
+    "subtitle": "her yeni kayıt için"
+  },
+  "languages": {
+    "switcherLabel": "Dil",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe"
+  },
+  "registration": {
+    "cardTitle": "Bilgilerinizi doldurun ve indirim kazanın",
+    "fields": {
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "phone": "Telefon",
+      "country": "Ülke",
+      "email": "E-posta",
+      "birthDate": "Doğum tarihi",
+      "city": "Şehir",
+      "preferredFood": "Favori rulolar veya istekler",
+      "feedback": "Bizim için istekleriniz",
+      "street": "Sokak",
+      "postalCode": "Posta kodu"
+    },
+    "placeholders": {
+      "firstName": "örn. Anna",
+      "lastName": "örn. Ivanova",
+      "phone": "Telefon numarası girin",
+      "country": "Ülke seçin",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "örn. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Ne sevdiğinizi söyleyin ki teklifleri size göre ayarlayabilelim",
+      "feedback": "Eklemek veya iyileştirmek istediğiniz şeyleri paylaşın",
+      "street": "örn. Damrak 1",
+      "postalCode": "örn. 1012 LP"
+    },
+    "hints": {
+      "phone": "Ülkenizi seçin ve Messenger için tam cep telefonu numarasını girin.",
+      "feedback": "Deneyiminizi iyileştirmek için her mesajı okuyoruz."
+    },
+    "actions": {
+      "reset": "Sıfırla",
+      "submit": "İndirim al",
+      "submitting": "Gönderiliyor..."
+    },
+    "status": {
+      "duplicate": "Zaten kayıtlısınız.",
+      "success": "Kayıt olduğunuz için teşekkürler! %15 indiriminiz hazır.",
+      "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+    },
+    "errors": {
+      "phoneInvalid": "Geçersiz telefon numarası formatı",
+      "phoneTooShort": "Lütfen tam bir telefon numarası girin"
+    },
+    "success": {
+      "phoneValid": "✓ Telefon numarası geçerli"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Ocak",
+        "february": "Şubat",
+        "march": "Mart",
+        "april": "Nisan",
+        "may": "Mayıs",
+        "june": "Haziran",
+        "july": "Temmuz",
+        "august": "Ağustos",
+        "september": "Eylül",
+        "october": "Ekim",
+        "november": "Kasım",
+        "december": "Aralık"
+      },
+      "previousYears": "Önceki {{count}} yıl",
+      "nextYears": "Sonraki {{count}} yıl",
+      "backToYears": "Yıllara geri dön",
+      "backToMonths": "Aylara geri dön",
+      "placeholder": "Tarih seçin"
+    },
+    "sections": {
+      "address": "Adres bilgileri"
+    }
+  },
+  "owner": {
+    "title": "Yönetici Paneli",
+    "auth": {
+      "title": "Yönetici Paneli",
+      "fields": {
+        "email": "E-posta",
+        "accessCode": "Erişim Kodu",
+        "password": "Şifre"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Erişim kodunuzu girin",
+        "password": "Şifrenizi girin"
+      },
+      "actions": {
+        "login": "Panele Giriş Yap",
+        "logging": "Giriş yapılıyor..."
+      },
+      "welcome": "Hoş geldiniz, {{name}}!",
+      "logout": "Çıkış Yap"
+    },
+    "unauthorized": {
+      "title": "Erişim Reddedildi",
+      "message": "Bu sayfaya erişemezsiniz. Sadece yöneticiler buraya girebilir.",
+      "subtitle": "Yönetici Paneli sadece yetkili kullanıcılar için kullanılabilir.",
+      "backToForm": "Misafir Formuna Dön"
+    },
+    "token": {
+      "label": "Yayınları yönetmek için gizli token girin",
+      "placeholder": "Sahip token",
+      "saved": "Token kaydedildi.",
+      "cleared": "Token temizlendi.",
+      "actions": {
+        "reset": "Sıfırla",
+        "save": "Token kaydet"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger yayını oluştur",
+      "fields": {
+        "title": "Başlık",
+        "body": "Mesaj metni"
+      },
+      "placeholder": {
+        "title": "örn. Sıcak Rulo Hafta Sonu",
+        "body": "Tüm müşterilere gönderilecek mesaj"
+      },
+      "hint": "Mesaj formu dolduran herkese gönderilecek.",
+      "actions": {
+        "reset": "Sıfırla",
+        "submit": "Yayın gönder",
+        "submitting": "Gönderiliyor..."
+      }
+    },
+    "customers": {
+      "title": "Müşteriler",
+      "empty": "Henüz kayıt yok veya token geçersiz.",
+      "refresh": "Yenile",
+      "refreshing": "Güncelleniyor...",
+      "columns": {
+        "name": "İsim",
+        "contacts": "İletişim",
+        "country": "Ülke",
+        "city": "Şehir",
+        "code": "Promo kod",
+        "createdAt": "Kayıtlı"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Suşi",
+      "fresh": "Taze",
+      "delicious": "Lezzetli",
+      "premium": "Premium",
+      "traditional": "Geleneksel",
+      "loyaltyProgram": "Sadakat programı",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Yönetici Paneli Girişi",
+      "subtitle": "Yönetim paneline erişmek için kimlik bilgilerini girin",
+      "email": "Yönetici E-postası",
+      "emailPlaceholder": "Yönetici e-postasını girin",
+      "accessCode": "Erişim Kodu",
+      "accessCodePlaceholder": "Erişim kodunu girin",
+      "password": "Şifre",
+      "passwordPlaceholder": "Şifreyi girin",
+      "login": "🚀 Panele Giriş Yap",
+      "loggingIn": "Giriş yapılıyor...",
+      "invalidCredentials": "❌ Geçersiz kimlik bilgileri. Erişim reddedildi.",
+      "loginError": "❌ Giriş hatası. Lütfen tekrar deneyin.",
+      "warning": "⚠️ Erişim yalnızca yetkili yöneticilere sınırlıdır",
+      "logout": "Çıkış Yap",
+      "sessionExpired": "Oturum süresi doldu. Lütfen tekrar giriş yapın."
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Program Loyalitas",
+    "subtitle": "Dapatkan diskon 10% untuk pesanan berikutnya dengan mengisi formulir."
+  },
+  "tabs": {
+    "registration": "Formulir Tamu",
+    "owner": "Dashboard Pemilik",
+    "admin": "Admin Panel"
+  },
+  "discountBadge": {
+    "title": "10% diskon",
+    "subtitle": "untuk setiap pendaftaran baru"
+  },
+  "languages": {
+    "switcherLabel": "Bahasa",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی"
+  },
+  "registration": {
+    "cardTitle": "Isi detail Anda dan dapatkan diskon",
+    "fields": {
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "phone": "Telepon",
+      "country": "Negara",
+      "email": "Email",
+      "birthDate": "Tanggal lahir",
+      "city": "Kota",
+      "preferredFood": "Rol favorit atau keinginan",
+      "feedback": "Keinginan Anda untuk kami",
+      "street": "Jalan",
+      "postalCode": "Kode pos"
+    },
+    "placeholders": {
+      "firstName": "contoh Anna",
+      "lastName": "contoh Ivanova",
+      "phone": "Masukkan nomor telepon",
+      "country": "Pilih negara",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "mis. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Beri tahu kami apa yang Anda suka agar kami dapat menyesuaikan penawaran",
+      "feedback": "Bagikan apa yang perlu ditambahkan atau diperbaiki",
+      "street": "mis. Damrak 1",
+      "postalCode": "mis. 1012 LP"
+    },
+    "hints": {
+      "phone": "Pilih negara Anda dan masukkan nomor ponsel lengkap untuk Messenger.",
+      "feedback": "Kami membaca setiap pesan untuk meningkatkan pengalaman Anda."
+    },
+    "actions": {
+      "reset": "Reset",
+      "submit": "Dapatkan diskon",
+      "submitting": "Mengirim..."
+    },
+    "status": {
+      "duplicate": "Anda sudah terdaftar.",
+      "success": "Terima kasih telah mendaftar! Diskon 10% Anda sudah siap.",
+      "error": "Ada yang salah. Silakan coba lagi."
+    },
+    "errors": {
+      "phoneInvalid": "Format nomor telepon tidak valid",
+      "phoneTooShort": "Silakan masukkan nomor telepon lengkap"
+    },
+    "success": {
+      "phoneValid": "✓ Nomor telepon valid"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januari",
+        "february": "Februari",
+        "march": "Maret",
+        "april": "April",
+        "may": "Mei",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "Agustus",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "Desember"
+      },
+      "previousYears": "{{count}} tahun sebelumnya",
+      "nextYears": "{{count}} tahun berikutnya",
+      "backToYears": "Kembali ke tahun",
+      "backToMonths": "Kembali ke bulan",
+      "placeholder": "Pilih tanggal"
+    },
+    "sections": {
+      "address": "Informasi alamat"
+    }
+  },
+  "owner": {
+    "title": "Dashboard Pemilik",
+    "auth": {
+      "title": "Dashboard Pemilik",
+      "fields": {
+        "email": "Email",
+        "accessCode": "Kode Akses",
+        "password": "Kata Sandi"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Masukkan kode akses Anda",
+        "password": "Masukkan kata sandi Anda"
+      },
+      "actions": {
+        "login": "Masuk ke Dashboard",
+        "logging": "Sedang masuk..."
+      },
+      "welcome": "Selamat datang, {{name}}!",
+      "logout": "Keluar"
+    },
+    "unauthorized": {
+      "title": "Akses Ditolak",
+      "message": "Anda tidak dapat mengakses halaman ini. Hanya administrator yang dapat masuk ke sini.",
+      "subtitle": "Dashboard pemilik hanya tersedia untuk pengguna yang berwenang.",
+      "backToForm": "Kembali ke Formulir Tamu"
+    },
+    "token": {
+      "label": "Masukkan token rahasia untuk mengelola siaran",
+      "placeholder": "Token pemilik",
+      "saved": "Token disimpan.",
+      "cleared": "Token dihapus.",
+      "actions": {
+        "reset": "Reset",
+        "save": "Simpan token"
+      }
+    },
+    "broadcast": {
+      "title": "Buat siaran Messenger",
+      "fields": {
+        "title": "Judul",
+        "body": "Teks pesan"
+      },
+      "placeholder": {
+        "title": "contoh Akhir Pekan Rol Panas",
+        "body": "Pesan yang akan dikirim ke semua pelanggan"
+      },
+      "hint": "Pesan akan dikirim ke semua yang mengisi formulir.",
+      "actions": {
+        "reset": "Reset",
+        "submit": "Kirim siaran",
+        "submitting": "Mengirim..."
+      }
+    },
+    "customers": {
+      "title": "Pelanggan",
+      "empty": "Belum ada pendaftaran atau token tidak valid.",
+      "refresh": "Refresh",
+      "refreshing": "Memperbarui...",
+      "columns": {
+        "name": "Nama",
+        "contacts": "Kontak",
+        "country": "Negara",
+        "city": "Kota",
+        "code": "Kode promo",
+        "createdAt": "Terdaftar"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Segar",
+      "delicious": "Lezat",
+      "premium": "Premium",
+      "traditional": "Tradisional",
+      "loyaltyProgram": "Program loyalitas",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Login Panel Admin",
+      "subtitle": "Masukkan kredensial untuk mengakses panel administrasi",
+      "email": "Email Admin",
+      "emailPlaceholder": "Masukkan email admin",
+      "accessCode": "Kode Akses",
+      "accessCodePlaceholder": "Masukkan kode akses",
+      "password": "Kata Sandi",
+      "passwordPlaceholder": "Masukkan kata sandi",
+      "login": "🚀 Login ke Panel",
+      "loggingIn": "Masuk...",
+      "invalidCredentials": "❌ Kredensial tidak valid. Akses ditolak.",
+      "loginError": "❌ Kesalahan login. Silakan coba lagi.",
+      "warning": "⚠️ Akses dibatasi hanya untuk administrator yang berwenang",
+      "logout": "Keluar",
+      "sessionExpired": "Sesi berakhir. Silakan login lagi."
+    }
+  }
+}

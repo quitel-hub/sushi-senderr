@@ -1,0 +1,375 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Program Vjernosti",
+    "subtitle": "Dobijte 10% popusta na vašu sljedeću narudžbu popunjavanjem forme."
+  },
+  "tabs": {
+    "registration": "Forma za Goste",
+    "owner": "Panel Vlasnika",
+    "admin": "Administratorska tabla"
+  },
+  "discountBadge": {
+    "title": "10% popusta",
+    "subtitle": "za svaku novu registraciju"
+  },
+  "languages": {
+    "switcherLabel": "Jezik",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip"
+  },
+  "registration": {
+    "cardTitle": "Ispunite svoje podatke i dobijte popust",
+    "fields": {
+      "firstName": "Ime",
+      "lastName": "Prezime",
+      "phone": "Telefon",
+      "country": "Zemlja",
+      "email": "Email",
+      "birthDate": "Datum rođenja",
+      "city": "Grad",
+      "preferredFood": "Omiljeni rolovi ili želje",
+      "feedback": "Vaše želje za nas",
+      "street": "Ulica",
+      "postalCode": "Poštanski broj"
+    },
+    "placeholders": {
+      "firstName": "npr. Anna",
+      "lastName": "npr. Ivanova",
+      "phone": "Unesite broj telefona",
+      "country": "Odaberite zemlju",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "npr. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Recite nam što volite kako bismo mogli prilagoditi ponude",
+      "feedback": "Podijelite što dodati ili poboljšati",
+      "street": "npr. Damrak 1",
+      "postalCode": "npr. 1012 LP"
+    },
+    "hints": {
+      "phone": "Odaberite svoju zemlju i unesite puni broj mobilnog telefona za Messenger.",
+      "feedback": "Čitamo svaku poruku da poboljšamo vaše iskustvo."
+    },
+    "actions": {
+      "reset": "Resetuj",
+      "submit": "Dobij popust",
+      "submitting": "Šalje se..."
+    },
+    "status": {
+      "duplicate": "Već ste registrovani.",
+      "success": "Hvala na registraciji! Vaš popust od 10% je spreman.",
+      "error": "Nešto je pošlo po zlu. Molimo pokušajte ponovo."
+    },
+    "errors": {
+      "phoneInvalid": "Nevažeći format telefonskog broja",
+      "phoneTooShort": "Molimo unesite potpuni broj telefona"
+    },
+    "success": {
+      "phoneValid": "✓ Broj telefona je valjan"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januar",
+        "february": "Februar",
+        "march": "Mart",
+        "april": "April",
+        "may": "Maj",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "August",
+        "september": "Septembar",
+        "october": "Oktobar",
+        "november": "Novembar",
+        "december": "Decembar"
+      },
+      "previousYears": "Prethodnih {{count}} godina",
+      "nextYears": "Sljedećih {{count}} godina",
+      "backToYears": "Nazad na godine",
+      "backToMonths": "Nazad na mjesece",
+      "placeholder": "Odaberite datum"
+    },
+    "sections": {
+      "address": "Adresne informacije"
+    }
+  },
+  "owner": {
+    "title": "Panel Vlasnika",
+    "auth": {
+      "title": "Panel Vlasnika",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Kod za pristup",
+        "password": "Lozinka"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Unesite kod za pristup",
+        "password": "Unesite lozinku"
+      },
+      "actions": {
+        "login": "Prijavite se u panel",
+        "logging": "Prijavljivanje..."
+      },
+      "welcome": "Dobrodošli, {{name}}!",
+      "logout": "Odjava"
+    },
+    "unauthorized": {
+      "title": "Pristup odbijen",
+      "message": "Ne možete pristupiti ovoj stranici. Samo administratori mogu ući ovdje.",
+      "subtitle": "Panel vlasnika dostupan je samo ovlaštenim korisnicima.",
+      "backToForm": "Povratak na obrazac gosta"
+    },
+    "token": {
+      "label": "Unesite tajni token za upravljanje emitovanjem",
+      "placeholder": "Token vlasnika",
+      "saved": "Token sačuvan.",
+      "cleared": "Token obrisan.",
+      "actions": {
+        "reset": "Resetuj",
+        "save": "Sačuvaj token"
+      }
+    },
+    "broadcast": {
+      "title": "Kreiraj Messenger emitovanje",
+      "fields": {
+        "title": "Naslov",
+        "body": "Tekst poruke"
+      },
+      "placeholder": {
+        "title": "npr. Vrući Rolovi Vikend",
+        "body": "Poruka koja će biti poslana svim kupcima"
+      },
+      "hint": "Poruka će biti poslana svima koji su ispunili formu.",
+      "actions": {
+        "reset": "Resetuj",
+        "submit": "Pošalji emitovanje",
+        "submitting": "Šalje se..."
+      }
+    },
+    "customers": {
+      "title": "Kupci",
+      "empty": "Još nema registracija ili je token nevažeći.",
+      "refresh": "Osvježi",
+      "refreshing": "Ažurira se...",
+      "columns": {
+        "name": "Ime",
+        "contacts": "Kontakti",
+        "country": "Zemlja",
+        "city": "Grad",
+        "code": "Promo kod",
+        "createdAt": "Registrovano"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Svjež",
+      "delicious": "Ukusan",
+      "premium": "Premium",
+      "traditional": "Tradicionalan",
+      "loyaltyProgram": "Program vjernosti",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Prijava u admin panel",
+      "subtitle": "Unesite podatke za pristup administratorskom panelu",
+      "email": "Admin email",
+      "emailPlaceholder": "Unesite admin email",
+      "accessCode": "Kod za pristup",
+      "accessCodePlaceholder": "Unesite kod za pristup",
+      "password": "Lozinka",
+      "passwordPlaceholder": "Unesite lozinku",
+      "login": "🚀 Prijava u panel",
+      "loggingIn": "Prijavljivanje...",
+      "invalidCredentials": "❌ Neispravni podaci. Pristup odbijen.",
+      "loginError": "❌ Greška pri prijavi. Molimo pokušajte ponovo.",
+      "warning": "⚠️ Pristup je ograničen samo na ovlaštene administratore",
+      "logout": "Odjava",
+      "sessionExpired": "Sesija je istekla. Molimo prijavite se ponovo."
+    }
+  }
+}

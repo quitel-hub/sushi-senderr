@@ -1,0 +1,370 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Uskluse programm",
+    "subtitle": "Saage 10% allahindlust järgmisele tellimusele vormi täitmisega."
+  },
+  "tabs": {
+    "registration": "Külalise vorm",
+    "owner": "Omaniku juhtpaneel",
+    "admin": "Administraatori paneel"
+  },
+  "discountBadge": {
+    "title": "10% allahindlus",
+    "subtitle": "iga uue registreerimise eest"
+  },
+  "languages": {
+    "switcherLabel": "Keel",
+    "en": "Inglise",
+    "de": "Saksa",
+    "nl": "Hollandi",
+    "da": "Taani",
+    "pl": "Poola",
+    "ru": "Vene",
+    "fr": "Prantsuse",
+    "es": "Hispaania",
+    "it": "Itaalia",
+    "pt": "Portugali",
+    "sv": "Rootsi",
+    "no": "Norra",
+    "fi": "Soome",
+    "cs": "Tšehhi",
+    "hu": "Ungari",
+    "el": "Kreeka",
+    "uk": "Ukraina",
+    "bg": "Bulgaaria",
+    "ro": "Rumeenia",
+    "hr": "Horvaatia",
+    "sk": "Slovaki",
+    "sl": "Sloveeni",
+    "lt": "Leedu",
+    "lv": "Läti",
+    "et": "Eesti",
+    "mt": "Malta",
+    "is": "Islandi"
+  },
+  "registration": {
+    "cardTitle": "Täitke oma andmed ja saage allahindlus",
+    "fields": {
+      "firstName": "Eesnimi",
+      "lastName": "Perekonnanimi",
+      "phone": "Telefon",
+      "country": "Riik",
+      "email": "E-post",
+      "birthDate": "Sünniaeg",
+      "city": "Linn",
+      "preferredFood": "Lemmikrullid või soovid",
+      "feedback": "Teie soovid meile",
+      "street": "Tänav",
+      "postalCode": "Postiindeks"
+    },
+    "placeholders": {
+      "firstName": "nt. Anna",
+      "lastName": "nt. Ivanova",
+      "phone": "Sisestage telefoninumber",
+      "country": "Valige riik",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "nt. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Öelge meile, mida te armastate, et saaksime valmistada eripakkumisi",
+      "feedback": "Jagage, mida lisada või parandada",
+      "street": "nt. Damrak 1",
+      "postalCode": "nt. 1012 LP"
+    },
+    "hints": {
+      "phone": "Valige oma riik ja sisestage täielik mobiiltelefoni number Messenger jaoks.",
+      "feedback": "Loeme iga sõnumit, et parandada teie kogemust."
+    },
+    "actions": {
+      "reset": "Lähtesta",
+      "submit": "Saada allahindlus",
+      "submitting": "Saadetakse..."
+    },
+    "status": {
+      "duplicate": "Olete juba registreeritud.",
+      "success": "Täname registreerumise eest! Teie 10% allahindlus on valmis.",
+      "error": "Midagi läks valesti. Palun proovige uuesti."
+    },
+    "errors": {
+      "phoneInvalid": "Vigane telefoninumbri formaat",
+      "phoneTooShort": "Palun sisestage täielik telefoninumber"
+    },
+    "success": {
+      "phoneValid": "✓ Telefoninumber on kehtiv"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Jaanuar",
+        "february": "Veebruar",
+        "march": "Märts",
+        "april": "Aprill",
+        "may": "Mai",
+        "june": "Juuni",
+        "july": "Juuli",
+        "august": "August",
+        "september": "September",
+        "october": "Oktoober",
+        "november": "November",
+        "december": "Detsember"
+      },
+      "previousYears": "Eelmised {{count}} aastat",
+      "nextYears": "Järgmised {{count}} aastat",
+      "backToYears": "Tagasi aastate juurde",
+      "backToMonths": "Tagasi kuude juurde",
+      "placeholder": "Valige kuupäev"
+    },
+    "sections": {
+      "address": "Aadressiandmed"
+    }
+  },
+  "owner": {
+    "title": "Omaniku juhtpaneel",
+    "auth": {
+      "title": "Omaniku juhtpaneel",
+      "fields": {
+        "email": "E-post",
+        "accessCode": "Juurdepääsu kood",
+        "password": "Parool"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Sisestage juurdepääsu kood",
+        "password": "Sisestage parool"
+      },
+      "actions": {
+        "login": "Logi sisse paneelile",
+        "logging": "Sisselogimine..."
+      },
+      "welcome": "Tere tulemast, {{name}}!",
+      "logout": "Logi välja"
+    },
+    "unauthorized": {
+      "title": "Juurdepääs keelatud",
+      "message": "Te ei saa sellele lehele juurde pääseda. Ainult administraatorid saavad siia siseneda.",
+      "subtitle": "Omaniku juhtpaneel on saadaval ainult volitatud kasutajatele.",
+      "backToForm": "Tagasi külalise vormile"
+    },
+    "token": {
+      "label": "Sisestage salajane token saatmiste haldamiseks",
+      "placeholder": "Omaniku token",
+      "saved": "Token salvestatud.",
+      "cleared": "Token kustutatud.",
+      "actions": {
+        "reset": "Lähtesta",
+        "save": "Salvesta token"
+      }
+    },
+    "broadcast": {
+      "title": "Loo Messenger saatmine",
+      "fields": {
+        "title": "Pealkiri",
+        "body": "Sõnumi tekst"
+      },
+      "placeholder": {
+        "title": "nt. Kuumad rullid nädalavahetuseks",
+        "body": "Sõnum, mis saadetakse kõigile klientidele"
+      },
+      "hint": "Sõnum saadetakse kõigile, kes täitsid vormi.",
+      "actions": {
+        "reset": "Lähtesta",
+        "submit": "Saada saatmine",
+        "submitting": "Saadetakse..."
+      }
+    },
+    "customers": {
+      "title": "Kliendid",
+      "empty": "Registreerimisi pole veel või token on kehtetu.",
+      "refresh": "Värskenda",
+      "refreshing": "Värskendatakse...",
+      "columns": {
+        "name": "Nimi",
+        "contacts": "Kontaktid",
+        "country": "Riik",
+        "city": "Linn",
+        "code": "Promo kood",
+        "createdAt": "Registreeritud"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Värske",
+      "delicious": "Maitsev",
+      "premium": "Premium",
+      "traditional": "Traditsiooniline",
+      "loyaltyProgram": "Ustavusprogramm",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin paneeli sisselogimine",
+      "subtitle": "Sisestage mandaadid administraatori paneeli juurdepääsuks",
+      "email": "Admin e-post",
+      "emailPlaceholder": "Sisestage admin e-post",
+      "accessCode": "Juurdepääsu kood",
+      "accessCodePlaceholder": "Sisestage juurdepääsu kood",
+      "password": "Parool",
+      "passwordPlaceholder": "Sisestage parool",
+      "login": "🚀 Logi sisse paneelisse",
+      "loggingIn": "Sisselogimine...",
+      "invalidCredentials": "❌ Kehtetud mandaadid. Juurdepääs keelatud.",
+      "loginError": "❌ Sisselogimise viga. Palun proovige uuesti.",
+      "warning": "⚠️ Juurdepääs on piiratud ainult volitatud administraatoritele",
+      "logout": "Logi välja",
+      "sessionExpired": "Sessioon on aegunud. Palun logige uuesti sisse."
+    }
+  }
+}

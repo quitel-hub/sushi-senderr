@@ -1,0 +1,365 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Program vernosti",
+    "subtitle": "Získajte 10% zľavu na ďalšiu objednávku vyplnením formulára."
+  },
+  "tabs": {
+    "registration": "Formulár hosťa",
+    "owner": "Ovládací panel vlastníka",
+    "admin": "Administračný panel"
+  },
+  "discountBadge": {
+    "title": "10% zľava",
+    "subtitle": "za každú novú registráciu"
+  },
+  "languages": {
+    "switcherLabel": "Jazyk",
+    "en": "Angličtina",
+    "de": "Nemčina",
+    "nl": "Holandčina",
+    "da": "Dánčina",
+    "pl": "Poľština",
+    "ru": "Ruština",
+    "fr": "Francúzština",
+    "es": "Španielčina",
+    "it": "Taliančina",
+    "pt": "Portugalčina",
+    "sv": "Švédčina",
+    "no": "Nórčina",
+    "fi": "Fínčina",
+    "cs": "Čeština",
+    "hu": "Maďarčina",
+    "el": "Gréčtina",
+    "uk": "Ukrajinčina",
+    "bg": "Bulharčina",
+    "ro": "Rumunčina",
+    "hr": "Chorvátčina",
+    "sk": "Slovenčina",
+    "sl": "Slovinčina"
+  },
+  "registration": {
+    "cardTitle": "Vyplňte svoje údaje a získajte zľavu",
+    "fields": {
+      "firstName": "Meno",
+      "lastName": "Priezvisko",
+      "phone": "Telefón",
+      "country": "Krajina",
+      "email": "Email",
+      "birthDate": "Dátum narodenia",
+      "city": "Mesto",
+      "preferredFood": "Obľúbené rolky alebo priania",
+      "feedback": "Vaše priania pre nás",
+      "street": "Ulica",
+      "postalCode": "PSČ"
+    },
+    "placeholders": {
+      "firstName": "napr. Anna",
+      "lastName": "napr. Ivanova",
+      "phone": "Zadajte telefónne číslo",
+      "country": "Vyberte krajinu",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "napr. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Povedzte nám, čo máte radi, aby sme mohli pripraviť špeciálne ponuky",
+      "feedback": "Zdieľajte, čo pridať alebo zlepšiť",
+      "street": "napr. Damrak 1",
+      "postalCode": "napr. 1012 LP"
+    },
+    "hints": {
+      "phone": "Vyberte svoju krajinu a zadajte plné mobilné číslo pre Messenger.",
+      "feedback": "Čítame každú správu, aby sme zlepšili vašu skúsenosť."
+    },
+    "actions": {
+      "reset": "Resetovať",
+      "submit": "Získať zľavu",
+      "submitting": "Odosiela sa..."
+    },
+    "status": {
+      "duplicate": "Už ste registrovaní.",
+      "success": "Ďakujeme za registráciu! Vaša 10% zľava je pripravená.",
+      "error": "Niečo sa pokazilo. Skúste to znova."
+    },
+    "errors": {
+      "phoneInvalid": "Neplatný formát telefónneho čísla",
+      "phoneTooShort": "Zadajte prosím kompletné telefónne číslo"
+    },
+    "success": {
+      "phoneValid": "✓ Telefónne číslo je platné"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Január",
+        "february": "Február",
+        "march": "Marec",
+        "april": "Apríl",
+        "may": "Máj",
+        "june": "Jún",
+        "july": "Júl",
+        "august": "August",
+        "september": "September",
+        "october": "Október",
+        "november": "November",
+        "december": "December"
+      },
+      "previousYears": "Predchádzajúce {{count}} rokov",
+      "nextYears": "Nasledujúce {{count}} rokov",
+      "backToYears": "Späť na roky",
+      "backToMonths": "Späť na mesiace",
+      "placeholder": "Vyberte dátum"
+    },
+    "sections": {
+      "address": "Adresné údaje"
+    }
+  },
+  "owner": {
+    "title": "Ovládací panel vlastníka",
+    "auth": {
+      "title": "Ovládací panel vlastníka",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Prístupový kód",
+        "password": "Heslo"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Zadajte váš prístupový kód",
+        "password": "Zadajte vaše heslo"
+      },
+      "actions": {
+        "login": "Prihlásiť sa do panelu",
+        "logging": "Prihlasuje sa..."
+      },
+      "welcome": "Vitajte, {{name}}!",
+      "logout": "Odhlásiť sa"
+    },
+    "unauthorized": {
+      "title": "Prístup zamietnutý",
+      "message": "Nemôžete pristupovať k tejto stránke. Iba administrátori sem môžu vstúpiť.",
+      "subtitle": "Ovládací panel vlastníka je dostupný iba pre oprávnených používateľov.",
+      "backToForm": "Späť na hosťovský formulár"
+    },
+    "token": {
+      "label": "Zadajte tajný token na správu vysielania",
+      "placeholder": "Token vlastníka",
+      "saved": "Token uložený.",
+      "cleared": "Token vymazaný.",
+      "actions": {
+        "reset": "Resetovať",
+        "save": "Uložiť token"
+      }
+    },
+    "broadcast": {
+      "title": "Vytvoriť Messenger vysielanie",
+      "fields": {
+        "title": "Názov",
+        "body": "Text správy"
+      },
+      "placeholder": {
+        "title": "napr. Horúce rolky na víkend",
+        "body": "Správa, ktorá bude odoslaná všetkým zákazníkom"
+      },
+      "hint": "Správa bude odoslaná všetkým, ktorí vyplnili formulár.",
+      "actions": {
+        "reset": "Resetovať",
+        "submit": "Odoslať vysielanie",
+        "submitting": "Odosiela sa..."
+      }
+    },
+    "customers": {
+      "title": "Zákazníci",
+      "empty": "Zatiaľ žiadne registrácie alebo token je neplatný.",
+      "refresh": "Obnoviť",
+      "refreshing": "Obnovuje sa...",
+      "columns": {
+        "name": "Meno",
+        "contacts": "Kontakty",
+        "country": "Krajina",
+        "city": "Mesto",
+        "code": "Promo kód",
+        "createdAt": "Registrovaný"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Čerstvý",
+      "delicious": "Výborný",
+      "premium": "Premium",
+      "traditional": "Tradičný",
+      "loyaltyProgram": "Vernostný program",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Prihlásenie do administračného panelu",
+      "subtitle": "Zadajte prihlasovacie údaje pre prístup k administračnému panelu",
+      "email": "Admin email",
+      "emailPlaceholder": "Zadajte admin email",
+      "accessCode": "Prístupový kód",
+      "accessCodePlaceholder": "Zadajte prístupový kód",
+      "password": "Heslo",
+      "passwordPlaceholder": "Zadajte heslo",
+      "login": "🚀 Prihlásiť sa do panelu",
+      "loggingIn": "Prihlasovanie...",
+      "invalidCredentials": "❌ Neplatné prihlasovacie údaje. Prístup zamietnutý.",
+      "loginError": "❌ Chyba prihlásenia. Skúste to prosím znovu.",
+      "warning": "⚠️ Prístup je obmedzený len na oprávnených administrátorov",
+      "logout": "Odhlásiť sa",
+      "sessionExpired": "Relácia vypršala. Prihláste sa prosím znovu."
+    }
+  }
+}

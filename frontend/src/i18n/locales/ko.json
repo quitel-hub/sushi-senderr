@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — 충성도 프로그램",
+    "subtitle": "양식을 작성하여 다음 주문에서 10% 할인을 받으세요."
+  },
+  "tabs": {
+    "registration": "게스트 양식",
+    "owner": "관리자 패널",
+    "admin": "관리자 패널"
+  },
+  "discountBadge": {
+    "title": "10% 할인",
+    "subtitle": "모든 새 등록에 대해"
+  },
+  "languages": {
+    "switcherLabel": "언어",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی"
+  },
+  "registration": {
+    "cardTitle": "세부 정보를 입력하고 할인을 받으세요",
+    "fields": {
+      "firstName": "이름",
+      "lastName": "성",
+      "phone": "전화",
+      "country": "국가",
+      "email": "이메일",
+      "birthDate": "생년월일",
+      "city": "도시",
+      "preferredFood": "좋아하는 롤이나 소원",
+      "feedback": "저희를 위한 소원",
+      "street": "거리",
+      "postalCode": "우편번호"
+    },
+    "placeholders": {
+      "firstName": "예. 안나",
+      "lastName": "예. 이바노바",
+      "phone": "전화번호 입력",
+      "country": "국가 선택",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "예: Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "좋아하는 것을 알려주시면 맞춤형 제안을 드릴 수 있습니다",
+      "feedback": "추가하거나 개선할 점을 공유해주세요",
+      "street": "예: Damrak 1",
+      "postalCode": "예: 1012 LP"
+    },
+    "hints": {
+      "phone": "국가를 선택하고 Messenger용 전체 휴대폰 번호를 입력하세요.",
+      "feedback": "경험을 향상시키기 위해 모든 메시지를 읽습니다."
+    },
+    "actions": {
+      "reset": "재설정",
+      "submit": "할인 받기",
+      "submitting": "제출 중..."
+    },
+    "status": {
+      "duplicate": "이미 등록되었습니다.",
+      "success": "등록해주셔서 감사합니다! 10% 할인이 준비되었습니다.",
+      "error": "문제가 발생했습니다. 다시 시도해주세요."
+    },
+    "errors": {
+      "phoneInvalid": "잘못된 전화번호 형식",
+      "phoneTooShort": "전체 전화번호를 입력해 주세요"
+    },
+    "success": {
+      "phoneValid": "✓ 전화번호가 유효합니다"
+    },
+    "datePicker": {
+      "months": {
+        "january": "1월",
+        "february": "2월",
+        "march": "3월",
+        "april": "4월",
+        "may": "5월",
+        "june": "6월",
+        "july": "7월",
+        "august": "8월",
+        "september": "9월",
+        "october": "10월",
+        "november": "11월",
+        "december": "12월"
+      },
+      "previousYears": "이전 {{count}}년",
+      "nextYears": "다음 {{count}}년",
+      "backToYears": "연도로 돌아가기",
+      "backToMonths": "월로 돌아가기",
+      "placeholder": "날짜 선택"
+    },
+    "sections": {
+      "address": "주소 정보"
+    }
+  },
+  "owner": {
+    "title": "관리자 패널",
+    "auth": {
+      "title": "관리자 패널",
+      "fields": {
+        "email": "이메일",
+        "accessCode": "액세스 코드",
+        "password": "비밀번호"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "액세스 코드를 입력하세요",
+        "password": "비밀번호를 입력하세요"
+      },
+      "actions": {
+        "login": "패널에 로그인",
+        "logging": "로그인 중..."
+      },
+      "welcome": "환영합니다, {{name}}님!",
+      "logout": "로그아웃"
+    },
+    "unauthorized": {
+      "title": "액세스 거부",
+      "message": "이 페이지에 액세스할 수 없습니다. 관리자만 여기에 들어갈 수 있습니다.",
+      "subtitle": "관리자 패널은 인증된 사용자만 사용할 수 있습니다.",
+      "backToForm": "게스트 양식으로 돌아가기"
+    },
+    "token": {
+      "label": "방송을 관리하기 위한 비밀 토큰을 입력하세요",
+      "placeholder": "소유자 토큰",
+      "saved": "토큰이 저장되었습니다.",
+      "cleared": "토큰이 지워졌습니다.",
+      "actions": {
+        "reset": "재설정",
+        "save": "토큰 저장"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger 방송 만들기",
+      "fields": {
+        "title": "제목",
+        "body": "메시지 텍스트"
+      },
+      "placeholder": {
+        "title": "예. 핫롤 주말",
+        "body": "모든 고객에게 전송될 메시지"
+      },
+      "hint": "메시지는 양식을 작성한 모든 사람에게 전송됩니다.",
+      "actions": {
+        "reset": "재설정",
+        "submit": "방송 전송",
+        "submitting": "전송 중..."
+      }
+    },
+    "customers": {
+      "title": "고객",
+      "empty": "아직 등록이 없거나 토큰이 유효하지 않습니다.",
+      "refresh": "새로고침",
+      "refreshing": "업데이트 중...",
+      "columns": {
+        "name": "이름",
+        "contacts": "연락처",
+        "country": "국가",
+        "city": "도시",
+        "code": "프로모 코드",
+        "createdAt": "등록됨"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "초밥",
+      "fresh": "신선한",
+      "delicious": "맛있는",
+      "premium": "프리미엄",
+      "traditional": "전통적인",
+      "loyaltyProgram": "로열티 프로그램",
+      "sushiIcon": "초밥 아이콘"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 관리자 패널 로그인",
+      "subtitle": "관리 패널에 액세스하려면 자격 증명을 입력하세요",
+      "email": "관리자 이메일",
+      "emailPlaceholder": "관리자 이메일을 입력하세요",
+      "accessCode": "액세스 코드",
+      "accessCodePlaceholder": "액세스 코드를 입력하세요",
+      "password": "비밀번호",
+      "passwordPlaceholder": "비밀번호를 입력하세요",
+      "login": "🚀 패널에 로그인",
+      "loggingIn": "로그인 중...",
+      "invalidCredentials": "❌ 잘못된 자격 증명. 액세스가 거부되었습니다.",
+      "loginError": "❌ 로그인 오류. 다시 시도해 주세요.",
+      "warning": "⚠️ 액세스는 승인된 관리자에게만 제한됩니다",
+      "logout": "로그아웃",
+      "sessionExpired": "세션이 만료되었습니다. 다시 로그인해 주세요."
+    }
+  }
+}

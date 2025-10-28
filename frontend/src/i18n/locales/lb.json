@@ -1,0 +1,380 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Loyalitéitsprogramm",
+    "subtitle": "Kritt 10% Rabatt op Är nächst Bestellung andeems Dir de Formulaire ausfëllt."
+  },
+  "tabs": {
+    "registration": "Gäschtformular",
+    "owner": "Eegentemer Panel",
+    "admin": "Admin-Panel"
+  },
+  "discountBadge": {
+    "title": "10% erof",
+    "subtitle": "fir all nei Registréierung"
+  },
+  "languages": {
+    "switcherLabel": "Sprooch",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Црногорски",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt"
+  },
+  "registration": {
+    "cardTitle": "Fëllt Är Detailen aus a kritt Rabatt",
+    "fields": {
+      "firstName": "Virnumm",
+      "lastName": "Familljennumm",
+      "phone": "Telefon",
+      "country": "Land",
+      "email": "E-Mail",
+      "birthDate": "Gebuertsdatum",
+      "city": "Stad",
+      "preferredFood": "Léifst Rollen oder Wënscher",
+      "feedback": "Är Wënscher fir eis",
+      "street": "Strooss",
+      "postalCode": "Postcode"
+    },
+    "placeholders": {
+      "firstName": "z.B. Anna",
+      "lastName": "z.B. Ivanova",
+      "phone": "Gitt Telefonsnummer an",
+      "country": "Wielt Land",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "z.B. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Sot eis wat Dir gär hutt fir datt mir d'Offeren upassen kënnen",
+      "feedback": "Deelt wat ze addéieren oder ze verbesseren",
+      "street": "z.B. Damrak 1",
+      "postalCode": "z.B. 1012 LP"
+    },
+    "hints": {
+      "phone": "Wielt Äert Land a gitt déi vollstänneg Handy-Nummer fir Messenger an.",
+      "feedback": "Mir liesen all Message fir Äert Erfarung ze verbesseren."
+    },
+    "actions": {
+      "reset": "Reset",
+      "submit": "Rabatt kréien",
+      "submitting": "Wërt geschéckt..."
+    },
+    "status": {
+      "duplicate": "Dir sidd schonn registréiert.",
+      "success": "Merci fir d'Registréierung! Äre 10% Rabatt ass prett.",
+      "error": "Eppes ass schief gaangen. Probéiert w.e.g. nach emol."
+    },
+    "errors": {
+      "phoneInvalid": "Ongültegen Telefonsnummerformat",
+      "phoneTooShort": "Gitt w.e.g. eng komplett Telefonsnummer an"
+    },
+    "success": {
+      "phoneValid": "✓ D'Telefonsnummer ass gëlteg"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januar",
+        "february": "Februar",
+        "march": "Mäerz",
+        "april": "Abrëll",
+        "may": "Mee",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "August",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "Dezember"
+      },
+      "previousYears": "Vireg {{count}} Joer",
+      "nextYears": "Nächst {{count}} Joer",
+      "backToYears": "Zréck op d'Joer",
+      "backToMonths": "Zréck op d'Méint",
+      "placeholder": "Datum wielen"
+    },
+    "sections": {
+      "address": "Adressinformatiounen"
+    }
+  },
+  "owner": {
+    "title": "Eegentemer Panel",
+    "auth": {
+      "title": "Eegentemer Panel",
+      "fields": {
+        "email": "E-Mail",
+        "accessCode": "Zougangscode",
+        "password": "Passwuert"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Gitt Äre Zougangscode an",
+        "password": "Gitt Äert Passwuert an"
+      },
+      "actions": {
+        "login": "An de Panel aloggen",
+        "logging": "Wërt aloggt..."
+      },
+      "welcome": "Wëllkomm, {{name}}!",
+      "logout": "Ausloggen"
+    },
+    "unauthorized": {
+      "title": "Zougang refuséiert",
+      "message": "Dir kënnt net op dës Säit zougriifen. Nëmme Administrateuren kënnen hei erakommen.",
+      "subtitle": "D'Eegentemer Panel ass nëmme fir autoriséiert Benotzer verfügbar.",
+      "backToForm": "Zréck op de Gast Formulaire"
+    },
+    "token": {
+      "label": "Gitt de geheime Token an fir Broadcasts ze verwalten",
+      "placeholder": "Eegentemer Token",
+      "saved": "Token gespäichert.",
+      "cleared": "Token geläscht.",
+      "actions": {
+        "reset": "Reset",
+        "save": "Token späicheren"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger Broadcast erstellen",
+      "fields": {
+        "title": "Titel",
+        "body": "Message Text"
+      },
+      "placeholder": {
+        "title": "z.B. Heet Roll Weekend",
+        "body": "Message déi un all Clienten geschéckt gëtt"
+      },
+      "hint": "D'Message gëtt un all déi geschéckt déi de Formulaire ausgefëllt hunn.",
+      "actions": {
+        "reset": "Reset",
+        "submit": "Broadcast schécken",
+        "submitting": "Wërt geschéckt..."
+      }
+    },
+    "customers": {
+      "title": "Clienten",
+      "empty": "Nach keng Registréierungen oder Token ongëlteg.",
+      "refresh": "Aktualiséieren",
+      "refreshing": "Wërt aktualiséiert...",
+      "columns": {
+        "name": "Numm",
+        "contacts": "Kontakter",
+        "country": "Land",
+        "city": "Stad",
+        "code": "Promo Code",
+        "createdAt": "Registréiert"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Fräsch",
+      "delicious": "Gutt",
+      "premium": "Premium",
+      "traditional": "Traditionell",
+      "loyaltyProgram": "Loyalitéitsprogramm",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin Panel Umeldung",
+      "subtitle": "Gitt d'Zoulaassungsdaten an fir Zougang zum Administratiounspanel",
+      "email": "Admin E-Mail",
+      "emailPlaceholder": "Gitt d'Admin E-Mail an",
+      "accessCode": "Zougangscode",
+      "accessCodePlaceholder": "Gitt den Zougangscode an",
+      "password": "Passwuert",
+      "passwordPlaceholder": "Gitt d'Passwuert an",
+      "login": "🚀 Umeldung am Panel",
+      "loggingIn": "Umeldung...",
+      "invalidCredentials": "❌ Ongëlteg Zoulaassungsdaten. Zougang refuséiert.",
+      "loginError": "❌ Umeldungsfeeler. Probéiert w.e.g. nach emol.",
+      "warning": "⚠️ Zougang ass nëmme fir autoriséiert Administrateuren limitéiert",
+      "logout": "Ausmeldung",
+      "sessionExpired": "Sessioun ass ofgelaf. Mellt Iech w.e.g. nach emol un."
+    }
+  }
+}

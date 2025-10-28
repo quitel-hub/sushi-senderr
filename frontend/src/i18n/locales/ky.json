@@ -1,0 +1,405 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Ынтымак программасы",
+    "subtitle": "Форманы толтуруп, кийинки буйрутмаңызга 10% арзандатуу алыңыз."
+  },
+  "tabs": {
+    "registration": "Конок формасы",
+    "owner": "Ээ панели",
+    "admin": "Администратор панели"
+  },
+  "discountBadge": {
+    "title": "10% арзандатуу",
+    "subtitle": "ар бир жаңы катталуу үчүн"
+  },
+  "languages": {
+    "switcherLabel": "Тил",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча"
+  },
+  "registration": {
+    "cardTitle": "Маалыматтарыңызды толтуруп, арзандатуу алыңыз",
+    "fields": {
+      "firstName": "Аты",
+      "lastName": "Фамилиясы",
+      "phone": "Телефон",
+      "country": "Өлкө",
+      "email": "Электрондук почта",
+      "birthDate": "Туулган күнү",
+      "city": "Шаар",
+      "preferredFood": "Сүйүктүү роллор же тилектер",
+      "feedback": "Биз үчүн тилектериңиз",
+      "street": "Көчө",
+      "postalCode": "Почта коду"
+    },
+    "placeholders": {
+      "firstName": "мс. Анна",
+      "lastName": "мс. Иванова",
+      "phone": "Телефон номурун киргизиңиз",
+      "country": "Өлкөнү тандаңыз",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "мисалы Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Эмне жактырып жатканыңызды айтыңыз, биз сунуштарды ыңгайлаштыра алалы",
+      "feedback": "Кошуш керек же жакшыртуу керек болгон нерселерди бөлүшүңүз",
+      "street": "мисалы Damrak 1",
+      "postalCode": "мисалы 1012 LP"
+    },
+    "hints": {
+      "phone": "Өлкөңүздү тандаңыз жана Messenger үчүн толук мобилдик телефон номурун киргизиңиз.",
+      "feedback": "Тажрыйбаңызды жакшыртуу үчүн биз ар бир билдирүүнү окуйбуз."
+    },
+    "actions": {
+      "reset": "Кайра орнотуу",
+      "submit": "Арзандатуу алуу",
+      "submitting": "Жөнөтүлүүдө..."
+    },
+    "status": {
+      "duplicate": "Сиз буга чейин катталгансыз.",
+      "success": "Каттоо үчүн рахмат! Сиздин 10% арзандатууңуз даяр.",
+      "error": "Бир нерсе туура эмес болду. Сураныч, кайра аракет кылыңыз."
+    },
+    "errors": {
+      "phoneInvalid": "Туура эмес телефон номуру форматы",
+      "phoneTooShort": "Толук телефон номурун киргизиңиз"
+    },
+    "success": {
+      "phoneValid": "✓ Телефон номуру туура"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Январь",
+        "february": "Февраль",
+        "march": "Март",
+        "april": "Апрель",
+        "may": "Май",
+        "june": "Июнь",
+        "july": "Июль",
+        "august": "Август",
+        "september": "Сентябрь",
+        "october": "Октябрь",
+        "november": "Ноябрь",
+        "december": "Декабрь"
+      },
+      "previousYears": "Мурунку {{count}} жыл",
+      "nextYears": "Кийинки {{count}} жыл",
+      "backToYears": "Жылдарга кайтуу",
+      "backToMonths": "Айларга кайтуу",
+      "placeholder": "Күндү тандаңыз"
+    },
+    "sections": {
+      "address": "Дареги маалымат"
+    }
+  },
+  "owner": {
+    "title": "Ээ панели",
+    "auth": {
+      "title": "Ээ панели",
+      "fields": {
+        "email": "Электрондук почта",
+        "accessCode": "Кирүү коду",
+        "password": "Сыр сөз"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Кирүү кодуңузду киргизиңиз",
+        "password": "Сыр сөзүңүздү киргизиңиз"
+      },
+      "actions": {
+        "login": "Панелге кирүү",
+        "logging": "Кирилуүдө..."
+      },
+      "welcome": "Кош келдиңиз, {{name}}!",
+      "logout": "Чыгуу"
+    },
+    "unauthorized": {
+      "title": "Кирүүгө тыюу салынды",
+      "message": "Сиз бул баракка кире албайсыз. Тек администраторлор бул жерге кире алышат.",
+      "subtitle": "Ээ панели тек уруксат берилген колдонуучулар үчүн гана жеткиликтүү.",
+      "backToForm": "Конок формасына кайтуу"
+    },
+    "token": {
+      "label": "Жарыялоолорду башкаруу үчүн жашыруун токенди киргизиңиз",
+      "placeholder": "Ээ токени",
+      "saved": "Токен сакталды.",
+      "cleared": "Токен тазаланды.",
+      "actions": {
+        "reset": "Кайра орнотуу",
+        "save": "Токенди сактоо"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger жарыялоосун түзүү",
+      "fields": {
+        "title": "Аталышы",
+        "body": "Билдирүү тексти"
+      },
+      "placeholder": {
+        "title": "мс. Ысык рол жума аягы",
+        "body": "Бардык кардарларга жөнөтүлүүчү билдирүү"
+      },
+      "hint": "Билдирүү форманы толтурган бардык адамдарга жөнөтүлөт.",
+      "actions": {
+        "reset": "Кайра орнотуу",
+        "submit": "Жарыялоо жөнөтүү",
+        "submitting": "Жөнөтүлүүдө..."
+      }
+    },
+    "customers": {
+      "title": "Кардарлар",
+      "empty": "Али каттоолор жок же токен туура эмес.",
+      "refresh": "Жаңылоо",
+      "refreshing": "Жаңыланууда...",
+      "columns": {
+        "name": "Аты",
+        "contacts": "Байланыштар",
+        "country": "Өлкө",
+        "city": "Шаар",
+        "code": "Промо код",
+        "createdAt": "Катталган"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Суши",
+      "fresh": "Жаңы",
+      "delicious": "Даамдуу",
+      "premium": "Премиум",
+      "traditional": "Салттуу",
+      "loyaltyProgram": "Ынтымак программасы",
+      "sushiIcon": "СУШИ ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Админ панелине кирүү",
+      "subtitle": "Админ панелине кирүү үчүн маалыматтарды киргизиңиз",
+      "email": "Админ электрондук почтасы",
+      "emailPlaceholder": "Админ электрондук почтасын киргизиңиз",
+      "accessCode": "Кирүү коду",
+      "accessCodePlaceholder": "Кирүү кодун киргизиңиз",
+      "password": "Сыр сөз",
+      "passwordPlaceholder": "Сыр сөздү киргизиңиз",
+      "login": "🚀 Панелге кирүү",
+      "loggingIn": "Кирүү...",
+      "invalidCredentials": "❌ Туура эмес маалыматтар. Кирүү четке кагылды.",
+      "loginError": "❌ Кирүү катасы. Кайра аракет кылыңыз.",
+      "warning": "⚠️ Кирүү уруксат берилген админдерге гана чектелген",
+      "logout": "Чыгуу",
+      "sessionExpired": "Сессия мөөнөтү бүттү. Кайра кириңиз."
+    }
+  }
+}

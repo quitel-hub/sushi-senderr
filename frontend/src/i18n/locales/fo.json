@@ -1,0 +1,380 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Trúnaðarprogram",
+    "subtitle": "Fá 10% avslætting á tína næstu pöntun við at fylla út eyðkunnu."
+  },
+  "tabs": {
+    "registration": "Gest Eyðkunnu",
+    "owner": "Eigandi Panel",
+    "admin": "Stjórnendapannil"
+  },
+  "discountBadge": {
+    "title": "10% avslætting",
+    "subtitle": "fyri hvørja nýggja skráseting"
+  },
+  "languages": {
+    "switcherLabel": "Mál",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Црногорски",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt"
+  },
+  "registration": {
+    "cardTitle": "Fyll út tínar upplýsingar og fá avslætting",
+    "fields": {
+      "firstName": "Fornavn",
+      "lastName": "Eftirnavn",
+      "phone": "Telefon",
+      "country": "Land",
+      "email": "Teldupostur",
+      "birthDate": "Føðingardagur",
+      "city": "Býur",
+      "preferredFood": "Yndis rullur ella ynskingar",
+      "feedback": "Tínir ynskingar fyri okkum",
+      "street": "Gøta",
+      "postalCode": "Postnummar"
+    },
+    "placeholders": {
+      "firstName": "t.d. Anna",
+      "lastName": "t.d. Ivanova",
+      "phone": "Skriva inn telefonnummar",
+      "country": "Vel land",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "t.d. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Sig okkum hvat tú elskar, so vit kunnu taka tilboð eftir",
+      "feedback": "Deil hvat at leggja aftur ella betra",
+      "street": "t.d. Damrak 1",
+      "postalCode": "t.d. 1012 LP"
+    },
+    "hints": {
+      "phone": "Vel títt land og skriva inn fulla mobilnummar fyri Messenger.",
+      "feedback": "Vit lesa hvørja boð fyri at betra tína upplivilsi."
+    },
+    "actions": {
+      "reset": "Nullstilla",
+      "submit": "Fá avslætting",
+      "submitting": "Sendir..."
+    },
+    "status": {
+      "duplicate": "Tú ert longu skrásettur.",
+      "success": "Takk fyri skráseting! Tín 10% avslætting er reið.",
+      "error": "Eitt gongdi skeivt. Vinarliga royn aftur."
+    },
+    "errors": {
+      "phoneInvalid": "Ógildugt telefonnummarformat",
+      "phoneTooShort": "Vinarliga, skrivað eitt fullt telefonnummar"
+    },
+    "success": {
+      "phoneValid": "✓ Telefonnummarið er gilt"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Januar",
+        "february": "Februar",
+        "march": "Mars",
+        "april": "Apríl",
+        "may": "Mai",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "August",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "Desember"
+      },
+      "previousYears": "Fyrrverandi {{count}} ár",
+      "nextYears": "Næstu {{count}} ár",
+      "backToYears": "Aftur til ár",
+      "backToMonths": "Aftur til mánaðir",
+      "placeholder": "Vel dagsetning"
+    },
+    "sections": {
+      "address": "Adressa upplýsingar"
+    }
+  },
+  "owner": {
+    "title": "Eigandi Panel",
+    "auth": {
+      "title": "Eigandi Panel",
+      "fields": {
+        "email": "T-post",
+        "accessCode": "Atgongd koda",
+        "password": "Loyniorð"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Skriva inn tína atgongd koda",
+        "password": "Skriva inn títt loyniorð"
+      },
+      "actions": {
+        "login": "Rita inn á panel",
+        "logging": "Ritar inn..."
+      },
+      "welcome": "Vælkomin, {{name}}!",
+      "logout": "Rita út"
+    },
+    "unauthorized": {
+      "title": "Atgongd avvíst",
+      "message": "Tú kanst ikki fáa atgongd til hesa síðuna. Einans stjórnendur kunnu koma inn her.",
+      "subtitle": "Eigandi panel er einans tøk fyri loyvd brúkarar.",
+      "backToForm": "Aftur til gesta eyðkunnu"
+    },
+    "token": {
+      "label": "Skriva inn loyndarmál token fyri at stýra útvarp",
+      "placeholder": "Eigandi token",
+      "saved": "Token goymt.",
+      "cleared": "Token strikað.",
+      "actions": {
+        "reset": "Nullstilla",
+        "save": "Goyma token"
+      }
+    },
+    "broadcast": {
+      "title": "Skapa Messenger útvarp",
+      "fields": {
+        "title": "Heiti",
+        "body": "Boð tekstur"
+      },
+      "placeholder": {
+        "title": "t.d. Heitur Rull Vika",
+        "body": "Boð sum verður sent til allar viðskiptavinir"
+      },
+      "hint": "Boðið verður sent til allar sum fylltu út eyðkunnuna.",
+      "actions": {
+        "reset": "Nullstilla",
+        "submit": "Send útvarp",
+        "submitting": "Sendir..."
+      }
+    },
+    "customers": {
+      "title": "Viðskiptavinir",
+      "empty": "Onki skráseting enn, ella token er ógildur.",
+      "refresh": "Endurnýggja",
+      "refreshing": "Dagførir...",
+      "columns": {
+        "name": "Navn",
+        "contacts": "Samskifti",
+        "country": "Land",
+        "city": "Býur",
+        "code": "Promo koda",
+        "createdAt": "Skrásettur"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Friskur",
+      "delicious": "Góður",
+      "premium": "Premium",
+      "traditional": "Hegðbundin",
+      "loyaltyProgram": "Trygdarráðstafanir",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin Panel Innskráning",
+      "subtitle": "Skriva inn innskráningargoymslur fyri at fáa atgongd til stjórnandi panel",
+      "email": "Admin T-postur",
+      "emailPlaceholder": "Skriva inn admin t-postur",
+      "accessCode": "Atgongdskóði",
+      "accessCodePlaceholder": "Skriva inn atgongdskóða",
+      "password": "Loyniorð",
+      "passwordPlaceholder": "Skriva inn loyniorð",
+      "login": "🚀 Innskráning til Panel",
+      "loggingIn": "Innskráning...",
+      "invalidCredentials": "❌ Ógild innskráningargoymslur. Atgongd avvíst.",
+      "loginError": "❌ Innskráningarvilla. Vinarliga royn aftur.",
+      "warning": "⚠️ Atgongd er avmarkaður bert til heimilaðir stjórnendur",
+      "logout": "Útskráning",
+      "sessionExpired": "Sessión er útrunnin. Vinarliga skriva inn aftur."
+    }
+  }
+}

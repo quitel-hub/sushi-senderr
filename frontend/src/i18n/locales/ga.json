@@ -1,0 +1,375 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Clár Dílseachta",
+    "subtitle": "Faigh lascaine 10% ar d'ordú seo chugainn trí fhoirm a líonadh amach."
+  },
+  "tabs": {
+    "registration": "Foirm Aoi",
+    "owner": "Painéal Úinéara",
+    "admin": "Painéal riaracháin"
+  },
+  "discountBadge": {
+    "title": "10% as",
+    "subtitle": "do gach clárú nua"
+  },
+  "languages": {
+    "switcherLabel": "Teanga",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip"
+  },
+  "registration": {
+    "cardTitle": "Líon amach do chuid sonraí agus faigh lascaine",
+    "fields": {
+      "firstName": "Ainm baiste",
+      "lastName": "Sloinne",
+      "phone": "Fón",
+      "country": "Tír",
+      "email": "Ríomhphost",
+      "birthDate": "Dáta breithe",
+      "city": "Cathair",
+      "preferredFood": "Rolls nó mianta is fearr leat",
+      "feedback": "Do mhianta dúinn",
+      "street": "Sráid",
+      "postalCode": "Cód poist"
+    },
+    "placeholders": {
+      "firstName": "m.sh. Anna",
+      "lastName": "m.sh. Ivanova",
+      "phone": "Cuir isteach uimhir fóin",
+      "country": "Roghnaigh tír",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "m.sh. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Inis dúinn cad is maith leat ionas gur féidir linn tairiscintí a oiriúnú",
+      "feedback": "Roinn cad le cur nó le feabhsú",
+      "street": "m.sh. Damrak 1",
+      "postalCode": "m.sh. 1012 LP"
+    },
+    "hints": {
+      "phone": "Roghnaigh do thír agus cuir isteach an uimhir fóin iomlán do Messenger.",
+      "feedback": "Léimid gach teachtaireacht chun do thaithí a fheabhsú."
+    },
+    "actions": {
+      "reset": "Athshocraigh",
+      "submit": "Faigh lascaine",
+      "submitting": "Á chur isteach..."
+    },
+    "status": {
+      "duplicate": "Tá tú cláraithe cheana féin.",
+      "success": "Go raibh maith agat as clárú! Tá do lascaine 10% réidh.",
+      "error": "Tharla rud éigin mícheart. Déan iarracht arís le do thoil."
+    },
+    "errors": {
+      "phoneInvalid": "Formáid uimhir theileafóin neamhbhailí",
+      "phoneTooShort": "Cuir isteach uimhir theileafóin iomlán le do thoil"
+    },
+    "success": {
+      "phoneValid": "✓ Tá an uimhir theileafóin bailí"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Eanáir",
+        "february": "Feabhra",
+        "march": "Márta",
+        "april": "Aibreán",
+        "may": "Bealtaine",
+        "june": "Meitheamh",
+        "july": "Iúil",
+        "august": "Lúnasa",
+        "september": "Meán Fómhair",
+        "october": "Deireadh Fómhair",
+        "november": "Samhain",
+        "december": "Nollaig"
+      },
+      "previousYears": "{{count}} bliain roimhe seo",
+      "nextYears": "{{count}} bliain amach romhainn",
+      "backToYears": "Ar ais go dtí na blianta",
+      "backToMonths": "Ar ais go dtí na míonna",
+      "placeholder": "Roghnaigh dáta"
+    },
+    "sections": {
+      "address": "Eolas seoladh"
+    }
+  },
+  "owner": {
+    "title": "Painéal Úinéara",
+    "auth": {
+      "title": "Painéal Úinéara",
+      "fields": {
+        "email": "Ríomhphost",
+        "accessCode": "Cód Rochtana",
+        "password": "Pasfhocal"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Cuir isteach do chód rochtana",
+        "password": "Cuir isteach do phasfhocal"
+      },
+      "actions": {
+        "login": "Logáil isteach sa phainéal",
+        "logging": "Ag logáil isteach..."
+      },
+      "welcome": "Fáilte, {{name}}!",
+      "logout": "Logáil amach"
+    },
+    "unauthorized": {
+      "title": "Rochtain Diúltaithe",
+      "message": "Ní féidir leat rochtain a fháil ar an leathanach seo. Ní féidir ach riaracháin a theacht isteach anseo.",
+      "subtitle": "Tá painéal úinéara ar fáil ach do úsáideoirí údaraithe.",
+      "backToForm": "Ar ais chuig foirm aoi"
+    },
+    "token": {
+      "label": "Cuir isteach an comhartha rúnda chun craoltaí a bhainistiú",
+      "placeholder": "Comhartha úinéara",
+      "saved": "Comhartha sábhálta.",
+      "cleared": "Comhartha glanta.",
+      "actions": {
+        "reset": "Athshocraigh",
+        "save": "Sábháil comhartha"
+      }
+    },
+    "broadcast": {
+      "title": "Cruthaigh craoladh Messenger",
+      "fields": {
+        "title": "Teideal",
+        "body": "Téacs teachtaireachta"
+      },
+      "placeholder": {
+        "title": "m.sh. Deireadh Seachtaine Roll Te",
+        "body": "Teachtaireacht a chuirfear chuig gach custaiméir"
+      },
+      "hint": "Seolfar an teachtaireacht chuig gach duine a líon an fhoirm amach.",
+      "actions": {
+        "reset": "Athshocraigh",
+        "submit": "Seol craoladh",
+        "submitting": "Á sheoladh..."
+      }
+    },
+    "customers": {
+      "title": "Custaiméirí",
+      "empty": "Níl aon chlárú fós nó comhartha neamhbhailí.",
+      "refresh": "Athnuaigh",
+      "refreshing": "Á nuashonrú...",
+      "columns": {
+        "name": "Ainm",
+        "contacts": "Teagmhálacha",
+        "country": "Tír",
+        "city": "Cathair",
+        "code": "Cód promo",
+        "createdAt": "Cláraithe"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Úr",
+      "delicious": "Blasta",
+      "premium": "Premium",
+      "traditional": "Traidisiúnta",
+      "loyaltyProgram": "Clár dílseachta",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Logáil isteach Painéal Riaracháin",
+      "subtitle": "Cuir isteach na dintiúir chun rochtain a fháil ar an bpainéal riaracháin",
+      "email": "Ríomhphost Riaracháin",
+      "emailPlaceholder": "Cuir isteach ríomhphost riaracháin",
+      "accessCode": "Cód Rochtain",
+      "accessCodePlaceholder": "Cuir isteach cód rochtain",
+      "password": "Pasfhocal",
+      "passwordPlaceholder": "Cuir isteach pasfhocal",
+      "login": "🚀 Logáil isteach sa Phainéal",
+      "loggingIn": "Ag logáil isteach...",
+      "invalidCredentials": "❌ Dintiúir neamhbhailí. Diúltaíodh rochtain.",
+      "loginError": "❌ Earráid logála isteach. Déan iarracht arís le do thoil.",
+      "warning": "⚠️ Tá rochtain teoranta do riaracháin údaraithe amháin",
+      "logout": "Logáil amach",
+      "sessionExpired": "Tá an seisiún imithe. Logáil isteach arís le do thoil."
+    }
+  }
+}

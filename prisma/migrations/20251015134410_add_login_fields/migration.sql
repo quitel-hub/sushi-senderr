@@ -1,0 +1,23 @@
+-- AlterTable
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "browserName" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "browserVersion" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "callingCode" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "continent" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "countryArea" INTEGER;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "countryCapital" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "countryCode" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "countryPopulation" INTEGER;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "currency" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "currencyName" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "deviceModel" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "deviceType" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "isEu" BOOLEAN;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "isp" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "languages" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "osName" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "osVersion" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "postal" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "region" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "regionCode" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "timezone" TEXT;
+ALTER TABLE "OwnerLoginSession" ADD COLUMN "utcOffset" TEXT;

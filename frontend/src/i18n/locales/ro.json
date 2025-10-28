@@ -1,0 +1,365 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Program de loialitate",
+    "subtitle": "Obțineți o reducere de 10% la următoarea comandă completând formularul."
+  },
+  "tabs": {
+    "registration": "Formular oaspete",
+    "owner": "Panou administrator",
+    "admin": "Panou de administrare"
+  },
+  "discountBadge": {
+    "title": "10% reducere",
+    "subtitle": "pentru fiecare înregistrare nouă"
+  },
+  "languages": {
+    "switcherLabel": "Limba",
+    "en": "Engleză",
+    "de": "Germană",
+    "nl": "Olandeză",
+    "da": "Daneză",
+    "pl": "Poloneză",
+    "ru": "Rusă",
+    "fr": "Franceză",
+    "es": "Spaniolă",
+    "it": "Italiană",
+    "pt": "Portugheză",
+    "sv": "Suedeză",
+    "no": "Norvegiană",
+    "fi": "Finlandeză",
+    "cs": "Cehă",
+    "hu": "Maghiară",
+    "el": "Greacă",
+    "uk": "Ucraineană",
+    "bg": "Bulgară",
+    "ro": "Română",
+    "hr": "Croată",
+    "sk": "Slovacă",
+    "sl": "Slovenă"
+  },
+  "registration": {
+    "cardTitle": "Completați detaliile și obțineți reducere",
+    "fields": {
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "phone": "Telefon",
+      "country": "Țară",
+      "email": "Email",
+      "birthDate": "Data nașterii",
+      "city": "Oraș",
+      "preferredFood": "Roluri preferate sau dorințe",
+      "feedback": "Dorințele voastre pentru noi",
+      "street": "Stradă",
+      "postalCode": "Cod poștal"
+    },
+    "placeholders": {
+      "firstName": "ex. Ana",
+      "lastName": "ex. Ivanova",
+      "phone": "Introduceți numărul de telefon",
+      "country": "Alegeți țara",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "ex. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Spuneți-ne ce vă place pentru a putea pregăti oferte speciale",
+      "feedback": "Împărtășiți ce să adăugăm sau să îmbunătățim",
+      "street": "ex. Damrak 1",
+      "postalCode": "ex. 1012 LP"
+    },
+    "hints": {
+      "phone": "Selectați țara și introduceți numărul complet de telefon pentru Messenger.",
+      "feedback": "Citim fiecare mesaj pentru a vă îmbunătăți experiența."
+    },
+    "actions": {
+      "reset": "Resetează",
+      "submit": "Obține reducere",
+      "submitting": "Se trimite..."
+    },
+    "status": {
+      "duplicate": "Sunteți deja înregistrat.",
+      "success": "Mulțumim pentru înregistrare! Reducerea de 10% este gata.",
+      "error": "Ceva a mers prost. Vă rugăm să încercați din nou."
+    },
+    "errors": {
+      "phoneInvalid": "Format de număr de telefon nevalid",
+      "phoneTooShort": "Vă rugăm să introduceți un număr de telefon complet"
+    },
+    "success": {
+      "phoneValid": "✓ Numărul de telefon este valid"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Ianuarie",
+        "february": "Februarie",
+        "march": "Martie",
+        "april": "Aprilie",
+        "may": "Mai",
+        "june": "Iunie",
+        "july": "Iulie",
+        "august": "August",
+        "september": "Septembrie",
+        "october": "Octombrie",
+        "november": "Noiembrie",
+        "december": "Decembrie"
+      },
+      "previousYears": "{{count}} ani anteriori",
+      "nextYears": "{{count}} ani următori",
+      "backToYears": "Înapoi la ani",
+      "backToMonths": "Înapoi la luni",
+      "placeholder": "Selectați data"
+    },
+    "sections": {
+      "address": "Informații adresă"
+    }
+  },
+  "owner": {
+    "title": "Panou administrator",
+    "auth": {
+      "title": "Panou administrator",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Cod de acces",
+        "password": "Parolă"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Introduceți codul de acces",
+        "password": "Introduceți parola"
+      },
+      "actions": {
+        "login": "Conectați-vă la panou",
+        "logging": "Conectare..."
+      },
+      "welcome": "Bun venit, {{name}}!",
+      "logout": "Deconectare"
+    },
+    "unauthorized": {
+      "title": "Acces interzis",
+      "message": "Nu puteți accesa această pagină. Doar administratorii pot intra aici.",
+      "subtitle": "Panoul administrator este disponibil doar pentru utilizatorii autorizați.",
+      "backToForm": "Înapoi la formularul oaspete"
+    },
+    "token": {
+      "label": "Introduceți tokenul secret pentru gestionarea difuzărilor",
+      "placeholder": "Token proprietar",
+      "saved": "Token salvat.",
+      "cleared": "Token șters.",
+      "actions": {
+        "reset": "Resetează",
+        "save": "Salvează token"
+      }
+    },
+    "broadcast": {
+      "title": "Creați difuzare Messenger",
+      "fields": {
+        "title": "Titlu",
+        "body": "Textul mesajului"
+      },
+      "placeholder": {
+        "title": "ex. Weekend cu roluri fierbinți",
+        "body": "Mesaj care va fi trimis tuturor clienților"
+      },
+      "hint": "Mesajul va fi trimis tuturor care au completat formularul.",
+      "actions": {
+        "reset": "Resetează",
+        "submit": "Trimite difuzare",
+        "submitting": "Se trimite..."
+      }
+    },
+    "customers": {
+      "title": "Clienți",
+      "empty": "Nu există încă înregistrări sau tokenul este invalid.",
+      "refresh": "Actualizează",
+      "refreshing": "Se actualizează...",
+      "columns": {
+        "name": "Nume",
+        "contacts": "Contacte",
+        "country": "Țară",
+        "city": "Oraș",
+        "code": "Cod promo",
+        "createdAt": "Înregistrat"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Proaspăt",
+      "delicious": "Delicios",
+      "premium": "Premium",
+      "traditional": "Tradițional",
+      "loyaltyProgram": "Program de loialitate",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Autentificare Panou Administrare",
+      "subtitle": "Introduceți credențialele pentru a accesa panoul de administrare",
+      "email": "Email Administrator",
+      "emailPlaceholder": "Introduceți email administrator",
+      "accessCode": "Cod Acces",
+      "accessCodePlaceholder": "Introduceți codul de acces",
+      "password": "Parolă",
+      "passwordPlaceholder": "Introduceți parola",
+      "login": "🚀 Autentificare Panou",
+      "loggingIn": "Autentificare...",
+      "invalidCredentials": "❌ Credențiale invalide. Acces refuzat.",
+      "loginError": "❌ Eroare autentificare. Vă rugăm să încercați din nou.",
+      "warning": "⚠️ Accesul este restricționat doar la administratorii autorizați",
+      "logout": "Deconectare",
+      "sessionExpired": "Sesiunea a expirat. Vă rugăm să vă autentificați din nou."
+    }
+  }
+}

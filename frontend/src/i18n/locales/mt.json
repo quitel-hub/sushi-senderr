@@ -1,0 +1,370 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Programm ta' Lealtà",
+    "subtitle": "Ikseb 10% skont fuq it-talb li jmiss billi timla l-formola."
+  },
+  "tabs": {
+    "registration": "Formola tal-Mistieden",
+    "owner": "Dashboard tal-Proprjetarju",
+    "admin": "Panel tal-amministratur"
+  },
+  "discountBadge": {
+    "title": "10% skont",
+    "subtitle": "għal kull reġistrazzjoni ġdida"
+  },
+  "languages": {
+    "switcherLabel": "Lingwa",
+    "en": "Ingliż",
+    "de": "Ġermaniż",
+    "nl": "Olandiż",
+    "da": "Daniż",
+    "pl": "Pollakk",
+    "ru": "Russu",
+    "fr": "Franċiż",
+    "es": "Spanjol",
+    "it": "Taljan",
+    "pt": "Portugiż",
+    "sv": "Żvediż",
+    "no": "Norveġiż",
+    "fi": "Finlandiż",
+    "cs": "Ċek",
+    "hu": "Ungeriż",
+    "el": "Grieg",
+    "uk": "Ukren",
+    "bg": "Bulgaru",
+    "ro": "Rumen",
+    "hr": "Kroat",
+    "sk": "Slovakk",
+    "sl": "Sloven",
+    "lt": "Litwan",
+    "lv": "Latvjan",
+    "et": "Estonjan",
+    "mt": "Malti",
+    "is": "Iżlandiż"
+  },
+  "registration": {
+    "cardTitle": "Imla d-dettalji tiegħek u ikseb skont",
+    "fields": {
+      "firstName": "Isem",
+      "lastName": "Kunjom",
+      "phone": "Telefon",
+      "country": "Pajjiż",
+      "email": "Email",
+      "birthDate": "Data tat-twelid",
+      "city": "Belt",
+      "preferredFood": "Rolls favoriti jew xewqat",
+      "feedback": "Xewqat tiegħek għalina",
+      "street": "Triq",
+      "postalCode": "Kodiċi postali"
+    },
+    "placeholders": {
+      "firstName": "eż. Anna",
+      "lastName": "eż. Ivanova",
+      "phone": "Daħħal in-numru tat-telefon",
+      "country": "Agħżel il-pajjiż",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "eż. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Għidilna x'tħobb sabiex nistgħu nippreparaw offerti speċjali",
+      "feedback": "Aqsam x'għandu jżid jew jitjieb",
+      "street": "eż. Damrak 1",
+      "postalCode": "eż. 1012 LP"
+    },
+    "hints": {
+      "phone": "Agħżel il-pajjiż tiegħek u daħħal in-numru sħiħ tat-telefon mobbli għal Messenger.",
+      "feedback": "Naqraw kull messaġġ biex nitjieb l-esperjenza tiegħek."
+    },
+    "actions": {
+      "reset": "Erġa' ibda",
+      "submit": "Ikseb skont",
+      "submitting": "Qed jintbagħat..."
+    },
+    "status": {
+      "duplicate": "Int diġà reġistrat.",
+      "success": "Grazzi tar-reġistrazzjoni! L-iskont ta' 10% tiegħek hu lest.",
+      "error": "Xi ħaġa marret ħażin. Jekk jogħġbok ipprova mill-ġdid."
+    },
+    "errors": {
+      "phoneInvalid": "Format ta' numru tat-telefon invalidu",
+      "phoneTooShort": "Jekk jogħġbok daħħal numru tat-telefon sħiħ"
+    },
+    "success": {
+      "phoneValid": "✓ In-numru tat-telefon huwa validu"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Jannar",
+        "february": "Frar",
+        "march": "Marzu",
+        "april": "April",
+        "may": "Mejju",
+        "june": "Ġunju",
+        "july": "Lulju",
+        "august": "Awwissu",
+        "september": "Settembru",
+        "october": "Ottubru",
+        "november": "Novembru",
+        "december": "Diċembru"
+      },
+      "previousYears": "{{count}} snin ta' qabel",
+      "nextYears": "{{count}} snin li ġejjin",
+      "backToYears": "Lura għas-snin",
+      "backToMonths": "Lura għax-xhur",
+      "placeholder": "Agħżel data"
+    },
+    "sections": {
+      "address": "Informazzjoni tal-indirizz"
+    }
+  },
+  "owner": {
+    "title": "Dashboard tal-Proprjetarju",
+    "auth": {
+      "title": "Dashboard tal-Proprjetarju",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Kodiċi ta' Aċċess",
+        "password": "Password"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Daħħal il-kodiċi ta' aċċess",
+        "password": "Daħħal il-password"
+      },
+      "actions": {
+        "login": "Idħol fil-Dashboard",
+        "logging": "Qed jidħol..."
+      },
+      "welcome": "Merħba, {{name}}!",
+      "logout": "Oħroġ"
+    },
+    "unauthorized": {
+      "title": "Aċċess Immiżżel",
+      "message": "Ma tistax taċċessa din il-paġna. Biss amministraturi jistgħu jidħlu hawn.",
+      "subtitle": "Id-Dashboard tal-proprjetarju huwa disponibbli biss għal utenti awtorizzati.",
+      "backToForm": "Lura għall-formola tal-mistieden"
+    },
+    "token": {
+      "label": "Daħħal it-token sigriet biex timmaniġġja l-ibgħat",
+      "placeholder": "Token tal-proprjetarju",
+      "saved": "Token issalva.",
+      "cleared": "Token imħassar.",
+      "actions": {
+        "reset": "Erġa' ibda",
+        "save": "Isalva t-token"
+      }
+    },
+    "broadcast": {
+      "title": "Oħloq ibgħat Messenger",
+      "fields": {
+        "title": "Titlu",
+        "body": "Test tal-messaġġ"
+      },
+      "placeholder": {
+        "title": "eż. Roll Hot għal weekend",
+        "body": "Messaġġ li jintbagħat lil kulħadd"
+      },
+      "hint": "Il-messaġġ jintbagħat lil kulħadd li mla l-formola.",
+      "actions": {
+        "reset": "Erġa' ibda",
+        "submit": "Ibgħat l-ibgħat",
+        "submitting": "Qed jintbagħat..."
+      }
+    },
+    "customers": {
+      "title": "Klijenti",
+      "empty": "Għad m'hemm l-ebda reġistrazzjonijiet jew it-token mhuwiex validu.",
+      "refresh": "Aġġorna",
+      "refreshing": "Qed jaġġorna...",
+      "columns": {
+        "name": "Isem",
+        "contacts": "Kontatti",
+        "country": "Pajjiż",
+        "city": "Belt",
+        "code": "Kodiċi promo",
+        "createdAt": "Reġistrat"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Friska",
+      "delicious": "Tajjeb",
+      "premium": "Premium",
+      "traditional": "Tradizzjonali",
+      "loyaltyProgram": "Programm ta' lealtà",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Idħol fil-Panel tal-Amministrazzjoni",
+      "subtitle": "Daħħal il-kredenzjali biex taċċessa l-panel tal-amministrazzjoni",
+      "email": "Email tal-Amministratur",
+      "emailPlaceholder": "Daħħal l-email tal-amministratur",
+      "accessCode": "Kodiċi ta' Aċċess",
+      "accessCodePlaceholder": "Daħħal il-kodiċi ta' aċċess",
+      "password": "Password",
+      "passwordPlaceholder": "Daħħal il-password",
+      "login": "🚀 Idħol fil-Panel",
+      "loggingIn": "Qed jidħol...",
+      "invalidCredentials": "❌ Kredenzjali invalidi. Aċċess imħassar.",
+      "loginError": "❌ Żball ta' idħol. Jekk jogħġbok ipprova mill-ġdid.",
+      "warning": "⚠️ L-aċċess huwa ristrett għal amministraturi awtorizzati biss",
+      "logout": "Oħroġ",
+      "sessionExpired": "Is-sessjoni skadiet. Jekk jogħġbok idħol mill-ġdid."
+    }
+  }
+}

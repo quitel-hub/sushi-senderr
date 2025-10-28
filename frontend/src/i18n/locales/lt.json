@@ -1,0 +1,370 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Lojalumo programa",
+    "subtitle": "Gaukite 10% nuolaidą kitam užsakymui užpildydami formą."
+  },
+  "tabs": {
+    "registration": "Svečio forma",
+    "owner": "Savininko valdymo skydas",
+    "admin": "Administratoriaus skydelis"
+  },
+  "discountBadge": {
+    "title": "10% nuolaida",
+    "subtitle": "už kiekvieną naują registraciją"
+  },
+  "languages": {
+    "switcherLabel": "Kalba",
+    "en": "Anglų",
+    "de": "Vokiečių",
+    "nl": "Olandų",
+    "da": "Danų",
+    "pl": "Lenkų",
+    "ru": "Rusų",
+    "fr": "Prancūzų",
+    "es": "Ispanų",
+    "it": "Italų",
+    "pt": "Portugalų",
+    "sv": "Švedų",
+    "no": "Norvegų",
+    "fi": "Suomių",
+    "cs": "Čekų",
+    "hu": "Vengrų",
+    "el": "Graikų",
+    "uk": "Ukrainiečių",
+    "bg": "Bulgarų",
+    "ro": "Rumunų",
+    "hr": "Kroatų",
+    "sk": "Slovakų",
+    "sl": "Slovėnų",
+    "lt": "Lietuvių",
+    "lv": "Latvių",
+    "et": "Estų",
+    "mt": "Maltiečių",
+    "is": "Islandų"
+  },
+  "registration": {
+    "cardTitle": "Užpildykite savo duomenis ir gaukite nuolaidą",
+    "fields": {
+      "firstName": "Vardas",
+      "lastName": "Pavardė",
+      "phone": "Telefonas",
+      "country": "Šalis",
+      "email": "El. paštas",
+      "birthDate": "Gimimo data",
+      "city": "Miestas",
+      "preferredFood": "Mėgstami rulonai ar pageidavimai",
+      "feedback": "Jūsų pageidavimai mums",
+      "street": "Gatvė",
+      "postalCode": "Pašto kodas"
+    },
+    "placeholders": {
+      "firstName": "pvz. Ana",
+      "lastName": "pvz. Ivanova",
+      "phone": "Įveskite telefono numerį",
+      "country": "Pasirinkite šalį",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "pvz. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Pasakykite, ką mėgstate, kad galėtume paruošti specialius pasiūlymus",
+      "feedback": "Pasidalinkite, ką pridėti ar pagerinti",
+      "street": "pvz. Damrak 1",
+      "postalCode": "pvz. 1012 LP"
+    },
+    "hints": {
+      "phone": "Pasirinkite savo šalį ir įveskite pilną mobiliojo telefono numerį Messenger.",
+      "feedback": "Skaitome kiekvieną žinutę, kad pagerintume jūsų patirtį."
+    },
+    "actions": {
+      "reset": "Iš naujo",
+      "submit": "Gauti nuolaidą",
+      "submitting": "Siunčiama..."
+    },
+    "status": {
+      "duplicate": "Jūs jau užsiregistravote.",
+      "success": "Ačiū už registraciją! Jūsų 10% nuolaida paruošta.",
+      "error": "Kažkas nutiko. Bandykite dar kartą."
+    },
+    "errors": {
+      "phoneInvalid": "Netinkamas telefono numerio formatas",
+      "phoneTooShort": "Įveskite pilną telefono numerį"
+    },
+    "success": {
+      "phoneValid": "✓ Telefono numeris yra tinkamas"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Sausis",
+        "february": "Vasaris",
+        "march": "Kovas",
+        "april": "Balandis",
+        "may": "Gegužė",
+        "june": "Birželis",
+        "july": "Liepa",
+        "august": "Rugpjūtis",
+        "september": "Rugsėjis",
+        "october": "Spalis",
+        "november": "Lapkritis",
+        "december": "Gruodis"
+      },
+      "previousYears": "Ankstesni {{count}} metai",
+      "nextYears": "Kiti {{count}} metai",
+      "backToYears": "Grįžti į metus",
+      "backToMonths": "Grįžti į mėnesius",
+      "placeholder": "Pasirinkite datą"
+    },
+    "sections": {
+      "address": "Adreso informacija"
+    }
+  },
+  "owner": {
+    "title": "Savininko valdymo skydas",
+    "auth": {
+      "title": "Savininko valdymo skydas",
+      "fields": {
+        "email": "El. paštas",
+        "accessCode": "Prieigos kodas",
+        "password": "Slaptažodis"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Įveskite prieigos kodą",
+        "password": "Įveskite slaptažodį"
+      },
+      "actions": {
+        "login": "Prisijungti prie skydo",
+        "logging": "Prisijungiama..."
+      },
+      "welcome": "Sveiki, {{name}}!",
+      "logout": "Atsijungti"
+    },
+    "unauthorized": {
+      "title": "Prieiga atmesta",
+      "message": "Negalite pasiekti šio puslapio. Tik administratoriai gali čia įeiti.",
+      "subtitle": "Savininko valdymo skydas prieinamas tik autorizuotiems naudotojams.",
+      "backToForm": "Grįžti prie svečio formos"
+    },
+    "token": {
+      "label": "Įveskite slaptą žetoną siuntimų valdymui",
+      "placeholder": "Savininko žetonas",
+      "saved": "Žetonas išsaugotas.",
+      "cleared": "Žetonas išvalytas.",
+      "actions": {
+        "reset": "Iš naujo",
+        "save": "Išsaugoti žetoną"
+      }
+    },
+    "broadcast": {
+      "title": "Sukurti Messenger siuntimą",
+      "fields": {
+        "title": "Pavadinimas",
+        "body": "Žinutės tekstas"
+      },
+      "placeholder": {
+        "title": "pvz. Karšti rulonai savaitgaliui",
+        "body": "Žinutė, kuri bus išsiųsta visiems klientams"
+      },
+      "hint": "Žinutė bus išsiųsta visiems, kurie užpildė formą.",
+      "actions": {
+        "reset": "Iš naujo",
+        "submit": "Siųsti siuntimą",
+        "submitting": "Siunčiama..."
+      }
+    },
+    "customers": {
+      "title": "Klientai",
+      "empty": "Dar nėra registracijų arba žetonas netinkamas.",
+      "refresh": "Atnaujinti",
+      "refreshing": "Atnaujinama...",
+      "columns": {
+        "name": "Vardas",
+        "contacts": "Kontaktai",
+        "country": "Šalis",
+        "city": "Miestas",
+        "code": "Promo kodas",
+        "createdAt": "Užregistruota"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Šviežias",
+      "delicious": "Skanus",
+      "premium": "Premium",
+      "traditional": "Tradicinis",
+      "loyaltyProgram": "Lojalumo programa",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Administratoriaus skydelio prisijungimas",
+      "subtitle": "Įveskite prisijungimo duomenis, kad pasiektumėte administravimo skydelį",
+      "email": "Administratoriaus el. paštas",
+      "emailPlaceholder": "Įveskite administratoriaus el. paštą",
+      "accessCode": "Prieigos kodas",
+      "accessCodePlaceholder": "Įveskite prieigos kodą",
+      "password": "Slaptažodis",
+      "passwordPlaceholder": "Įveskite slaptažodį",
+      "login": "🚀 Prisijungti prie skydelio",
+      "loggingIn": "Prisijungiama...",
+      "invalidCredentials": "❌ Neteisingi prisijungimo duomenys. Prieiga atmesta.",
+      "loginError": "❌ Prisijungimo klaida. Bandykite dar kartą.",
+      "warning": "⚠️ Prieiga ribojama tik įgaliotiems administratoriams",
+      "logout": "Atsijungti",
+      "sessionExpired": "Sesija baigėsi. Prisijunkite dar kartą."
+    }
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Wepalyk programmasy",
+    "subtitle": "Forma doldurup, indiki sargyt üçin 10% arzanladyş alyň."
+  },
+  "tabs": {
+    "registration": "Myhman formasy",
+    "owner": "Eýe paneli",
+    "admin": "Admin Panel"
+  },
+  "discountBadge": {
+    "title": "10% arzanladyş",
+    "subtitle": "her täze hasaba alyş üçin"
+  },
+  "languages": {
+    "switcherLabel": "Dil",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча"
+  },
+  "registration": {
+    "cardTitle": "Maglumatlaryňyzy dolduryň we arzanladyş alyň",
+    "fields": {
+      "firstName": "Ady",
+      "lastName": "Familiýasy",
+      "phone": "Telefon",
+      "country": "Ýurt",
+      "email": "Elektron poçta",
+      "birthDate": "Doglan senesi",
+      "city": "Şäher",
+      "preferredFood": "Halan rollar ýa-da arzular",
+      "feedback": "Bize arzular",
+      "street": "Köçe",
+      "postalCode": "Poçta kody"
+    },
+    "placeholders": {
+      "firstName": "mäs. Anna",
+      "lastName": "mäs. Ivanova",
+      "phone": "Telefon belgisini giriziň",
+      "country": "Ýurty saýlaň",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "mysal Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Näme gowy görýändigiňizi aýdyň, şeýle-de teklip berişleri uýgunlaşdyra bilelim",
+      "feedback": "Goşmaly ýa-da gowulaşdyrmaly zatlary paýlaşyň",
+      "street": "mysal Damrak 1",
+      "postalCode": "mysal 1012 LP"
+    },
+    "hints": {
+      "phone": "Ýurduňyzy saýlaň we Messenger üçin doly mobil telefon belgisini giriziň.",
+      "feedback": "Täjribäňizi gowulaşdyrmak üçin her habary okarys."
+    },
+    "actions": {
+      "reset": "Täzeden düzelt",
+      "submit": "Arzanladyş al",
+      "submitting": "Iberilýär..."
+    },
+    "status": {
+      "duplicate": "Siz eýýäm hasaba alyndyňyz.",
+      "success": "Hasaba alyş üçin sag boluň! 10% arzanladyşyňyz taýýar.",
+      "error": "Bir zat nädogry boldy. Gaýtadan synap görüň."
+    },
+    "errors": {
+      "phoneInvalid": "Nädogry telefon belgisi formaty",
+      "phoneTooShort": "Doly telefon belgisini giriziň"
+    },
+    "success": {
+      "phoneValid": "✓ Telefon belgisi dogry"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Ýanwar",
+        "february": "Fewral",
+        "march": "Mart",
+        "april": "Aprel",
+        "may": "Maý",
+        "june": "Iýun",
+        "july": "Iýul",
+        "august": "Awgust",
+        "september": "Sentýabr",
+        "october": "Oktýabr",
+        "november": "Noýabr",
+        "december": "Dekabr"
+      },
+      "previousYears": "Öňki {{count}} ýyl",
+      "nextYears": "Indiki {{count}} ýyl",
+      "backToYears": "Ýyllara dolan",
+      "backToMonths": "Aýlara dolan",
+      "placeholder": "Sene saýlaň"
+    },
+    "sections": {
+      "address": "Salgy maglumatlary"
+    }
+  },
+  "owner": {
+    "title": "Eýe paneli",
+    "auth": {
+      "title": "Eýe paneli",
+      "fields": {
+        "email": "Elektron poçta",
+        "accessCode": "Giriş kody",
+        "password": "Açar sözi"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Giriş kodyňyzy giriziň",
+        "password": "Açar söziňizi giriziň"
+      },
+      "actions": {
+        "login": "Panele giriş",
+        "logging": "Girilýär..."
+      },
+      "welcome": "Hoş geldiňiz, {{name}}!",
+      "logout": "Çykyş"
+    },
+    "unauthorized": {
+      "title": "Giriş ýatyryldy",
+      "message": "Bu sahypa girip bilmersiňiz. Diňe administratorlar bu ýere girip biler.",
+      "subtitle": "Eýe paneli diňe rugsat berilen ulanyjylar üçin elýeterli.",
+      "backToForm": "Myhman formasynda yza gaýdyp bar"
+    },
+    "token": {
+      "label": "Ýaylymlary dolandyrmak üçin gizlin token giriziň",
+      "placeholder": "Eýe tokeni",
+      "saved": "Token saklandy.",
+      "cleared": "Token arassalandy.",
+      "actions": {
+        "reset": "Täzeden düzelt",
+        "save": "Tokenni sakla"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger ýaylym dörediň",
+      "fields": {
+        "title": "Ady",
+        "body": "Habar teksti"
+      },
+      "placeholder": {
+        "title": "mäs. Gyzgyn roll hepde ahyry",
+        "body": "Ähli müşderilere iberiljek habar"
+      },
+      "hint": "Habar formany dolduran ähli adamlara iberiler.",
+      "actions": {
+        "reset": "Täzeden düzelt",
+        "submit": "Ýaylym iber",
+        "submitting": "Iberilýär..."
+      }
+    },
+    "customers": {
+      "title": "Müşderiler",
+      "empty": "Entek hasaba alyş ýok ýa-da token nädogry.",
+      "refresh": "Täzele",
+      "refreshing": "Täzelenýär...",
+      "columns": {
+        "name": "Ady",
+        "contacts": "Aragatnaşyklar",
+        "country": "Ýurt",
+        "city": "Şäher",
+        "code": "Promo kod",
+        "createdAt": "Hasaba alyndy"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Suşi",
+      "fresh": "Täze",
+      "delicious": "Tagamly",
+      "premium": "Premium",
+      "traditional": "Gadymy",
+      "loyaltyProgram": "Sadaklyk programmy",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Admin panel girişi",
+      "subtitle": "Administrator paneli üçin maglumatlary giriziň",
+      "email": "Admin e-poçta",
+      "emailPlaceholder": "Admin e-poçta giriziň",
+      "accessCode": "Giriş kody",
+      "accessCodePlaceholder": "Giriş kodyny giriziň",
+      "password": "Açarsöz",
+      "passwordPlaceholder": "Açarsözü giriziň",
+      "login": "🚀 Panelä giriş",
+      "loggingIn": "Giriş...",
+      "invalidCredentials": "❌ Nädogry maglumatlar. Giriş ýatyryldy.",
+      "loginError": "❌ Giriş ýalňyşlygy. Gaýtadan synanyşyň.",
+      "warning": "⚠️ Giriş diňe ygtyýarly administratorlara çäklendirilýär",
+      "logout": "Çykyş",
+      "sessionExpired": "Sessiýa gutardy. Gaýtadan giriň."
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — โปรแกรมความภักดี",
+    "subtitle": "รับส่วนลด 10% สำหรับการสั่งซื้อครั้งต่อไปโดยกรอกแบบฟอร์ม"
+  },
+  "tabs": {
+    "registration": "แบบฟอร์มแขก",
+    "owner": "แดชบอร์ดเจ้าของ",
+    "admin": "แผงผู้ดูแลระบบ"
+  },
+  "discountBadge": {
+    "title": "ลด 10%",
+    "subtitle": "สำหรับการลงทะเบียนใหม่ทุกครั้ง"
+  },
+  "languages": {
+    "switcherLabel": "ภาษา",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی"
+  },
+  "registration": {
+    "cardTitle": "กรอกรายละเอียดของคุณและรับส่วนลด",
+    "fields": {
+      "firstName": "ชื่อ",
+      "lastName": "นามสกุล",
+      "phone": "โทรศัพท์",
+      "country": "ประเทศ",
+      "email": "อีเมล",
+      "birthDate": "วันเกิด",
+      "city": "เมือง",
+      "preferredFood": "ม้วนที่ชอบหรือความต้องการ",
+      "feedback": "ความต้องการของคุณสำหรับเรา",
+      "street": "ถนน",
+      "postalCode": "รหัสไปรษณีย์"
+    },
+    "placeholders": {
+      "firstName": "เช่น แอนนา",
+      "lastName": "เช่น อิวาโนวา",
+      "phone": "ใส่หมายเลขโทรศัพท์",
+      "country": "เลือกประเทศ",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "เช่น Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "บอกเราว่าคุณชอบอะไรเพื่อให้เราสามารถปรับแต่งข้อเสนอได้",
+      "feedback": "แบ่งปันสิ่งที่ต้องเพิ่มหรือปรับปรุง",
+      "street": "เช่น Damrak 1",
+      "postalCode": "เช่น 1012 LP"
+    },
+    "hints": {
+      "phone": "เลือกประเทศของคุณและใส่หมายเลขโทรศัพท์มือถือเต็มสำหรับ Messenger",
+      "feedback": "เราอ่านข้อความทุกข้อความเพื่อปรับปรุงประสบการณ์ของคุณ"
+    },
+    "actions": {
+      "reset": "รีเซ็ต",
+      "submit": "รับส่วนลด",
+      "submitting": "กำลังส่ง..."
+    },
+    "status": {
+      "duplicate": "คุณลงทะเบียนแล้ว",
+      "success": "ขอบคุณสำหรับการลงทะเบียน! ส่วนลด 10% ของคุณพร้อมแล้ว",
+      "error": "มีบางอย่างผิดพลาด กรุณาลองอีกครั้ง"
+    },
+    "errors": {
+      "phoneInvalid": "รูปแบบหมายเลขโทรศัพท์ไม่ถูกต้อง",
+      "phoneTooShort": "กรุณาใส่หมายเลขโทรศัพท์ที่สมบูรณ์"
+    },
+    "success": {
+      "phoneValid": "✓ หมายเลขโทรศัพท์ถูกต้อง"
+    },
+    "datePicker": {
+      "months": {
+        "january": "มกราคม",
+        "february": "กุมภาพันธ์",
+        "march": "มีนาคม",
+        "april": "เมษายน",
+        "may": "พฤษภาคม",
+        "june": "มิถุนายน",
+        "july": "กรกฎาคม",
+        "august": "สิงหาคม",
+        "september": "กันยายน",
+        "october": "ตุลาคม",
+        "november": "พฤศจิกายน",
+        "december": "ธันวาคม"
+      },
+      "previousYears": "{{count}} ปีที่แล้ว",
+      "nextYears": "{{count}} ปีถัดไป",
+      "backToYears": "กลับไปที่ปี",
+      "backToMonths": "กลับไปที่เดือน",
+      "placeholder": "เลือกวันที่"
+    },
+    "sections": {
+      "address": "ข้อมูลที่อยู่"
+    }
+  },
+  "owner": {
+    "title": "แดชบอร์ดเจ้าของ",
+    "auth": {
+      "title": "แดชบอร์ดเจ้าของ",
+      "fields": {
+        "email": "อีเมล",
+        "accessCode": "รหัสเข้าถึง",
+        "password": "รหัสผ่าน"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "ใส่รหัสเข้าถึงของคุณ",
+        "password": "ใส่รหัสผ่านของคุณ"
+      },
+      "actions": {
+        "login": "เข้าสู่แดชบอร์ด",
+        "logging": "กำลังเข้าสู่ระบบ..."
+      },
+      "welcome": "ยินดีต้อนรับ {{name}}!",
+      "logout": "ออกจากระบบ"
+    },
+    "unauthorized": {
+      "title": "การเข้าถึงถูกปฏิเสธ",
+      "message": "คุณไม่สามารถเข้าถึงหน้านี้ได้ เฉพาะผู้ดูแลระบบเท่านั้นที่สามารถเข้าที่นี่ได้",
+      "subtitle": "แดชบอร์ดเจ้าของมีให้เฉพาะผู้ใช้ที่ได้รับอนุญาตเท่านั้น",
+      "backToForm": "กลับไปที่แบบฟอร์มแขก"
+    },
+    "token": {
+      "label": "ใส่โทเค็นลับเพื่อจัดการการออกอากาศ",
+      "placeholder": "โทเค็นเจ้าของ",
+      "saved": "โทเค็นถูกบันทึกแล้ว",
+      "cleared": "โทเค็นถูกล้างแล้ว",
+      "actions": {
+        "reset": "รีเซ็ต",
+        "save": "บันทึกโทเค็น"
+      }
+    },
+    "broadcast": {
+      "title": "สร้างการออกอากาศ Messenger",
+      "fields": {
+        "title": "หัวข้อ",
+        "body": "ข้อความ"
+      },
+      "placeholder": {
+        "title": "เช่น สุดสัปดาห์ม้วนร้อน",
+        "body": "ข้อความที่จะส่งให้ลูกค้าทุกคน"
+      },
+      "hint": "ข้อความจะถูกส่งให้ทุกคนที่กรอกแบบฟอร์ม",
+      "actions": {
+        "reset": "รีเซ็ต",
+        "submit": "ส่งการออกอากาศ",
+        "submitting": "กำลังส่ง..."
+      }
+    },
+    "customers": {
+      "title": "ลูกค้า",
+      "empty": "ยังไม่มีการลงทะเบียนหรือโทเค็นไม่ถูกต้อง",
+      "refresh": "รีเฟรช",
+      "refreshing": "กำลังอัปเดต...",
+      "columns": {
+        "name": "ชื่อ",
+        "contacts": "ติดต่อ",
+        "country": "ประเทศ",
+        "city": "เมือง",
+        "code": "รหัสโปรโมชั่น",
+        "createdAt": "ลงทะเบียนแล้ว"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "ซูชิ",
+      "fresh": "สด",
+      "delicious": "อร่อย",
+      "premium": "พรีเมียม",
+      "traditional": "ดั้งเดิม",
+      "loyaltyProgram": "โปรแกรมความภักดี",
+      "sushiIcon": "ซูชิไอคอน"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 เข้าสู่ระบบแผงควบคุมผู้ดูแล",
+      "subtitle": "ป้อนข้อมูลประจำตัวเพื่อเข้าถึงแผงควบคุมผู้ดูแล",
+      "email": "อีเมลผู้ดูแล",
+      "emailPlaceholder": "ป้อนอีเมลผู้ดูแล",
+      "accessCode": "รหัสการเข้าถึง",
+      "accessCodePlaceholder": "ป้อนรหัสการเข้าถึง",
+      "password": "รหัสผ่าน",
+      "passwordPlaceholder": "ป้อนรหัสผ่าน",
+      "login": "🚀 เข้าสู่ระบบแผงควบคุม",
+      "loggingIn": "กำลังเข้าสู่ระบบ...",
+      "invalidCredentials": "❌ ข้อมูลประจำตัวไม่ถูกต้อง การเข้าถึงถูกปฏิเสธ",
+      "loginError": "❌ ข้อผิดพลาดในการเข้าสู่ระบบ กรุณาลองอีกครั้ง",
+      "warning": "⚠️ การเข้าถึงถูกจำกัดเฉพาะผู้ดูแลที่ได้รับอนุญาตเท่านั้น",
+      "logout": "ออกจากระบบ",
+      "sessionExpired": "เซสชันหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง"
+    }
+  }
+}

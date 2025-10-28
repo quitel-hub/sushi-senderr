@@ -1,0 +1,375 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Programi i Besnikërisë",
+    "subtitle": "Merrni 10% zbritje për porosinë tuaj të ardhshme duke plotësuar formularin."
+  },
+  "tabs": {
+    "registration": "Formulari i Mysafirëve",
+    "owner": "Paneli i Pronarit",
+    "admin": "Paneli i administratorit"
+  },
+  "discountBadge": {
+    "title": "10% zbritje",
+    "subtitle": "për çdo regjistrim të ri"
+  },
+  "languages": {
+    "switcherLabel": "Gjuha",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip"
+  },
+  "registration": {
+    "cardTitle": "Plotësoni detajet tuaja dhe merrni zbritje",
+    "fields": {
+      "firstName": "Emri",
+      "lastName": "Mbiemri",
+      "phone": "Telefoni",
+      "country": "Shteti",
+      "email": "Email",
+      "birthDate": "Data e lindjes",
+      "city": "Qyteti",
+      "preferredFood": "Rrotat e preferuara ose dëshirat",
+      "feedback": "Dëshirat tuaja për ne",
+      "street": "Rruga",
+      "postalCode": "Kodi postar"
+    },
+    "placeholders": {
+      "firstName": "p.sh. Anna",
+      "lastName": "p.sh. Ivanova",
+      "phone": "Shkruani numrin e telefonit",
+      "country": "Zgjidhni shtetin",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "p.sh. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Na tregoni çfarë doni që të mund t'i përshtatim ofertat",
+      "feedback": "Ndani çfarë të shtoni ose të përmirësoni",
+      "street": "p.sh. Damrak 1",
+      "postalCode": "p.sh. 1012 LP"
+    },
+    "hints": {
+      "phone": "Zgjidhni shtetin tuaj dhe shkruani numrin e plotë të telefonit për Messenger.",
+      "feedback": "Lexojmë çdo mesazh për të përmirësuar përvojën tuaj."
+    },
+    "actions": {
+      "reset": "Rivendos",
+      "submit": "Merr zbritje",
+      "submitting": "Po dërgohet..."
+    },
+    "status": {
+      "duplicate": "Jeni tashmë të regjistruar.",
+      "success": "Faleminderit për regjistrimin! Zbritja juaj 10% është gati.",
+      "error": "Diçka shkoi keq. Ju lutemi provoni përsëri."
+    },
+    "errors": {
+      "phoneInvalid": "Format i pavlefshëm i numrit të telefonit",
+      "phoneTooShort": "Ju lutemi vendosni një numër telefoni të plotë"
+    },
+    "success": {
+      "phoneValid": "✓ Numri i telefonit është i vlefshëm"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Janar",
+        "february": "Shkurt",
+        "march": "Mars",
+        "april": "Prill",
+        "may": "Maj",
+        "june": "Qershor",
+        "july": "Korrik",
+        "august": "Gusht",
+        "september": "Shtator",
+        "october": "Tetor",
+        "november": "Nëntor",
+        "december": "Dhjetor"
+      },
+      "previousYears": "{{count}} vite të mëparshme",
+      "nextYears": "{{count}} vite të ardhshme",
+      "backToYears": "Kthehu te vitet",
+      "backToMonths": "Kthehu te muajt",
+      "placeholder": "Zgjidhni datën"
+    },
+    "sections": {
+      "address": "Informacione adrese"
+    }
+  },
+  "owner": {
+    "title": "Paneli i Pronarit",
+    "auth": {
+      "title": "Paneli i Pronarit",
+      "fields": {
+        "email": "E-mail",
+        "accessCode": "Kodi i Aksesit",
+        "password": "Fjalëkalimi"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Shkruani kodin tuaj të aksesit",
+        "password": "Shkruani fjalëkalimin tuaj"
+      },
+      "actions": {
+        "login": "Hyni në panel",
+        "logging": "Po hyni..."
+      },
+      "welcome": "Mirë se erdhet, {{name}}!",
+      "logout": "Dilni"
+    },
+    "unauthorized": {
+      "title": "Aksesi u refuzua",
+      "message": "Nuk mund të hyni në këtë faqe. Vetëm administratorët mund të hyjnë këtu.",
+      "subtitle": "Paneli i pronarit është i disponueshëm vetëm për përdorues të autorizuar.",
+      "backToForm": "Kthehu te forma e mysafirit"
+    },
+    "token": {
+      "label": "Shkruani tokenin sekret për të menaxhuar transmetimet",
+      "placeholder": "Tokeni i pronarit",
+      "saved": "Tokeni u ruajt.",
+      "cleared": "Tokeni u fshi.",
+      "actions": {
+        "reset": "Rivendos",
+        "save": "Ruaj token"
+      }
+    },
+    "broadcast": {
+      "title": "Krijo transmetim Messenger",
+      "fields": {
+        "title": "Titulli",
+        "body": "Teksti i mesazhit"
+      },
+      "placeholder": {
+        "title": "p.sh. Fundjavë Rrotash të Nxehta",
+        "body": "Mesazh që do të dërgohet te të gjithë klientët"
+      },
+      "hint": "Mesazhi do të dërgohet te të gjithë ata që plotësuan formularin.",
+      "actions": {
+        "reset": "Rivendos",
+        "submit": "Dërgo transmetim",
+        "submitting": "Po dërgohet..."
+      }
+    },
+    "customers": {
+      "title": "Klientët",
+      "empty": "Nuk ka regjistrime ende ose tokeni është i pavlefshëm.",
+      "refresh": "Rifresko",
+      "refreshing": "Po përditësohet...",
+      "columns": {
+        "name": "Emri",
+        "contacts": "Kontaktet",
+        "country": "Shteti",
+        "city": "Qyteti",
+        "code": "Kodi promo",
+        "createdAt": "I regjistruar"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "I freskët",
+      "delicious": "I shijshëm",
+      "premium": "Premium",
+      "traditional": "Tradicional",
+      "loyaltyProgram": "Program besnikërie",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Hyrja në Panelin e Administrimit",
+      "subtitle": "Shkruani kredencialet për të hyrë në panelin e administrimit",
+      "email": "Email i Administratorit",
+      "emailPlaceholder": "Shkruani emailin e administratorit",
+      "accessCode": "Kodi i Aksesit",
+      "accessCodePlaceholder": "Shkruani kodin e aksesit",
+      "password": "Fjalëkalimi",
+      "passwordPlaceholder": "Shkruani fjalëkalimin",
+      "login": "🚀 Hyrja në Panel",
+      "loggingIn": "Duke hyrë...",
+      "invalidCredentials": "❌ Kredenciale të pavlefshme. Aksesi u refuzua.",
+      "loginError": "❌ Gabim në hyrje. Ju lutemi provoni përsëri.",
+      "warning": "⚠️ Aksesi është i kufizuar vetëm për administratorët e autorizuar",
+      "logout": "Dalja",
+      "sessionExpired": "Seanca ka skaduar. Ju lutemi hyni përsëri."
+    }
+  }
+}

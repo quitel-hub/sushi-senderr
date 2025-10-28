@@ -1,0 +1,411 @@
+{
+  "app": {
+    "title": "SUSHI ICON — የመጣጣም ፕሮግራም",
+    "subtitle": "መረጃውን በማስገባት በሚቀጥለው ትዕዛዝ ላይ 10% ቅናሽ ያግኙ።"
+  },
+  "tabs": {
+    "registration": "እንግዳ ቅጥ",
+    "owner": "የባለቤት ዳሽቦርድ",
+    "admin": "አስተዳዳሪ ፓነል"
+  },
+  "discountBadge": {
+    "title": "10% ቅናሽ",
+    "subtitle": "ለእያንዳንዱ አዲስ ምዝገባ"
+  },
+  "languages": {
+    "switcherLabel": "ቋንቋ",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча",
+    "ar-eg": "العربية (مصر)",
+    "am": "አማርኛ",
+    "so": "Soomaali",
+    "ar-ma": "العربية (المغرب)",
+    "ar-dz": "العربية (الجزائر)",
+    "af": "Afrikaans"
+  },
+  "registration": {
+    "cardTitle": "ዝርዝሮችዎን ይሙሉ እና ቅናሽ ያግኙ",
+    "fields": {
+      "firstName": "የመጀመሪያ ስም",
+      "lastName": "የአባት ስም",
+      "phone": "ስልክ",
+      "country": "አገር",
+      "email": "ኢሜይል",
+      "birthDate": "የትውልድ ቀን",
+      "city": "ከተማ",
+      "preferredFood": "የሚወዱት ሮሎች ወይም ምኞቶች",
+      "feedback": "ለእኛ ምኞቶችዎ",
+      "street": "መንገድ",
+      "postalCode": "የፖስታ ኮድ"
+    },
+    "placeholders": {
+      "firstName": "ምሳሌ አና",
+      "lastName": "ምሳሌ ኢቫኖቫ",
+      "phone": "ስልክ ቁጥር ያስገቡ",
+      "country": "አገር ይምረጡ",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "ለምሳሌ Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "ምን እንደሚወዱ ይንገሩን እንዲሁም ቅናሾችን ማስተካከል እንችል",
+      "feedback": "ምን ማከል ወይም ማሻሻል እንዳለባቸው ያጋሩ",
+      "street": "ለምሳሌ Damrak 1",
+      "postalCode": "ለምሳሌ 1012 LP"
+    },
+    "hints": {
+      "phone": "አገርዎን ይምረጡ እና ለ Messenger ሙሉ ሞባይል ስልክ ቁጥር ያስገቡ።",
+      "feedback": "ልምድዎን ለማሻሻል እያንዳንዱን መልዕክት እናንባላለን።"
+    },
+    "actions": {
+      "reset": "እንደገና አስጀምር",
+      "submit": "ቅናሽ ያግኙ",
+      "submitting": "በመላክ ላይ..."
+    },
+    "status": {
+      "duplicate": "አስቀድመው ተመዝግበዋል።",
+      "success": "ለምዝገባ እናመሰግናለን! 10% ቅናሽዎ ዝግጁ ነው።",
+      "error": "አንድ ነገር ተሳስቷል። እባክዎ እንደገና ይሞክሩ።"
+    },
+    "errors": {
+      "phoneInvalid": "ማይሰራ የስልክ ቁጥር ቅርጸት",
+      "phoneTooShort": "እባክዎ ሙሉ ስልክ ቁጥር ያስገቡ"
+    },
+    "success": {
+      "phoneValid": "✓ የስልክ ቁጥሩ ትክክል ነው"
+    },
+    "datePicker": {
+      "months": {
+        "january": "ጃንዋሪ",
+        "february": "ፌብሩዋሪ",
+        "march": "ማርች",
+        "april": "ኤፕሪል",
+        "may": "ሜይ",
+        "june": "ጁን",
+        "july": "ጁላይ",
+        "august": "ኦገስት",
+        "september": "ሴፕቴምበር",
+        "october": "ኦክቶበር",
+        "november": "ኖቬምበር",
+        "december": "ዲሴምበር"
+      },
+      "previousYears": "የቀድሞ {{count}} ዓመታት",
+      "nextYears": "የሚቀጥሉ {{count}} ዓመታት",
+      "backToYears": "ወደ ዓመታት ተመለስ",
+      "backToMonths": "ወደ ወራት ተመለስ",
+      "placeholder": "ቀን ይምረጡ"
+    },
+    "sections": {
+      "address": "የአድራሻ መረጃ"
+    }
+  },
+  "owner": {
+    "title": "የባለቤት ዳሽቦርድ",
+    "auth": {
+      "title": "የባለቤት ዳሽቦርድ",
+      "fields": {
+        "email": "ኢሜይል",
+        "accessCode": "የመዳረሻ ኮድ",
+        "password": "የይለፍ ቃል"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "የመዳረሻ ኮድዎን ያስገቡ",
+        "password": "የይለፍ ቃልዎን ያስገቡ"
+      },
+      "actions": {
+        "login": "ወደ ዳሽቦርድ ይግቡ",
+        "logging": "በመግባት ላይ..."
+      },
+      "welcome": "እንኳን ደህና መጡ፣ {{name}}!",
+      "logout": "ውጣ"
+    },
+    "unauthorized": {
+      "title": "መዳረሻ ተከልክሏል",
+      "message": "ወደዚህ ገጽ መዳረስ አይችሉም። አስተዳዳሪዎች ብቻ እዚህ መግባት ይችላሉ።",
+      "subtitle": "የባለቤት ዳሽቦርድ ለተፈቀደላቸው ተጠቃሚዎች ብቻ ይገኛል።",
+      "backToForm": "ወደ እንግዳ ቅጥ ተመለስ"
+    },
+    "token": {
+      "label": "ማስተላልፎችን ለመቆጣጠር ሚስጥር ቶከን ያስገቡ",
+      "placeholder": "የባለቤት ቶከን",
+      "saved": "ቶከን ተቀምጧል።",
+      "cleared": "ቶከን ተጸድቷል።",
+      "actions": {
+        "reset": "እንደገና አስጀምር",
+        "save": "ቶከን አስቀምጥ"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger ማስተላልፍ ይፍጠሩ",
+      "fields": {
+        "title": "ርዕስ",
+        "body": "የመልዕክት ጽሑፍ"
+      },
+      "placeholder": {
+        "title": "ምሳሌ የሙቀት ሮሎች ሳምንት መጨረሻ",
+        "body": "ለሁሉም ደንበኞች የሚላክ መልዕክት"
+      },
+      "hint": "መልዕክቱ ቅጥ የሞላ ሁሉም ሰው ይላካል።",
+      "actions": {
+        "reset": "እንደገና አስጀምር",
+        "submit": "ማስተላልፍ ላክ",
+        "submitting": "በመላክ ላይ..."
+      }
+    },
+    "customers": {
+      "title": "ደንበኞች",
+      "empty": "እስካሁን ምዝገባዎች የሉም ወይም ቶከን የማይሰራ ነው።",
+      "refresh": "አድስ",
+      "refreshing": "በማደስ ላይ...",
+      "columns": {
+        "name": "ስም",
+        "contacts": "የመገናኛ",
+        "country": "አገር",
+        "city": "ከተማ",
+        "code": "የማስተዋወቂያ ኮድ",
+        "createdAt": "ተመዝግቧል"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "ሱሺ",
+      "fresh": "ትኩስ",
+      "delicious": "ጣፋጭ",
+      "premium": "ፕሪሚየም",
+      "traditional": "ባህላዊ",
+      "loyaltyProgram": "የአመለካከት ፕሮግራም",
+      "sushiIcon": "ሱሺ አዶ"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 የአስተዳዳሪ ፓነል መግባት",
+      "subtitle": "ወደ አስተዳዳሪ ፓነል ለመድረስ የማረጋገጫ ምስክሮችን ያስገቡ",
+      "email": "የአስተዳዳሪ ኢሜይል",
+      "emailPlaceholder": "የአስተዳዳሪ ኢሜይል ያስገቡ",
+      "accessCode": "የመድረሻ ኮድ",
+      "accessCodePlaceholder": "የመድረሻ ኮድ ያስገቡ",
+      "password": "የይለፍ ቃል",
+      "passwordPlaceholder": "የይለፍ ቃል ያስገቡ",
+      "login": "🚀 ወደ ፓነል ይግቡ",
+      "loggingIn": "ይገባሉ...",
+      "invalidCredentials": "❌ የማይሰራ የማረጋገጫ ምስክሮች። መድረስ ተከልክሏል።",
+      "loginError": "❌ የመግባት ስህተት። እባክዎ እንደገና ይሞክሩ።",
+      "warning": "⚠️ መድረስ ለሚፈቀዱ አስተዳዳሪዎች ብቻ የተገደበ ነው",
+      "logout": "ውጣ",
+      "sessionExpired": "የስራ ክፍለ ጊዜ አልቋል። እባክዎ እንደገና ይግቡ።"
+    }
+  }
+}

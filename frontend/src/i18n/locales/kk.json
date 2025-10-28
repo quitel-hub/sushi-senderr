@@ -1,0 +1,405 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Сыбайлас жүйесі",
+    "subtitle": "Форманы толтырып, келесі тапсырысыңызға 10% жеңілдік алыңыз."
+  },
+  "tabs": {
+    "registration": "Қонақ формасы",
+    "owner": "Ие панелі",
+    "admin": "Әкімші панелі"
+  },
+  "discountBadge": {
+    "title": "10% жеңілдік",
+    "subtitle": "әрбір жаңа тіркелу үшін"
+  },
+  "languages": {
+    "switcherLabel": "Тіл",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча"
+  },
+  "registration": {
+    "cardTitle": "Деректеріңізді толтырып, жеңілдік алыңыз",
+    "fields": {
+      "firstName": "Аты",
+      "lastName": "Тегі",
+      "phone": "Телефон",
+      "country": "Ел",
+      "email": "Электрондық пошта",
+      "birthDate": "Туған күні",
+      "city": "Қала",
+      "preferredFood": "Сүйікті ролдар немесе тілектер",
+      "feedback": "Бізге арналған тілектеріңіз",
+      "street": "Көше",
+      "postalCode": "Пошта коды"
+    },
+    "placeholders": {
+      "firstName": "мысалы Анна",
+      "lastName": "мысалы Иванова",
+      "phone": "Телефон нөмірін енгізіңіз",
+      "country": "Елді таңдаңыз",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "мысалы Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Не ұнататыныңызды айтыңыз, сонда біз ұсыныстарды реттей аламыз",
+      "feedback": "Қандай қосу немесе жақсарту керектігін бөлісіңіз",
+      "street": "мысалы Damrak 1",
+      "postalCode": "мысалы 1012 LP"
+    },
+    "hints": {
+      "phone": "Еліңізді таңдаңыз және Messenger үшін толық ұялы телефон нөмірін енгізіңіз.",
+      "feedback": "Тәжірибеңізді жақсарту үшін біз әрбір хабарламаны оқимыз."
+    },
+    "actions": {
+      "reset": "Қалпына келтіру",
+      "submit": "Жеңілдік алу",
+      "submitting": "Жіберілуде..."
+    },
+    "status": {
+      "duplicate": "Сіз қазірдің өзінде тіркелгенсіз.",
+      "success": "Тіркелу үшін рахмет! Сіздің 10% жеңілдігіңіз дайын.",
+      "error": "Бірдеңе дұрыс болмады. Қайталап көріңіз."
+    },
+    "errors": {
+      "phoneInvalid": "Дұрыс емес телефон нөмірі форматы",
+      "phoneTooShort": "Толық телефон нөмірін енгізіңіз"
+    },
+    "success": {
+      "phoneValid": "✓ Телефон нөмірі дұрыс"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Қаңтар",
+        "february": "Ақпан",
+        "march": "Наурыз",
+        "april": "Сәуір",
+        "may": "Мамыр",
+        "june": "Маусым",
+        "july": "Шілде",
+        "august": "Тамыз",
+        "september": "Қыркүйек",
+        "october": "Қазан",
+        "november": "Қараша",
+        "december": "Желтоқсан"
+      },
+      "previousYears": "Алдыңғы {{count}} жыл",
+      "nextYears": "Келесі {{count}} жыл",
+      "backToYears": "Жылдарға қайту",
+      "backToMonths": "Айларға қайту",
+      "placeholder": "Күнді таңдаңыз"
+    },
+    "sections": {
+      "address": "Мекенжай ақпараты"
+    }
+  },
+  "owner": {
+    "title": "Ие панелі",
+    "auth": {
+      "title": "Ие панелі",
+      "fields": {
+        "email": "Электрондық пошта",
+        "accessCode": "Кіру коды",
+        "password": "Құпия сөз"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Кіру кодыңызды енгізіңіз",
+        "password": "Құпия сөзіңізді енгізіңіз"
+      },
+      "actions": {
+        "login": "Панельге кіру",
+        "logging": "Кіруде..."
+      },
+      "welcome": "Қош келдіңіз, {{name}}!",
+      "logout": "Шығу"
+    },
+    "unauthorized": {
+      "title": "Кіруге тыйым салынды",
+      "message": "Сіз бұл бетке кіре алмайсыз. Тек әкімшілер мұнда кіре алады.",
+      "subtitle": "Ие панелі тек рұқсат берілген пайдаланушыларға ғана қолжетімді.",
+      "backToForm": "Қонақ формасына оралу"
+    },
+    "token": {
+      "label": "Хабарламаларды басқару үшін құпия токенді енгізіңіз",
+      "placeholder": "Ие токені",
+      "saved": "Токен сақталды.",
+      "cleared": "Токен тазартылды.",
+      "actions": {
+        "reset": "Қалпына келтіру",
+        "save": "Токенді сақтау"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger хабарламасын жасау",
+      "fields": {
+        "title": "Тақырып",
+        "body": "Хабарлама мәтіні"
+      },
+      "placeholder": {
+        "title": "мысалы Ыстық рол аптасы",
+        "body": "Барлық тұтынушыларға жіберілетін хабарлама"
+      },
+      "hint": "Хабарлама форманы толтырған барлық адамдарға жіберіледі.",
+      "actions": {
+        "reset": "Қалпына келтіру",
+        "submit": "Хабарлама жіберу",
+        "submitting": "Жіберілуде..."
+      }
+    },
+    "customers": {
+      "title": "Тұтынушылар",
+      "empty": "Әлі тіркелулер жоқ немесе токен жарамсыз.",
+      "refresh": "Жаңарту",
+      "refreshing": "Жаңартылуда...",
+      "columns": {
+        "name": "Аты",
+        "contacts": "Байланыстар",
+        "country": "Ел",
+        "city": "Қала",
+        "code": "Промо коды",
+        "createdAt": "Тіркелген"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Суши",
+      "fresh": "Жаңа",
+      "delicious": "Дәмді",
+      "premium": "Премиум",
+      "traditional": "Дәстүрлі",
+      "loyaltyProgram": "Садқаштық бағдарламасы",
+      "sushiIcon": "СУШИ ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Әкімші панеліне кіру",
+      "subtitle": "Әкімші панеліне кіру үшін деректерді енгізіңіз",
+      "email": "Әкімші электрондық поштасы",
+      "emailPlaceholder": "Әкімші электрондық поштасын енгізіңіз",
+      "accessCode": "Кіру коды",
+      "accessCodePlaceholder": "Кіру кодын енгізіңіз",
+      "password": "Құпия сөз",
+      "passwordPlaceholder": "Құпия сөзді енгізіңіз",
+      "login": "🚀 Панельге кіру",
+      "loggingIn": "Кіру...",
+      "invalidCredentials": "❌ Дұрыс емес деректер. Кіру жоққа шығарылды.",
+      "loginError": "❌ Кіру қатесі. Қайталап көріңіз.",
+      "warning": "⚠️ Кіру тек рұқсат берілген әкімшілерге ғана шектеулі",
+      "logout": "Шығу",
+      "sessionExpired": "Сессия мерзімі өтті. Қайта кіріңіз."
+    }
+  }
+}

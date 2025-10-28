@@ -1,0 +1,405 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Հավատարմության ծրագիր",
+    "subtitle": "Ստացեք 10% զեղչ ձեր հաջորդ պատվերի համար՝ լրացնելով ձևաթուղթը:"
+  },
+  "tabs": {
+    "registration": "Հյուրի ձևաթուղթ",
+    "owner": "Սեփականատիրոջ վահանակ",
+    "admin": "Ադմինիստրատորի վահանակ"
+  },
+  "discountBadge": {
+    "title": "10% զեղչ",
+    "subtitle": "յուրաքանչյուր նոր գրանցման համար"
+  },
+  "languages": {
+    "switcherLabel": "Լեզու",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча"
+  },
+  "registration": {
+    "cardTitle": "Լրացրեք ձեր մանրամասները և ստացեք զեղչ",
+    "fields": {
+      "firstName": "Անուն",
+      "lastName": "Ազգանուն",
+      "phone": "Հեռախոս",
+      "country": "Երկիր",
+      "email": "Էլ-փոստ",
+      "birthDate": "Ծննդյան ամսաթիվ",
+      "city": "Քաղաք",
+      "preferredFood": "Նախընտրելի ռոլեր կամ ցանկություններ",
+      "feedback": "Ձեր ցանկությունները մեզ համար",
+      "street": "Փողոց",
+      "postalCode": "Փոստային կոդ"
+    },
+    "placeholders": {
+      "firstName": "օր. Աննա",
+      "lastName": "օր. Իվանովա",
+      "phone": "Մուտքագրեք հեռախոսի համարը",
+      "country": "Ընտրեք երկիր",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "օր. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Պատմեք մեզ, թե ինչ եք սիրում, որպեսզի կարողանանք հարմարեցնել առաջարկները",
+      "feedback": "Կիսվեք այն բանով, ինչ պետք է ավելացնել կամ բարելավել",
+      "street": "օր. Damrak 1",
+      "postalCode": "օր. 1012 LP"
+    },
+    "hints": {
+      "phone": "Ընտրեք ձեր երկիրը և մուտքագրեք ամբողջական բջջային հեռախոսի համարը Messenger-ի համար:",
+      "feedback": "Մենք կարդում ենք յուրաքանչյուր հաղորդագրություն՝ ձեր փորձը բարելավելու համար:"
+    },
+    "actions": {
+      "reset": "Վերակայել",
+      "submit": "Ստանալ զեղչ",
+      "submitting": "Ուղարկվում է..."
+    },
+    "status": {
+      "duplicate": "Դուք արդեն գրանցված եք:",
+      "success": "Շնորհակալություն գրանցման համար! Ձեր 10% զեղչը պատրաստ է:",
+      "error": "Ինչ-որ բան սխալ է: Խնդրում ենք կրկին փորձել:"
+    },
+    "errors": {
+      "phoneInvalid": "Անվավեր հեռախոսահամարի ձևաչափ",
+      "phoneTooShort": "Խնդրում ենք մուտքագրել ամբողջական հեռախոսահամար"
+    },
+    "success": {
+      "phoneValid": "✓ Հեռախոսահամարը վավեր է"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Հունվար",
+        "february": "Փետրվար",
+        "march": "Մարտ",
+        "april": "Ապրիլ",
+        "may": "Մայիս",
+        "june": "Հունիս",
+        "july": "Հուլիս",
+        "august": "Օգոստոս",
+        "september": "Սեպտեմբեր",
+        "october": "Հոկտեմբեր",
+        "november": "Նոյեմբեր",
+        "december": "Դեկտեմբեր"
+      },
+      "previousYears": "Նախորդ {{count}} տարի",
+      "nextYears": "Հաջորդ {{count}} տարի",
+      "backToYears": "Վերադառնալ տարիներին",
+      "backToMonths": "Վերադառնալ ամիսներին",
+      "placeholder": "Ընտրեք ամսաթիվը"
+    },
+    "sections": {
+      "address": "Հասցեի տվյալներ"
+    }
+  },
+  "owner": {
+    "title": "Սեփականատիրոջ վահանակ",
+    "auth": {
+      "title": "Սեփականատիրոջ վահանակ",
+      "fields": {
+        "email": "Էլ-փոստ",
+        "accessCode": "Մուտքի կոդ",
+        "password": "Գաղտնաբառ"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Մուտքագրեք մուտքի կոդը",
+        "password": "Մուտքագրեք գաղտնաբառը"
+      },
+      "actions": {
+        "login": "Մուտք գործել վահանակ",
+        "logging": "Մուտք գործվում է..."
+      },
+      "welcome": "Բարի գալուստ, {{name}}!",
+      "logout": "Ելք"
+    },
+    "unauthorized": {
+      "title": "Մուտքը մերժված է",
+      "message": "Դուք չեք կարող մուտք գործել այս էջ: Միայն ադմինիստրատորները կարող են այստեղ մուտք գործել:",
+      "subtitle": "Սեփականատիրոջ վահանակը հասանելի է միայն լիազորված օգտատերերի համար:",
+      "backToForm": "Վերադառնալ հյուրի ձևաթղթին"
+    },
+    "token": {
+      "label": "Մուտքագրեք գաղտնի նշանը հեռարձակումները կառավարելու համար",
+      "placeholder": "Սեփականատիրոջ նշան",
+      "saved": "Նշանը պահպանված է:",
+      "cleared": "Նշանը մաքրված է:",
+      "actions": {
+        "reset": "Վերակայել",
+        "save": "Պահպանել նշան"
+      }
+    },
+    "broadcast": {
+      "title": "Ստեղծել Messenger հեռարձակում",
+      "fields": {
+        "title": "Վերնագիր",
+        "body": "Հաղորդագրության տեքստ"
+      },
+      "placeholder": {
+        "title": "օր. Տաք ռոլերի շաբաթվա վերջ",
+        "body": "Հաղորդագրություն, որը կուղարկվի բոլոր հաճախորդներին"
+      },
+      "hint": "Հաղորդագրությունը կուղարկվի բոլոր նրանց, ովքեր լրացրել են ձևաթուղթը:",
+      "actions": {
+        "reset": "Վերակայել",
+        "submit": "Ուղարկել հեռարձակում",
+        "submitting": "Ուղարկվում է..."
+      }
+    },
+    "customers": {
+      "title": "Հաճախորդներ",
+      "empty": "Դեռ գրանցումներ չկան կամ նշանը անվավեր է:",
+      "refresh": "Թարմացնել",
+      "refreshing": "Թարմացվում է...",
+      "columns": {
+        "name": "Անուն",
+        "contacts": "Կապեր",
+        "country": "Երկիր",
+        "city": "Քաղաք",
+        "code": "Պրոմո կոդ",
+        "createdAt": "Գրանցված"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Սուշի",
+      "fresh": "Թարմ",
+      "delicious": "Համեղ",
+      "premium": "Պրեմիում",
+      "traditional": "Ավանդական",
+      "loyaltyProgram": "Հավատարմության ծրագիր",
+      "sushiIcon": "ՍՈՒՇԻ ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Վարչական վահանակի մուտք",
+      "subtitle": "Մուտքագրեք մուտքի տվյալները վարչական վահանակ մուտք գործելու համար",
+      "email": "Վարչական էլ. փոստ",
+      "emailPlaceholder": "Մուտքագրեք վարչական էլ. փոստ",
+      "accessCode": "Մուտքի կոդ",
+      "accessCodePlaceholder": "Մուտքագրեք մուտքի կոդ",
+      "password": "Գաղտնաբառ",
+      "passwordPlaceholder": "Մուտքագրեք գաղտնաբառ",
+      "login": "🚀 Մուտք վահանակ",
+      "loggingIn": "Մուտք...",
+      "invalidCredentials": "❌ Անվավեր մուտքի տվյալներ: Մուտքը մերժված է:",
+      "loginError": "❌ Մուտքի սխալ: Խնդրում ենք կրկին փորձել:",
+      "warning": "⚠️ Մուտքը սահմանափակված է միայն լիազորված վարչականներին",
+      "logout": "Ելք",
+      "sessionExpired": "Նիստը լրացել է: Խնդրում ենք կրկին մուտք գործել:"
+    }
+  }
+}

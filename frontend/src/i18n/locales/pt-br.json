@@ -1,0 +1,362 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Programa de Fidelidade",
+    "subtitle": "Obtenha 10% de desconto no seu próximo pedido preenchendo o formulário."
+  },
+  "tabs": {
+    "registration": "Formulário de Convidado",
+    "owner": "Painel do Proprietário",
+    "admin": "Admin Panel"
+  },
+  "discountBadge": {
+    "title": "10% de desconto",
+    "subtitle": "para cada nova inscrição"
+  },
+  "languages": {
+    "switcherLabel": "Idioma",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)"
+  },
+  "registration": {
+    "cardTitle": "Preencha seus detalhes e obtenha desconto",
+    "fields": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "phone": "Telefone",
+      "country": "País",
+      "email": "E-mail",
+      "birthDate": "Data de nascimento",
+      "city": "Cidade",
+      "preferredFood": "Rolos favoritos ou desejos",
+      "feedback": "Seus desejos para nós",
+      "street": "Street",
+      "postalCode": "Postal Code"
+    },
+    "placeholders": {
+      "firstName": "ex. Anna",
+      "lastName": "ex. Ivanova",
+      "phone": "Digite o número do telefone",
+      "country": "Escolha o país",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "e.g. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "Nos conte o que você ama para podermos adaptar as ofertas",
+      "feedback": "Compartilhe o que adicionar ou melhorar",
+      "street": "e.g. Damrak 1",
+      "postalCode": "e.g. 1012 LP"
+    },
+    "hints": {
+      "phone": "Selecione seu país e digite o número completo do celular para Messenger.",
+      "feedback": "Lemos cada mensagem para melhorar sua experiência."
+    },
+    "actions": {
+      "reset": "Resetar",
+      "submit": "Obter desconto",
+      "submitting": "Enviando..."
+    },
+    "status": {
+      "duplicate": "Você já está registrado.",
+      "success": "Obrigado por se registrar! Seu desconto de 10% está pronto.",
+      "error": "Algo deu errado. Por favor, tente novamente."
+    },
+    "errors": {
+      "phoneInvalid": "Invalid phone number format",
+      "phoneTooShort": "Por favor, insira um número de telefone completo"
+    },
+    "success": {
+      "phoneValid": "✓ Phone number is valid"
+    },
+    "datePicker": {
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "previousYears": "{{count}} anos anteriores",
+      "nextYears": "{{count}} anos seguintes",
+      "backToYears": "Voltar aos anos",
+      "backToMonths": "Voltar aos meses",
+      "placeholder": "Selecionar data"
+    },
+    "sections": {
+      "address": "Address Information"
+    }
+  },
+  "owner": {
+    "title": "Painel do Proprietário",
+    "token": {
+      "label": "Digite o token secreto para gerenciar transmissões",
+      "placeholder": "Token do proprietário",
+      "saved": "Token salvo.",
+      "cleared": "Token limpo.",
+      "actions": {
+        "reset": "Resetar",
+        "save": "Salvar token"
+      }
+    },
+    "broadcast": {
+      "title": "Criar transmissão Messenger",
+      "fields": {
+        "title": "Título",
+        "body": "Texto da mensagem"
+      },
+      "placeholder": {
+        "title": "ex. Fim de Semana de Rolos Quentes",
+        "body": "Mensagem que será enviada para todos os clientes"
+      },
+      "hint": "A mensagem será enviada para todos que preencheram o formulário.",
+      "actions": {
+        "reset": "Resetar",
+        "submit": "Enviar transmissão",
+        "submitting": "Enviando..."
+      }
+    },
+    "customers": {
+      "title": "Clientes",
+      "empty": "Nenhuma inscrição ainda ou token inválido.",
+      "refresh": "Atualizar",
+      "refreshing": "Atualizando...",
+      "columns": {
+        "name": "Nome",
+        "contacts": "Contatos",
+        "country": "País",
+        "city": "Cidade",
+        "code": "Código promocional",
+        "createdAt": "Registrado"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Fresh",
+      "delicious": "Delicious",
+      "premium": "Premium",
+      "traditional": "Traditional",
+      "loyaltyProgram": "Loyalty Program",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Login do Painel Administrativo",
+      "subtitle": "Digite as credenciais para acessar o painel administrativo",
+      "email": "Email do Administrador",
+      "emailPlaceholder": "Digite o email do administrador",
+      "accessCode": "Código de Acesso",
+      "accessCodePlaceholder": "Digite o código de acesso",
+      "password": "Senha",
+      "passwordPlaceholder": "Digite a senha",
+      "login": "🚀 Entrar no Painel",
+      "loggingIn": "Entrando...",
+      "invalidCredentials": "❌ Credenciais inválidas. Acesso negado.",
+      "loginError": "❌ Erro de login. Tente novamente.",
+      "warning": "⚠️ O acesso é restrito apenas a administradores autorizados",
+      "logout": "Sair",
+      "sessionExpired": "Sessão expirada. Faça login novamente."
+    }
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "app": {
+    "title": "SUSHI ICON — ლოიალობის პროგრამა",
+    "subtitle": "მიიღეთ 10% ფასდაკლება თქვენს შემდეგ შეკვეთაზე ფორმის შევსებით."
+  },
+  "tabs": {
+    "registration": "სტუმრის ფორმა",
+    "owner": "მფლობელის დაფა",
+    "admin": "ადმინისტრატორის პანელი"
+  },
+  "discountBadge": {
+    "title": "10% ფასდაკლება",
+    "subtitle": "ყოველი ახალი რეგისტრაციისთვის"
+  },
+  "languages": {
+    "switcherLabel": "ენა",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча"
+  },
+  "registration": {
+    "cardTitle": "შეავსეთ თქვენი დეტალები და მიიღეთ ფასდაკლება",
+    "fields": {
+      "firstName": "სახელი",
+      "lastName": "გვარი",
+      "phone": "ტელეფონი",
+      "country": "ქვეყანა",
+      "email": "ელ-ფოსტა",
+      "birthDate": "დაბადების თარიღი",
+      "city": "ქალაქი",
+      "preferredFood": "საყვარელი როლები ან სურვილები",
+      "feedback": "თქვენი სურვილები ჩვენთვის",
+      "street": "ქუჩა",
+      "postalCode": "საფოსტო კოდი"
+    },
+    "placeholders": {
+      "firstName": "მაგ. ანა",
+      "lastName": "მაგ. ივანოვა",
+      "phone": "შეიყვანეთ ტელეფონის ნომერი",
+      "country": "აირჩიეთ ქვეყანა",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "მაგ. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "გვითხარით რა მოგწონთ, რომ შევძლოთ შეთავაზებების მორგება",
+      "feedback": "გაუზიარეთ რა უნდა დაემატოს ან გაუმჯობესდეს",
+      "street": "მაგ. Damrak 1",
+      "postalCode": "მაგ. 1012 LP"
+    },
+    "hints": {
+      "phone": "აირჩიეთ თქვენი ქვეყანა და შეიყვანეთ სრული მობილური ნომერი Messenger-ისთვის.",
+      "feedback": "ჩვენ ვკითხულობთ ყოველ შეტყობინებას თქვენი გამოცდილების გასაუმჯობესებლად."
+    },
+    "actions": {
+      "reset": "გადატვირთვა",
+      "submit": "მიიღეთ ფასდაკლება",
+      "submitting": "იგზავნება..."
+    },
+    "status": {
+      "duplicate": "თქვენ უკვე დარეგისტრირებული ხართ.",
+      "success": "მადლობა რეგისტრაციისთვის! თქვენი 10% ფასდაკლება მზადაა.",
+      "error": "რაღაც შეცდომა მოხდა. გთხოვთ სცადოთ კვლავ."
+    },
+    "errors": {
+      "phoneInvalid": "არასწორი ტელეფონის ნომრის ფორმატი",
+      "phoneTooShort": "გთხოვთ შეიყვანოთ სრული ტელეფონის ნომერი"
+    },
+    "success": {
+      "phoneValid": "✓ ტელეფონის ნომერი სწორია"
+    },
+    "datePicker": {
+      "months": {
+        "january": "იანვარი",
+        "february": "თებერვალი",
+        "march": "მარტი",
+        "april": "აპრილი",
+        "may": "მაისი",
+        "june": "ივნისი",
+        "july": "ივლისი",
+        "august": "აგვისტო",
+        "september": "სექტემბერი",
+        "october": "ოქტომბერი",
+        "november": "ნოემბერი",
+        "december": "დეკემბერი"
+      },
+      "previousYears": "წინა {{count}} წელი",
+      "nextYears": "შემდეგი {{count}} წელი",
+      "backToYears": "წლებზე დაბრუნება",
+      "backToMonths": "თვეებზე დაბრუნება",
+      "placeholder": "აირჩიეთ თარიღი"
+    },
+    "sections": {
+      "address": "მისამართის ინფორმაცია"
+    }
+  },
+  "owner": {
+    "title": "მფლობელის დაფა",
+    "auth": {
+      "title": "მფლობელის დაფა",
+      "fields": {
+        "email": "ელ-ფოსტა",
+        "accessCode": "წვდომის კოდი",
+        "password": "პაროლი"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "შეიყვანეთ წვდომის კოდი",
+        "password": "შეიყვანეთ პაროლი"
+      },
+      "actions": {
+        "login": "შესვლა დაფაში",
+        "logging": "შედის..."
+      },
+      "welcome": "მოგესალმებით, {{name}}!",
+      "logout": "გასვლა"
+    },
+    "unauthorized": {
+      "title": "წვდომა უარყოფილია",
+      "message": "ამ გვერდზე წვდომა შეუძლებელია. მხოლოდ ადმინისტრატორები შეუძლიათ აქ შესვლა.",
+      "subtitle": "მფლობელის დაფა ხელმისაწვდომია მხოლოდ უფლებამოსილი მომხმარებლებისთვის.",
+      "backToForm": "უკან სტუმრის ფორმაზე"
+    },
+    "token": {
+      "label": "შეიყვანეთ საიდუმლო ტოკენი ტრანსლაციების მართვისთვის",
+      "placeholder": "მფლობელის ტოკენი",
+      "saved": "ტოკენი შენახულია.",
+      "cleared": "ტოკენი გასუფთავებულია.",
+      "actions": {
+        "reset": "გადატვირთვა",
+        "save": "შეინახეთ ტოკენი"
+      }
+    },
+    "broadcast": {
+      "title": "შექმენით Messenger ტრანსლაცია",
+      "fields": {
+        "title": "სათაური",
+        "body": "შეტყობინების ტექსტი"
+      },
+      "placeholder": {
+        "title": "მაგ. ცხელი როლის კვირის ბოლო",
+        "body": "შეტყობინება, რომელიც გაიგზავნება ყველა მომხმარებელთან"
+      },
+      "hint": "შეტყობინება გაიგზავნება ყველასთან, ვინც შეავსო ფორმა.",
+      "actions": {
+        "reset": "გადატვირთვა",
+        "submit": "გაგზავნეთ ტრანსლაცია",
+        "submitting": "იგზავნება..."
+      }
+    },
+    "customers": {
+      "title": "მომხმარებლები",
+      "empty": "ჯერ არ არის რეგისტრაციები ან ტოკენი არასწორია.",
+      "refresh": "განახლება",
+      "refreshing": "განახლდება...",
+      "columns": {
+        "name": "სახელი",
+        "contacts": "კონტაქტები",
+        "country": "ქვეყანა",
+        "city": "ქალაქი",
+        "code": "პრომო კოდი",
+        "createdAt": "დარეგისტრირებული"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "სუში",
+      "fresh": "ახალი",
+      "delicious": "გემრიელი",
+      "premium": "პრემიუმი",
+      "traditional": "ტრადიციული",
+      "loyaltyProgram": "ვერწმუნების პროგრამა",
+      "sushiIcon": "სუში ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 ადმინისტრაციული პანელის შესვლა",
+      "subtitle": "შეიყვანეთ მონაცემები ადმინისტრაციულ პანელზე წვდომისთვის",
+      "email": "ადმინისტრატორის ელ. ფოსტა",
+      "emailPlaceholder": "შეიყვანეთ ადმინისტრატორის ელ. ფოსტა",
+      "accessCode": "წვდომის კოდი",
+      "accessCodePlaceholder": "შეიყვანეთ წვდომის კოდი",
+      "password": "პაროლი",
+      "passwordPlaceholder": "შეიყვანეთ პაროლი",
+      "login": "🚀 პანელში შესვლა",
+      "loggingIn": "შესვლა...",
+      "invalidCredentials": "❌ არასწორი მონაცემები. წვდომა უარყოფილია.",
+      "loginError": "❌ შესვლის შეცდომა. გთხოვთ, სცადეთ კვლავ.",
+      "warning": "⚠️ წვდომა შეზღუდულია მხოლოდ უფლებამოსილ ადმინისტრატორებზე",
+      "logout": "გასვლა",
+      "sessionExpired": "სესია ამოიწურა. გთხოვთ, შედით კვლავ."
+    }
+  }
+}

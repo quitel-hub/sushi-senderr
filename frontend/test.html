@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовая страница</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 48px;
+            margin: 0 0 20px 0;
+        }
+        p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .success {
+            color: #4ade80;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Тест успешен!</h1>
+        <p class="success">✅ Сервер работает</p>
+        <p class="success">✅ Браузер загружает страницы</p>
+        <p class="success">✅ HTML и CSS работают</p>
+        <hr style="margin: 30px 0; border: 1px solid rgba(255,255,255,0.3);">
+        <p>Если вы видите эту страницу, значит проблема в React-приложении.</p>
+        <p style="font-size: 16px; margin-top: 20px;">
+            Откройте консоль (F12) и проверьте ошибки JavaScript.
+        </p>
+    </div>
+    <script>
+        console.log('✅ JavaScript работает!');
+        console.log('🌐 Текущий URL:', window.location.href);
+        console.log('📊 User Agent:', navigator.userAgent);
+    </script>
+</body>
+</html>
+

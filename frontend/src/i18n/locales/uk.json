@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — Програма лояльності",
+    "subtitle": "Отримайте знижку 10% на наступне замовлення, заповнивши форму."
+  },
+  "tabs": {
+    "registration": "Форма гостя",
+    "owner": "Панель адміністратора",
+    "admin": "Панель адміністратора"
+  },
+  "discountBadge": {
+    "title": "10% знижка",
+    "subtitle": "за кожну нову реєстрацію"
+  },
+  "languages": {
+    "switcherLabel": "Мова",
+    "en": "Англійська",
+    "de": "Німецька",
+    "nl": "Голландська",
+    "da": "Данська",
+    "pl": "Польська",
+    "ru": "Російська",
+    "fr": "Французька",
+    "es": "Іспанська",
+    "it": "Італійська",
+    "pt": "Португальська",
+    "sv": "Шведська",
+    "no": "Норвезька",
+    "fi": "Фінська",
+    "cs": "Чеська",
+    "hu": "Угорська",
+    "el": "Грецька",
+    "uk": "Українська",
+    "bg": "Болгарська",
+    "ro": "Румунська",
+    "hr": "Хорватська",
+    "sk": "Словацька",
+    "sl": "Словенська"
+  },
+  "registration": {
+    "cardTitle": "Заповніть свої дані та отримайте знижку",
+    "fields": {
+      "firstName": "Ім'я",
+      "lastName": "Прізвище",
+      "phone": "Телефон",
+      "country": "Країна",
+      "email": "Email",
+      "birthDate": "Дата народження",
+      "city": "Місто",
+      "preferredFood": "Улюблені роли або побажання",
+      "feedback": "Ваші побажання для нас",
+      "street": "Вулиця",
+      "postalCode": "Поштовий код"
+    },
+    "placeholders": {
+      "firstName": "наприклад, Анна",
+      "lastName": "наприклад, Іванова",
+      "phone": "Введіть номер телефону",
+      "country": "Оберіть країну",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "Наприклад, Амстердам, Damrak 1, 1012 LP",
+      "preferredFood": "Напишіть свої улюблені роли або побажання щодо їжі",
+      "feedback": "Поділіться, що додати або покращити",
+      "street": "Наприклад, Damrak 1",
+      "postalCode": "Наприклад, 1012 LP"
+    },
+    "hints": {
+      "phone": "Оберіть свою країну та введіть повний мобільний номер для Messenger.",
+      "feedback": "Ми читаємо кожне повідомлення, щоб зробити ваш досвід кращим."
+    },
+    "actions": {
+      "reset": "Скинути",
+      "submit": "Отримати знижку",
+      "submitting": "Відправляємо..."
+    },
+    "status": {
+      "duplicate": "Ви вже зареєстровані.",
+      "success": "Дякуємо за реєстрацію! Ваша знижка 10% готова.",
+      "error": "Щось пішло не так. Спробуйте ще раз."
+    },
+    "errors": {
+      "phoneInvalid": "Невірний формат номера телефону",
+      "phoneTooShort": "Будь ласка, введіть повний номер телефону"
+    },
+    "validation": {
+      "firstName": {
+        "required": "Вкажіть ім'я",
+        "lettersOnly": "Неправильне ім'я: використовуйте лише літери"
+      },
+      "lastName": {
+        "required": "Вкажіть прізвище",
+        "lettersOnly": "Неправильне прізвище: використовуйте лише літери"
+      },
+      "country": {
+        "required": "Оберіть країну"
+      },
+      "phone": {
+        "invalid": "Невірний формат номера телефону",
+        "length": "Неправильний номер телефону: перевірте кількість цифр"
+      },
+      "email": {
+        "invalid": "Введіть коректний e‑mail"
+      },
+      "postalCode": {
+        "format": "Поштовий код має бути у форматі 1234 AB (4 цифри і 2 літери через пробіл)"
+      },
+      "street": {
+        "required": "Вкажіть вулицю"
+      },
+      "city": {
+        "required": "Вкажіть місто"
+      },
+      "houseNumber": {
+        "required": "Вкажіть номер будинку"
+      }
+    },
+    "success": {
+      "phoneValid": "✓ Номер телефону коректний"
+    },
+    "datePicker": {
+      "months": {
+        "january": "Січень",
+        "february": "Лютий",
+        "march": "Березень",
+        "april": "Квітень",
+        "may": "Травень",
+        "june": "Червень",
+        "july": "Липень",
+        "august": "Серпень",
+        "september": "Вересень",
+        "october": "Жовтень",
+        "november": "Листопад",
+        "december": "Грудень"
+      },
+      "previousYears": "Попередні {{count}} років",
+      "nextYears": "Наступні {{count}} років",
+      "backToYears": "Назад до років",
+      "backToMonths": "Назад до місяців",
+      "placeholder": "Виберіть дату"
+    },
+    "sections": {
+      "address": "Адреса"
+    }
+  },
+  "owner": {
+    "title": "Панель адміністратора",
+    "auth": {
+      "title": "Панель адміністратора",
+      "fields": {
+        "email": "Email",
+        "accessCode": "Код доступу",
+        "password": "Пароль"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "Введіть ваш код доступу",
+        "password": "Введіть ваш пароль"
+      },
+      "actions": {
+        "login": "Увійти в панель",
+        "logging": "Входимо..."
+      },
+      "welcome": "Ласкаво просимо, {{name}}!",
+      "logout": "Вийти"
+    },
+    "unauthorized": {
+      "title": "Доступ заборонено",
+      "message": "Ви не можете увійти на цю сторінку. Сюди можуть входити тільки адміністратори.",
+      "subtitle": "Панель адміністратора доступна тільки авторизованим користувачам.",
+      "backToForm": "Повернутися до форми гостя"
+    },
+    "token": {
+      "label": "Введіть секретний токен для керування розсилками",
+      "placeholder": "Токен власника",
+      "saved": "Токен збережено.",
+      "cleared": "Токен очищено.",
+      "actions": {
+        "reset": "Скинути",
+        "save": "Зберегти токен"
+      }
+    },
+    "broadcast": {
+      "title": "Створити розсилку Messenger",
+      "fields": {
+        "title": "Заголовок",
+        "body": "Текст повідомлення"
+      },
+      "placeholder": {
+        "title": "наприклад, Гарячі роли на вихідні",
+        "body": "Повідомлення, яке буде відправлено всім клієнтам"
+      },
+      "hint": "Повідомлення буде відправлено всім, хто заповнив форму.",
+      "actions": {
+        "reset": "Скинути",
+        "submit": "Відправити розсилку",
+        "submitting": "Відправляємо..."
+      }
+    },
+    "customers": {
+      "title": "Клієнти",
+      "empty": "Поки немає реєстрацій або токен недійсний.",
+      "refresh": "Оновити",
+      "refreshing": "Оновлюємо...",
+      "columns": {
+        "name": "Ім'я",
+        "contacts": "Контакти",
+        "country": "Країна",
+        "city": "Місто",
+        "code": "Промокод",
+        "createdAt": "Зареєстровано"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Суші",
+      "fresh": "Свіжий",
+      "delicious": "Смачний",
+      "premium": "Преміум",
+      "traditional": "Традиційний",
+      "loyaltyProgram": "Програма лояльності",
+      "sushiIcon": "СУШІ ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 Вхід в панель адміністратора",
+      "subtitle": "Введіть облікові дані для доступу до адміністративної панелі",
+      "email": "Email адміністратора",
+      "emailPlaceholder": "Введіть email адміністратора",
+      "accessCode": "Код доступу",
+      "accessCodePlaceholder": "Введіть код доступу",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введіть пароль",
+      "login": "🚀 Увійти в панель",
+      "loggingIn": "Вхід...",
+      "invalidCredentials": "❌ Невірні облікові дані. Доступ заборонено.",
+      "loginError": "❌ Помилка при вході. Спробуйте знову.",
+      "warning": "⚠️ Доступ дозволений тільки авторизованим адміністраторам",
+      "logout": "Вийти",
+      "sessionExpired": "Сесія закінчилася. Будь ласка, увійдіть знову."
+    }
+  }
+}

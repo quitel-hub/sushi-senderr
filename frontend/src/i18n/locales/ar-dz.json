@@ -1,0 +1,411 @@
+{
+  "app": {
+    "title": "SUSHI ICON — برنامج الولاء",
+    "subtitle": "احصل على خصم 10% على طلبك التالي بملء النموذج."
+  },
+  "tabs": {
+    "registration": "نموذج الضيف",
+    "owner": "لوحة تحكم المالك",
+    "admin": "Admin Panel"
+  },
+  "discountBadge": {
+    "title": "خصم 10%",
+    "subtitle": "لكل تسجيل جديد"
+  },
+  "languages": {
+    "switcherLabel": "اللغة",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی",
+    "ar": "العربية",
+    "ka": "ქართული",
+    "hy": "Հայերեն",
+    "kk": "Қазақша",
+    "uz": "O'zbekcha",
+    "az": "Azərbaycan",
+    "tk": "Türkmençe",
+    "ky": "Кыргызча",
+    "ar-eg": "العربية (مصر)",
+    "am": "አማርኛ",
+    "so": "Soomaali",
+    "ar-ma": "العربية (المغرب)",
+    "ar-dz": "العربية (الجزائر)",
+    "af": "Afrikaans"
+  },
+  "registration": {
+    "cardTitle": "املأ تفاصيلك واحصل على خصم",
+    "fields": {
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "phone": "الهاتف",
+      "country": "البلد",
+      "email": "البريد الإلكتروني",
+      "birthDate": "تاريخ الميلاد",
+      "city": "المدينة",
+      "preferredFood": "اللفائف المفضلة أو الأمنيات",
+      "feedback": "أمنياتك لنا",
+      "street": "Street",
+      "postalCode": "Postal Code"
+    },
+    "placeholders": {
+      "firstName": "مثال آنا",
+      "lastName": "مثال إيفانوفا",
+      "phone": "أدخل رقم الهاتف",
+      "country": "اختر البلد",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "e.g. Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "أخبرنا بما تحب حتى نتمكن من تخصيص العروض",
+      "feedback": "شارك ما يجب إضافته أو تحسينه",
+      "street": "e.g. Damrak 1",
+      "postalCode": "e.g. 1012 LP"
+    },
+    "hints": {
+      "phone": "اختر بلدك وأدخل رقم الهاتف المحمول الكامل لـ Messenger.",
+      "feedback": "نقرأ كل رسالة لتحسين تجربتك."
+    },
+    "actions": {
+      "reset": "إعادة تعيين",
+      "submit": "احصل على خصم",
+      "submitting": "جاري الإرسال..."
+    },
+    "status": {
+      "duplicate": "أنت مسجل بالفعل.",
+      "success": "شكراً لك على التسجيل! خصمك 10% جاهز.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    },
+    "errors": {
+      "phoneInvalid": "Invalid phone number format",
+      "phoneTooShort": "يرجى إدخال رقم هاتف كامل"
+    },
+    "success": {
+      "phoneValid": "✓ Phone number is valid"
+    },
+    "datePicker": {
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "previousYears": "السابق {{count}} سنوات",
+      "nextYears": "التالي {{count}} سنوات",
+      "backToYears": "العودة إلى السنوات",
+      "backToMonths": "العودة إلى الأشهر",
+      "placeholder": "اختر التاريخ"
+    },
+    "sections": {
+      "address": "Address Information"
+    }
+  },
+  "owner": {
+    "title": "لوحة تحكم المالك",
+    "auth": {
+      "title": "لوحة تحكم المالك",
+      "fields": {
+        "email": "البريد الإلكتروني",
+        "accessCode": "رمز الوصول",
+        "password": "كلمة المرور"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "أدخل رمز الوصول",
+        "password": "أدخل كلمة المرور"
+      },
+      "actions": {
+        "login": "تسجيل الدخول للوحة",
+        "logging": "جاري تسجيل الدخول..."
+      },
+      "welcome": "مرحباً، {{name}}!",
+      "logout": "تسجيل الخروج"
+    },
+    "unauthorized": {
+      "title": "تم رفض الوصول",
+      "message": "لا يمكنك الوصول إلى هذه الصفحة. فقط المديرون يمكنهم الدخول هنا.",
+      "subtitle": "لوحة تحكم المالك متاحة فقط للمستخدمين المصرح لهم.",
+      "backToForm": "العودة إلى نموذج الضيوف"
+    },
+    "token": {
+      "label": "أدخل الرمز السري لإدارة البث",
+      "placeholder": "رمز المالك",
+      "saved": "تم حفظ الرمز.",
+      "cleared": "تم مسح الرمز.",
+      "actions": {
+        "reset": "إعادة تعيين",
+        "save": "حفظ الرمز"
+      }
+    },
+    "broadcast": {
+      "title": "إنشاء بث Messenger",
+      "fields": {
+        "title": "العنوان",
+        "body": "نص الرسالة"
+      },
+      "placeholder": {
+        "title": "مثال عطلة نهاية الأسبوع للفائف الساخنة",
+        "body": "رسالة ستُرسل لجميع العملاء"
+      },
+      "hint": "ستُرسل الرسالة لجميع من ملأ النموذج.",
+      "actions": {
+        "reset": "إعادة تعيين",
+        "submit": "إرسال البث",
+        "submitting": "جاري الإرسال..."
+      }
+    },
+    "customers": {
+      "title": "العملاء",
+      "empty": "لا توجد تسجيلات بعد أو الرمز غير صالح.",
+      "refresh": "تحديث",
+      "refreshing": "جاري التحديث...",
+      "columns": {
+        "name": "الاسم",
+        "contacts": "جهات الاتصال",
+        "country": "البلد",
+        "city": "المدينة",
+        "code": "كود الترويج",
+        "createdAt": "مسجل"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "Sushi",
+      "fresh": "Fresh",
+      "delicious": "Delicious",
+      "premium": "Premium",
+      "traditional": "Traditional",
+      "loyaltyProgram": "Loyalty Program",
+      "sushiIcon": "SUSHI ICON"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 تسجيل دخول لوحة الإدارة",
+      "subtitle": "أدخل بيانات الاعتماد للوصول إلى لوحة الإدارة",
+      "email": "بريد الإدارة الإلكتروني",
+      "emailPlaceholder": "أدخل بريد الإدارة الإلكتروني",
+      "accessCode": "رمز الوصول",
+      "accessCodePlaceholder": "أدخل رمز الوصول",
+      "password": "كلمة المرور",
+      "passwordPlaceholder": "أدخل كلمة المرور",
+      "login": "🚀 تسجيل الدخول إلى اللوحة",
+      "loggingIn": "جاري تسجيل الدخول...",
+      "invalidCredentials": "❌ بيانات اعتماد غير صحيحة. تم رفض الوصول.",
+      "loginError": "❌ خطأ في تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "warning": "⚠️ الوصول مقصور على المدراء المصرح لهم فقط",
+      "logout": "تسجيل الخروج",
+      "sessionExpired": "انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى."
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "app": {
+    "title": "SUSHI ICON — वफादारी कार्यक्रम",
+    "subtitle": "फॉर्म भरकर अपने अगले ऑर्डर पर 10% छूट प्राप्त करें।"
+  },
+  "tabs": {
+    "registration": "अतिथि फॉर्म",
+    "owner": "प्रशासक पैनल",
+    "admin": "प्रशासन पैनल"
+  },
+  "discountBadge": {
+    "title": "10% छूट",
+    "subtitle": "हर नए पंजीकरण के लिए"
+  },
+  "languages": {
+    "switcherLabel": "भाषा",
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch",
+    "da": "Danish",
+    "pl": "Polish",
+    "ru": "Russian",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "ro": "Romanian",
+    "hr": "Croatian",
+    "sk": "Slovak",
+    "sl": "Slovenian",
+    "lt": "Lithuanian",
+    "lv": "Latvian",
+    "et": "Estonian",
+    "mt": "Maltese",
+    "is": "Icelandic",
+    "ga": "Gaeilge",
+    "cy": "Cymraeg",
+    "ca": "Català",
+    "bs": "Bosanski",
+    "sq": "Shqip",
+    "mk": "Македонски",
+    "sr": "Српски",
+    "me": "Crnogorski",
+    "lb": "Lëtzebuergesch",
+    "fo": "Føroyskt",
+    "tr": "Türkçe",
+    "be": "Беларуская",
+    "en-us": "English (US)",
+    "fr-ca": "Français (Canada)",
+    "pt-br": "Português (Brasil)",
+    "es-mx": "Español (México)",
+    "es-ar": "Español (Argentina)",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "vi": "Tiếng Việt",
+    "th": "ไทย",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "hi": "हिन्दी",
+    "ur": "اردو",
+    "fa": "فارسی"
+  },
+  "registration": {
+    "cardTitle": "अपनी जानकारी भरें और छूट प्राप्त करें",
+    "fields": {
+      "firstName": "नाम",
+      "lastName": "उपनाम",
+      "phone": "फोन",
+      "country": "देश",
+      "email": "ईमेल",
+      "birthDate": "जन्म तिथि",
+      "city": "शहर",
+      "preferredFood": "पसंदीदा रोल या इच्छाएं",
+      "feedback": "हमारे लिए आपकी इच्छाएं",
+      "street": "सड़क",
+      "postalCode": "डाक कोड"
+    },
+    "placeholders": {
+      "firstName": "जैसे अन्ना",
+      "lastName": "जैसे इवानोवा",
+      "phone": "फोन नंबर दर्ज करें",
+      "country": "देश चुनें",
+      "email": "example@mail.com",
+      "birthDate": "",
+      "city": "जैसे Amsterdam, Damrak 1, 1012 LP",
+      "preferredFood": "बताएं कि आपको क्या पसंद है ताकि हम ऑफर को अनुकूलित कर सकें",
+      "feedback": "बताएं कि क्या जोड़ना या सुधारना है",
+      "street": "जैसे Damrak 1",
+      "postalCode": "जैसे 1012 LP"
+    },
+    "hints": {
+      "phone": "अपना देश चुनें और Messenger के लिए पूरा मोबाइल नंबर दर्ज करें।",
+      "feedback": "आपके अनुभव को बेहतर बनाने के लिए हम हर संदेश पढ़ते हैं।"
+    },
+    "actions": {
+      "reset": "रीसेट",
+      "submit": "छूट प्राप्त करें",
+      "submitting": "भेजा जा रहा है..."
+    },
+    "status": {
+      "duplicate": "आप पहले से ही पंजीकृत हैं।",
+      "success": "पंजीकरण के लिए धन्यवाद! आपकी 10% छूट तैयार है।",
+      "error": "कुछ गलत हुआ। कृपया फिर से कोशिश करें।"
+    },
+    "errors": {
+      "phoneInvalid": "अमान्य फोन नंबर प्रारूप",
+      "phoneTooShort": "कृपया एक पूर्ण फोन नंबर दर्ज करें"
+    },
+    "success": {
+      "phoneValid": "✓ फोन नंबर मान्य है"
+    },
+    "datePicker": {
+      "months": {
+        "january": "जनवरी",
+        "february": "फरवरी",
+        "march": "मार्च",
+        "april": "अप्रैल",
+        "may": "मई",
+        "june": "जून",
+        "july": "जुलाई",
+        "august": "अगस्त",
+        "september": "सितंबर",
+        "october": "अक्टूबर",
+        "november": "नवंबर",
+        "december": "दिसंबर"
+      },
+      "previousYears": "पिछले {{count}} वर्ष",
+      "nextYears": "अगले {{count}} वर्ष",
+      "backToYears": "वर्षों पर वापस जाएं",
+      "backToMonths": "महीनों पर वापस जाएं",
+      "placeholder": "तारीख चुनें"
+    },
+    "sections": {
+      "address": "पता जानकारी"
+    }
+  },
+  "owner": {
+    "title": "प्रशासक पैनल",
+    "auth": {
+      "title": "प्रशासक पैनल",
+      "fields": {
+        "email": "ईमेल",
+        "accessCode": "एक्सेस कोड",
+        "password": "पासवर्ड"
+      },
+      "placeholders": {
+        "email": "your-email@gmail.com",
+        "accessCode": "अपना एक्सेस कोड दर्ज करें",
+        "password": "अपना पासवर्ड दर्ज करें"
+      },
+      "actions": {
+        "login": "पैनल में लॉग इन करें",
+        "logging": "लॉग इन हो रहा है..."
+      },
+      "welcome": "स्वागत है, {{name}}!",
+      "logout": "लॉग आउट"
+    },
+    "unauthorized": {
+      "title": "पहुंच अस्वीकृत",
+      "message": "आप इस पेज तक पहुंच नहीं सकते। केवल प्रशासक ही यहां प्रवेश कर सकते हैं।",
+      "subtitle": "प्रशासक पैनल केवल अधिकृत उपयोगकर्ताओं के लिए उपलब्ध है।",
+      "backToForm": "अतिथि फॉर्म पर वापस जाएं"
+    },
+    "token": {
+      "label": "प्रसारण प्रबंधित करने के लिए गुप्त टोकन दर्ज करें",
+      "placeholder": "मालिक टोकन",
+      "saved": "टोकन सहेजा गया।",
+      "cleared": "टोकन साफ किया गया।",
+      "actions": {
+        "reset": "रीसेट",
+        "save": "टोकन सहेजें"
+      }
+    },
+    "broadcast": {
+      "title": "Messenger प्रसारण बनाएं",
+      "fields": {
+        "title": "शीर्षक",
+        "body": "संदेश पाठ"
+      },
+      "placeholder": {
+        "title": "जैसे हॉट रोल वीकेंड",
+        "body": "संदेश जो सभी ग्राहकों को भेजा जाएगा"
+      },
+      "hint": "संदेश उन सभी को भेजा जाएगा जिन्होंने फॉर्म भरा है।",
+      "actions": {
+        "reset": "रीसेट",
+        "submit": "प्रसारण भेजें",
+        "submitting": "भेजा जा रहा है..."
+      }
+    },
+    "customers": {
+      "title": "ग्राहक",
+      "empty": "अभी तक कोई पंजीकरण नहीं या टोकन अमान्य है।",
+      "refresh": "रिफ्रेश करें",
+      "refreshing": "अपडेट हो रहा है...",
+      "columns": {
+        "name": "नाम",
+        "contacts": "संपर्क",
+        "country": "देश",
+        "city": "शहर",
+        "code": "प्रोमो कोड",
+        "createdAt": "पंजीकृत"
+      }
+    }
+  },
+  "sushi": {
+    "animation": {
+      "sushi": "सुशी",
+      "fresh": "ताजा",
+      "delicious": "स्वादिष्ट",
+      "premium": "प्रीमियम",
+      "traditional": "पारंपरिक",
+      "loyaltyProgram": "निष्ठा कार्यक्रम",
+      "sushiIcon": "सुशी आइकन"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "sync": {
+      "autoSync": "🔄 Auto-sync",
+      "syncStopped": "⏸️ Sync stopped",
+      "syncNow": "🔄 Sync now",
+      "lastSync": "Last sync: {{time}}",
+      "error": "Error loading data: {{error}}"
+    },
+    "stats": {
+      "customers": "Customers",
+      "sessions": "Sessions",
+      "successful": "Successful",
+      "failed": "Failed",
+      "synced": "Synced"
+    },
+    "filters": {
+      "search": "🔍 Search all data...",
+      "allCountries": "All countries",
+      "allStatuses": "All statuses",
+      "successful": "Successful",
+      "failed": "Failed",
+      "clearFilters": "🗑️ Clear filters"
+    },
+    "tabs": {
+      "customers": "👥 Customers ({{filtered}}/{{total}})",
+      "sessions": "🔐 Login sessions ({{filtered}}/{{total}})",
+      "device": "📱 Current device",
+      "broadcast": "📢 Broadcast",
+      "synced": "🔄 Synced data ({{filtered}}/{{total}})"
+    },
+    "customers": {
+      "title": "Customer list",
+      "exportCsv": "📊 Export CSV",
+      "exportJson": "📄 Export JSON",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "address": "Address",
+        "birthDate": "Birth date",
+        "preferences": "Preferences",
+        "feedback": "Feedback",
+        "promoCode": "Promo code",
+        "registrationDate": "Registration date"
+      }
+    },
+    "sessions": {
+      "title": "Login history",
+      "table": {
+        "loginTime": "Login time",
+        "status": "Status",
+        "ipAddress": "IP address",
+        "location": "Location",
+        "browser": "Browser",
+        "os": "OS",
+        "device": "Device",
+        "timezone": "Timezone",
+        "isp": "ISP",
+        "details": "Details"
+      },
+      "status": {
+        "successful": "Successful",
+        "failed": "Failed"
+      },
+      "details": {
+        "title": "Details",
+        "region": "Region",
+        "countryCode": "Country code",
+        "postal": "Postal code",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Country population",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code",
+        "utcOffset": "UTC offset",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "device": {
+      "title": "Current connection information",
+      "location": {
+        "title": "🌍 Location",
+        "country": "Country",
+        "city": "City",
+        "region": "Region",
+        "address": "Address",
+        "ip": "IP",
+        "isp": "ISP",
+        "coordinates": "Coordinates"
+      },
+      "device": {
+        "title": "💻 Device",
+        "type": "Type",
+        "model": "Model",
+        "browser": "Browser",
+        "os": "OS"
+      },
+      "network": {
+        "title": "🌐 Network and time",
+        "timezone": "Timezone",
+        "utcOffset": "UTC offset",
+        "countryCode": "Country code",
+        "regionCode": "Region code",
+        "postal": "Postal code"
+      },
+      "economy": {
+        "title": "💰 Economy",
+        "currency": "Currency",
+        "languages": "Languages",
+        "population": "Population",
+        "area": "Area",
+        "capital": "Capital",
+        "continent": "Continent",
+        "eu": "EU",
+        "callingCode": "Calling code"
+      }
+    },
+    "broadcast": {
+      "title": "Message broadcast",
+      "titleLabel": "Message title:",
+      "titlePlaceholder": "Enter title...",
+      "bodyLabel": "Message text:",
+      "bodyPlaceholder": "Enter message text...",
+      "sendButton": "📢 Send to all customers",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "synced": {
+      "title": "Synced form data",
+      "description": "Data that users fill in the form is automatically synced every second",
+      "noData": "No synced data",
+      "status": {
+        "draft": "Draft",
+        "completed": "Completed"
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "birthDate": "Birth date",
+        "preferredFood": "Preferred food",
+        "feedback": "Feedback"
+      }
+    },
+    "auth": {
+      "title": "🔐 एडमिन पैनल लॉगिन",
+      "subtitle": "प्रशासनिक पैनल तक पहुंचने के लिए क्रेडेंशियल दर्ज करें",
+      "email": "एडमिन ईमेल",
+      "emailPlaceholder": "एडमिन ईमेल दर्ज करें",
+      "accessCode": "एक्सेस कोड",
+      "accessCodePlaceholder": "एक्सेस कोड दर्ज करें",
+      "password": "पासवर्ड",
+      "passwordPlaceholder": "पासवर्ड दर्ज करें",
+      "login": "🚀 पैनल में लॉगिन करें",
+      "loggingIn": "लॉगिन हो रहा है...",
+      "invalidCredentials": "❌ अमान्य क्रेडेंशियल। पहुंच अस्वीकृत।",
+      "loginError": "❌ लॉगिन त्रुटि। कृपया पुनः प्रयास करें।",
+      "warning": "⚠️ पहुंच केवल अधिकृत प्रशासकों तक सीमित है",
+      "logout": "लॉगआउट",
+      "sessionExpired": "सत्र समाप्त हो गया। कृपया पुनः लॉगिन करें।"
+    }
+  }
+}
