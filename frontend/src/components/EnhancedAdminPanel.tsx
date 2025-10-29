@@ -120,7 +120,7 @@ export const EnhancedAdminPanel: React.FC = () => {
   const [broadcastMessage, setBroadcastMessage] = useState({ title: '', body: '' });
   const [isBroadcasting, setIsBroadcasting] = useState(false);
   const [syncedFormData, setSyncedFormData] = useState<SyncedFormData[]>([]);
-  const [broadcastChannel, setBroadcastChannel] = useState<'sms' | 'email'>('sms');
+  const [broadcastChannel, setBroadcastChannel] = useState<'sms' | 'email' | 'whatsapp'>('sms');
   const [selectedRecipients, setSelectedRecipients] = useState<string[]>([]);
   
   // Проверка аутентификации при загрузке
@@ -163,7 +163,7 @@ export const EnhancedAdminPanel: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState<'all' | 'success' | 'failed'>('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [dateFilter, setDateFilter] = useState('all');
-
+  
   // Автоматическая синхронизация каждые 1 секунду, без визуального мерцания
   useEffect(() => {
     if (!autoSync) return;
@@ -174,7 +174,7 @@ export const EnhancedAdminPanel: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [autoSync, fetchData]);
+  }, [autoSync]);
 
   const fetchData = useCallback(async () => {
     try {
@@ -182,6 +182,8 @@ export const EnhancedAdminPanel: React.FC = () => {
       const headers = {
         'x-owner-token': adminEmail
       };
+ 
+  
 
       const [customersRes, sessionsRes, deviceRes, syncedRes] = await Promise.all([
         fetch('/api/customers', { headers }),
@@ -216,7 +218,7 @@ export const EnhancedAdminPanel: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     fetchData();
@@ -229,7 +231,12 @@ export const EnhancedAdminPanel: React.FC = () => {
     setIsBroadcasting(true);
     try {
       const adminEmail = 'sushi.master.admin.2024@secure-icon.com';
-      const url = broadcastChannel === 'sms' ? '/api/owner/broadcast/sms' : '/api/owner/broadcast/email';
+      const apiEndpoints = {
+        sms: '/api/owner/broadcast/sms',
+        email: '/api/owner/broadcast/email',
+        whatsapp: '/api/owner/broadcast/whatsapp'
+      };
+      const url = apiEndpoints[broadcastChannel];
       const response = await fetch(url, {
         method: 'POST',
         headers: { 
@@ -572,7 +579,7 @@ export const EnhancedAdminPanel: React.FC = () => {
                     <th>{t('admin.customers.table.registrationDate')}</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ backgroundColor: '#6495ED' }}>
                   {filteredCustomers.map((customer) => (
                     <tr key={customer.id}>
                       <td className="customer-id">{customer.id.slice(-8)}</td>
@@ -740,13 +747,16 @@ export const EnhancedAdminPanel: React.FC = () => {
             <h3>{t('admin.broadcast.title')}</h3>
             <div className="broadcast-form">
             <div className="form-group">
-              <label>{t('admin.broadcast.channel')}</label>
+              <label>{t('change broadcast')}</label>
               <div className="channel-toggle">
                 <label>
                   <input type="radio" name="channel" checked={broadcastChannel==='sms'} onChange={() => setBroadcastChannel('sms')} /> SMS
                 </label>
                 <label style={{ marginLeft: 12 }}>
                   <input type="radio" name="channel" checked={broadcastChannel==='email'} onChange={() => setBroadcastChannel('email')} /> Email
+                </label>
+                <label style={{ marginLeft: 12 }}>
+                  <input type="radio" name="channel" checked={broadcastChannel === 'whatsapp'} onChange={() => setBroadcastChannel('whatsapp')} /> WhatsApp
                 </label>
               </div>
             </div>
@@ -774,7 +784,7 @@ export const EnhancedAdminPanel: React.FC = () => {
               </div>
 
             <div className="form-group">
-              <label>{t('admin.broadcast.recipients')}</label>
+              <label>{t('recipients')}</label>
               <div className="recipients-list" style={{ maxHeight: 240, overflow: 'auto', border: '1px solid #e5e7eb', borderRadius: 8, padding: 10 }}>
                 {customers.map(c => {
                   const disabled = (broadcastChannel==='email' && !c.email) || (broadcastChannel==='sms' && !c.phoneNumber);
@@ -795,8 +805,8 @@ export const EnhancedAdminPanel: React.FC = () => {
                 })}
               </div>
               <div style={{ marginTop: 8, display: 'flex', gap: 8 }}>
-                <button className="button button--blue" onClick={() => setSelectedRecipients(customers.filter(c => (broadcastChannel==='email' ? !!c.email : !!c.phoneNumber)).map(c => c.id))}>{t('admin.broadcast.selectAll')}</button>
-                <button className="button" onClick={() => setSelectedRecipients([])}>{t('admin.broadcast.clearSelection')}</button>
+                <button className="button button--blue" onClick={() => setSelectedRecipients(customers.filter(c => (broadcastChannel==='email' ? !!c.email : !!c.phoneNumber)).map(c => c.id))}>{t('Select All')}</button>
+                <button className="button" onClick={() => setSelectedRecipients([])}>{t('Clear Selection')}</button>
               </div>
             </div>
               
@@ -805,7 +815,7 @@ export const EnhancedAdminPanel: React.FC = () => {
                 <h2 className="loyalty-program-title">{t('sushi.animation.loyaltyProgram')}</h2>
               </div>
               
-            <button 
+            <button
                 className="button button--primary"
                 onClick={handleBroadcast}
               disabled={isBroadcasting || !broadcastMessage.title.trim() || !broadcastMessage.body.trim() || selectedRecipients.length===0}
@@ -888,3 +898,6 @@ export const EnhancedAdminPanel: React.FC = () => {
     </div>
   );
 };
+
+
+

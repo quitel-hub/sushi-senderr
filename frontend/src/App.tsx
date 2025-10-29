@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useMemo, useRef, type FormEvent } from "react";
+import React, { useState, useCallback, useEffect, useMemo, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./App.css";
@@ -10,7 +10,7 @@ import SimplePhoneInput from "./components/SimplePhoneInput";
 import DatePicker from "./components/DatePicker";
 import { InteractiveHoverButton } from "./components/ui/interactive-hover-button";
 import ThankYouPage from "./components/ThankYouPage";
-// import UnifiedAdminPanel from "./components/UnifiedAdminPanel";
+import  { EnhancedAdminPanel } from './components/EnhancedAdminPanel';
 type Submission = {
   id: string | number;
   name: string;
@@ -26,6 +26,8 @@ type Submission = {
   promoCode: string;
   registrationDate: string;
   status: string;
+  isDraft: string;
+  houseNumber: string;
 };
 import NetherlandsAddressInput from "./components/NetherlandsAddressInput";
 import AccessDenied from "./components/AccessDenied";
@@ -87,15 +89,15 @@ export default function App() {
   const [showAccessDenied, setShowAccessDenied] = useState(false);
   
   // Состояние для панели управления
-  const [activeSection, setActiveSection] = useState<string>('');
+  // const [activeSection, setActiveSection] = useState<string>('');
   // const [showQuickAccess, setShowQuickAccess] = useState(false);
   // const [showAdditionalTools, setShowAdditionalTools] = useState(false);
   
   // Состояние для синхронизации с анкетой
   const [formSubmissions, setFormSubmissions] = useState<Submission[]>([]);
-  const selectedCategory = 'Все категории';
+  // const selectedCategory = 'Все категории';
   const [exportData, setExportData] = useState<Submission[]>([]);
-  const dataTableRef = useRef<HTMLDivElement | null>(null);
+  // const dataTableRef = useRef<HTMLDivElement | null>(null);
   
   // Состояние для автосохранения черновиков
   const [draftId, setDraftId] = useState<string | null>(null);
@@ -315,10 +317,10 @@ export default function App() {
     setAdminError('');
   };
 
-  const handleBackToForm = () => {
-    setShowAdminPanel(false);
-    setShowAdminLogin(false);
-  };
+  // const handleBackToForm = () => {
+  //   setShowAdminPanel(false);
+  //   setShowAdminLogin(false);
+  // };
 
   // Проверка аутентификации при загрузке
   useEffect(() => {
@@ -440,72 +442,72 @@ export default function App() {
 
   // Функции для панели управления
 
-  const handleViewAllLogs = () => {
-    console.log('Просмотр всех логов');
-    alert('Открыты все логи системы!');
-  };
+  // const handleViewAllLogs = () => {
+  //   console.log('Просмотр всех логов');
+  //   alert('Открыты все логи системы!');
+  // };
 
   // Панель настроек удалена по требованию
 
-  // Функции для быстрого доступа
-  const handleMainPage = () => {
-    setShowAdminPanel(false);
-    setShowAdminLogin(false);
-  };
+  // // Функции для быстрого доступа
+  // const handleMainPage = () => {
+  //   setShowAdminPanel(false);
+  //   setShowAdminLogin(false);
+  // };
 
-  const handleUsersPage = () => {
-    setActiveSection('users');
-    setTimeout(() => {
-      dataTableRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
-  };
+  // const handleUsersPage = () => {
+  //   setActiveSection('users');
+  //   setTimeout(() => {
+  //     dataTableRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }, 0);
+  // };
 
-  // Функции для дополнительных инструментов
-  const handleTechnicalSupport = () => {
-    console.log('Открыта техническая поддержка...');
-    alert('Открыта техническая поддержка!');
-    setActiveSection('support');
-  };
+  // // Функции для дополнительных инструментов
+  // const handleTechnicalSupport = () => {
+  //   console.log('Открыта техническая поддержка...');
+  //   alert('Открыта техническая поддержка!');
+  //   setActiveSection('support');
+  // };
 
-  const handleDesignSettings = () => {
-    console.log('Открыты настройки дизайна...');
-    alert('Открыты настройки дизайна!');
-    setActiveSection('design');
-  };
+  // const handleDesignSettings = () => {
+  //   console.log('Открыты настройки дизайна...');
+  //   alert('Открыты настройки дизайна!');
+  //   setActiveSection('design');
+  // };
 
-  const handleSecuritySettings = () => {
-    console.log('Открыты настройки безопасности...');
-    alert('Открыты настройки безопасности!');
-    setActiveSection('security');
-  };
+  // const handleSecuritySettings = () => {
+  //   console.log('Открыты настройки безопасности...');
+  //   alert('Открыты настройки безопасности!');
+  //   setActiveSection('security');
+  // };
 
-  const handleMobileSettings = () => {
-    console.log('Открыты настройки мобильной версии...');
-    alert('Открыты настройки мобильной версии!');
-    setActiveSection('mobile');
-  };
+  // const handleMobileSettings = () => {
+  //   console.log('Открыты настройки мобильной версии...');
+  //   alert('Открыты настройки мобильной версии!');
+  //   setActiveSection('mobile');
+  // };
 
   // Функции для работы с данными анкеты — загрузка выполняется внутри эффектов
 
   // Фильтрация и поиск отключены в текущей версии UI
 
   // Динамическая статистика по заявкам
-  const now = new Date();
-  const draftsCount = formSubmissions.filter(item => item.isDraft || item.status === 'Заполняется').length;
-  const completedSubmissions = formSubmissions.filter(item => !item.isDraft && item.status !== 'Заполняется');
-  const totalCount = completedSubmissions.length;
-  const todayCount = completedSubmissions.filter(item => {
-    const d = new Date(item.registrationDate);
-    return !isNaN(d.getTime()) && d.toDateString() === now.toDateString();
-  }).length;
-  const countSinceDays = (days: number) => completedSubmissions.filter(item => {
-    const d = new Date(item.registrationDate);
-    if (isNaN(d.getTime())) return false;
-    return (now.getTime() - d.getTime()) <= days * 24 * 60 * 60 * 1000;
-  }).length;
-  const weekCount = countSinceDays(7);
-  const monthCount = countSinceDays(30);
-  const yearCount = countSinceDays(365);
+  // const now = new Date();
+  // const draftsCount = formSubmissions.filter(item => item.isDraft || item.status === 'Заполняется').length;
+  // const completedSubmissions = formSubmissions.filter(item => !item.isDraft && item.status !== 'Заполняется');
+  // const totalCount = completedSubmissions.length;
+  // const todayCount = completedSubmissions.filter(item => {
+  //   const d = new Date(item.registrationDate);
+  //   return !isNaN(d.getTime()) && d.toDateString() === now.toDateString();
+  // }).length;
+  // const countSinceDays = (days: number) => completedSubmissions.filter(item => {
+  //   const d = new Date(item.registrationDate);
+  //   if (isNaN(d.getTime())) return false;
+  //   return (now.getTime() - d.getTime()) <= days * 24 * 60 * 60 * 1000;
+  // }).length;
+  // const weekCount = countSinceDays(7);
+  // const monthCount = countSinceDays(30);
+  // const yearCount = countSinceDays(365);
 
   if (showThankYou) {
     return <ThankYouPage customerData={formState} onClose={() => setShowThankYou(false)} />;
@@ -727,975 +729,976 @@ export default function App() {
               </div>
             </section>
           ) : (isAdminAuthenticated && (showAdminPanel || showAdminLogin)) ? (
-            <div style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              background: `
-                radial-gradient(140% 120% at 18% 10%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 74%),
-                radial-gradient(140% 140% at 82% 12%, rgba(62, 205, 255, 0.3), rgba(62, 205, 255, 0) 68%),
-                radial-gradient(120% 160% at 48% 92%, rgba(0, 170, 230, 0.2), rgba(0, 170, 230, 0) 74%),
-                linear-gradient(180deg, rgba(3, 26, 58, 0.98) 0%, rgba(2, 38, 74, 0.95) 20%, rgba(1, 46, 88, 0.92) 40%, rgba(1, 46, 88, 0.95) 70%, rgba(2, 38, 74, 0.98) 85%, rgba(3, 26, 58, 1) 95%, rgba(3, 26, 58, 1) 100%)
-              `,
-              backgroundAttachment: 'fixed',
-              zIndex: 1000,
-              overflow: 'auto',
-              fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", sans-serif',
-              padding: '20px',
-              animation: 'none'
-            }}>
-              <style>{`
-                @keyframes pulse {
-                  0%, 100% {
-                    opacity: 1;
-                    transform: scale(1);
-                  }
-                  50% {
-                    opacity: 0.85;
-                    transform: scale(0.995);
-                  }
-                }
-              `}</style>
-              <div style={{
-                maxWidth: '1200px',
-                margin: '0 auto',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(20px)',
-                borderRadius: '20px',
-                padding: '30px',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2)',
-                border: '1px solid rgba(255, 255, 255, 0.2)'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: '30px',
-                  paddingBottom: '20px',
-                  borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(10px)',
-                  borderRadius: '15px',
-                  padding: '20px',
-                  border: '1px solid rgba(255, 255, 255, 0.2)'
-                }}>
-                  <h1 style={{ 
-                    margin: 0, 
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontSize: '32px',
-                    fontWeight: '700',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                  }}>
-                    📊 Панель управления
-                  </h1>
-                  <div style={{ display: 'flex', gap: '15px' }}>
-                    <button 
-                      onClick={handleBackToForm}
-                      style={{
-                        padding: '12px 24px',
-                        background: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '25px',
-                        fontSize: '14px',
-                        fontWeight: '600',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        boxShadow: '0 4px 15px rgba(40, 167, 69, 0.4)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.2)'
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(40, 167, 69, 0.6)';
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(40, 167, 69, 0.4)';
-                      }}
-                    >
-                      ← Назад к анкете
-                    </button>
-                    <button 
-                      onClick={handleAdminLogout}
-                      style={{
-                        padding: '12px 24px',
-                        background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%)',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '25px',
-                        fontSize: '14px',
-                        fontWeight: '600',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.2)'
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 107, 107, 0.6)';
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.4)';
-                      }}
-                    >
-                      🚪 Выйти
-                    </button>
-                  </div>
-                </div>
+            // <div style={{
+            //   position: 'fixed',
+            //   top: 0,
+            //   left: 0,
+            //   width: '100vw',
+            //   height: '100vh',
+            //   background: `
+            //     radial-gradient(140% 120% at 18% 10%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 74%),
+            //     radial-gradient(140% 140% at 82% 12%, rgba(62, 205, 255, 0.3), rgba(62, 205, 255, 0) 68%),
+            //     radial-gradient(120% 160% at 48% 92%, rgba(0, 170, 230, 0.2), rgba(0, 170, 230, 0) 74%),
+            //     linear-gradient(180deg, rgba(3, 26, 58, 0.98) 0%, rgba(2, 38, 74, 0.95) 20%, rgba(1, 46, 88, 0.92) 40%, rgba(1, 46, 88, 0.95) 70%, rgba(2, 38, 74, 0.98) 85%, rgba(3, 26, 58, 1) 95%, rgba(3, 26, 58, 1) 100%)
+            //   `,
+            //   backgroundAttachment: 'fixed',
+            //   zIndex: 1000,
+            //   overflow: 'auto',
+            //   fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", sans-serif',
+            //   padding: '20px',
+            //   animation: 'none'
+            // }}>
+            //   <style>{`
+            //     @keyframes pulse {
+            //       0%, 100% {
+            //         opacity: 1;
+            //         transform: scale(1);
+            //       }
+            //       50% {
+            //         opacity: 0.85;
+            //         transform: scale(0.995);
+            //       }
+            //     }
+            //   `}</style>
+            //   <div style={{
+            //     maxWidth: '1200px',
+            //     margin: '0 auto',
+            //     backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            //     backdropFilter: 'blur(20px)',
+            //     borderRadius: '20px',
+            //     padding: '30px',
+            //     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2)',
+            //     border: '1px solid rgba(255, 255, 255, 0.2)'
+            //   }}>
+            //     <div style={{
+            //       display: 'flex',
+            //       justifyContent: 'space-between',
+            //       alignItems: 'center',
+            //       marginBottom: '30px',
+            //       paddingBottom: '20px',
+            //       borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+            //       background: 'rgba(255, 255, 255, 0.1)',
+            //       backdropFilter: 'blur(10px)',
+            //       borderRadius: '15px',
+            //       padding: '20px',
+            //       border: '1px solid rgba(255, 255, 255, 0.2)'
+            //     }}>
+            //       <h1 style={{ 
+            //         margin: 0, 
+            //         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //         WebkitBackgroundClip: 'text',
+            //         WebkitTextFillColor: 'transparent',
+            //         fontSize: '32px',
+            //         fontWeight: '700',
+            //         textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //       }}>
+            //         📊 Панель управления
+            //       </h1>
+            //       <div style={{ display: 'flex', gap: '15px' }}>
+            //         <button 
+            //           onClick={handleBackToForm}
+            //           style={{
+            //             padding: '12px 24px',
+            //             background: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '25px',
+            //             fontSize: '14px',
+            //             fontWeight: '600',
+            //             cursor: 'pointer',
+            //             transition: 'all 0.3s ease',
+            //             boxShadow: '0 4px 15px rgba(40, 167, 69, 0.4)',
+            //             textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+            //           }}
+            //           onMouseOver={(e) => {
+            //             e.currentTarget.style.transform = 'translateY(-2px)';
+            //             e.currentTarget.style.boxShadow = '0 8px 25px rgba(40, 167, 69, 0.6)';
+            //           }}
+            //           onMouseOut={(e) => {
+            //             e.currentTarget.style.transform = 'translateY(0)';
+            //             e.currentTarget.style.boxShadow = '0 4px 15px rgba(40, 167, 69, 0.4)';
+            //           }}
+            //         >
+            //           ← Назад к анкете
+            //         </button>
+            //         <button 
+            //           onClick={handleAdminLogout}
+            //           style={{
+            //             padding: '12px 24px',
+            //             background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%)',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '25px',
+            //             fontSize: '14px',
+            //             fontWeight: '600',
+            //             cursor: 'pointer',
+            //             transition: 'all 0.3s ease',
+            //             boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)',
+            //             textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+            //           }}
+            //           onMouseOver={(e) => {
+            //             e.currentTarget.style.transform = 'translateY(-2px)';
+            //             e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 107, 107, 0.6)';
+            //           }}
+            //           onMouseOut={(e) => {
+            //             e.currentTarget.style.transform = 'translateY(0)';
+            //             e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.4)';
+            //           }}
+            //         >
+            //           🚪 Выйти
+            //         </button>
+            //       </div>
+            //     </div>
                 
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                  gap: '20px',
-                  marginBottom: '30px'
-                }}>
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h3 style={{ 
-                      color: '#333', 
-                      margin: '0 0 15px 0',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      fontSize: '18px',
-                      fontWeight: '700',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>📈 Статистика</h3>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', padding: '8px', backgroundColor: '#fff3cd', borderRadius: '6px', border: '2px dashed #ffc107' }}>
-                      <span style={{ color: '#856404', fontSize: '14px', fontWeight: '600' }}>🔄 Заполняется сейчас:</span>
-                      <strong style={{ color: '#856404', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)', animation: draftsCount > 0 ? 'pulse 2s ease-in-out infinite' : 'none' }}>{draftsCount}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>Общее количество:</span>
-                      <strong style={{ color: '#007bff', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{totalCount}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За сегодня:</span>
-                      <strong style={{ color: '#28a745', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{todayCount}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За неделю:</span>
-                      <strong style={{ color: '#17a2b8', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{weekCount}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За месяц:</span>
-                      <strong style={{ color: '#6f42c1', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{monthCount}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За год:</span>
-                      <strong style={{ color: '#fd7e14', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{yearCount}</strong>
-                    </div>
-                  </div>
-                </div>
+            //     <div style={{
+            //       display: 'grid',
+            //       gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            //       gap: '20px',
+            //       marginBottom: '30px'
+            //     }}>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h3 style={{ 
+            //           color: '#333', 
+            //           margin: '0 0 15px 0',
+            //           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //           WebkitBackgroundClip: 'text',
+            //           WebkitTextFillColor: 'transparent',
+            //           fontSize: '18px',
+            //           fontWeight: '700',
+            //           textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}>📈 Статистика</h3>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', padding: '8px', backgroundColor: '#fff3cd', borderRadius: '6px', border: '2px dashed #ffc107' }}>
+            //           <span style={{ color: '#856404', fontSize: '14px', fontWeight: '600' }}>🔄 Заполняется сейчас:</span>
+            //           <strong style={{ color: '#856404', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)', animation: draftsCount > 0 ? 'pulse 2s ease-in-out infinite' : 'none' }}>{draftsCount}</strong>
+            //         </div>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+            //           <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>Общее количество:</span>
+            //           <strong style={{ color: '#007bff', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{totalCount}</strong>
+            //         </div>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+            //           <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За сегодня:</span>
+            //           <strong style={{ color: '#28a745', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{todayCount}</strong>
+            //         </div>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+            //           <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За неделю:</span>
+            //           <strong style={{ color: '#17a2b8', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{weekCount}</strong>
+            //         </div>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+            //           <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За месяц:</span>
+            //           <strong style={{ color: '#6f42c1', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{monthCount}</strong>
+            //         </div>
+            //         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            //           <span style={{ color: '#333', fontSize: '14px', fontWeight: '500' }}>За год:</span>
+            //           <strong style={{ color: '#fd7e14', fontSize: '16px', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>{yearCount}</strong>
+            //         </div>
+            //       </div>
+            //     </div>
                 
-                <div ref={dataTableRef} style={{
-                  backgroundColor: '#f8f9fa',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  border: '1px solid #dee2e6',
-                  marginBottom: '20px'
-                }}>
-                  <style>{`
-                    .table-scroll-container {
-                      overflow-x: auto;
-                      overflow-y: visible;
-                      -webkit-overflow-scrolling: touch;
-                      position: relative;
-                    }
+            //     <div ref={dataTableRef} style={{
+            //       backgroundColor: '#f8f9fa',
+            //       padding: '20px',
+            //       borderRadius: '8px',
+            //       border: '1px solid #dee2e6',
+            //       marginBottom: '20px'
+            //     }}>
+            //       <style>{`
+            //         .table-scroll-container {
+            //           overflow-x: auto;
+            //           overflow-y: visible;
+            //           -webkit-overflow-scrolling: touch;
+            //           position: relative;
+            //         }
                     
-                    .table-scroll-container::-webkit-scrollbar {
-                      height: 12px;
-                    }
+            //         .table-scroll-container::-webkit-scrollbar {
+            //           height: 12px;
+            //         }
                     
-                    .table-scroll-container::-webkit-scrollbar-track {
-                      background: #f1f1f1;
-                      border-radius: 6px;
-                    }
+            //         .table-scroll-container::-webkit-scrollbar-track {
+            //           background: #f1f1f1;
+            //           border-radius: 6px;
+            //         }
                     
-                    .table-scroll-container::-webkit-scrollbar-thumb {
-                      background: #888;
-                      border-radius: 6px;
-                    }
+            //         .table-scroll-container::-webkit-scrollbar-thumb {
+            //           background: #888;
+            //           border-radius: 6px;
+            //         }
                     
-                    .table-scroll-container::-webkit-scrollbar-thumb:hover {
-                      background: #555;
-                    }
-                  `}</style>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '15px',
-                    flexWrap: 'wrap',
-                    gap: '10px'
-                  }}>
-                    <div>
-                      <h3 style={{ color: '#495057', margin: 0 }}>📊 Таблица данных (синхронизация в реальном времени)</h3>
-                      <p style={{ color: '#6c757d', fontSize: '13px', margin: '5px 0 0 0', fontStyle: 'italic' }}>
-                        ← → Прокрутите таблицу вправо-влево для просмотра всех столбцов
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <button style={{
-                        padding: '5px 10px',
-                        backgroundColor: '#007bff',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        📥 Импорт
-                      </button>
-                      <button style={{
-                        padding: '5px 10px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        📤 Экспорт
-                      </button>
-                    </div>
-                  </div>
+            //         .table-scroll-container::-webkit-scrollbar-thumb:hover {
+            //           background: #555;
+            //         }
+            //       `}</style>
+            //       <div style={{
+            //         display: 'flex',
+            //         justifyContent: 'space-between',
+            //         alignItems: 'center',
+            //         marginBottom: '15px',
+            //         flexWrap: 'wrap',
+            //         gap: '10px'
+            //       }}>
+            //         <div>
+            //           <h3 style={{ color: '#495057', margin: 0 }}>📊 Таблица данных (синхронизация в реальном времени)</h3>
+            //           <p style={{ color: '#6c757d', fontSize: '13px', margin: '5px 0 0 0', fontStyle: 'italic' }}>
+            //             ← → Прокрутите таблицу вправо-влево для просмотра всех столбцов
+            //           </p>
+            //         </div>
+            //         <div style={{ display: 'flex', gap: '10px' }}>
+            //           <button style={{
+            //             padding: '5px 10px',
+            //             backgroundColor: '#007bff',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             📥 Импорт
+            //           </button>
+            //           <button style={{
+            //             padding: '5px 10px',
+            //             backgroundColor: '#28a745',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             📤 Экспорт
+            //           </button>
+            //         </div>
+            //       </div>
                   
-                  {/* Легенда */}
-                  <div style={{
-                    backgroundColor: 'white',
-                    border: '2px solid #dee2e6',
-                    borderRadius: '8px',
-                    padding: '15px',
-                    marginBottom: '15px',
-                    display: 'flex',
-                    gap: '20px',
-                    flexWrap: 'wrap',
-                    alignItems: 'center'
-                  }}>
-                    <div style={{ fontWeight: '700', color: '#2c3e50', fontSize: '14px' }}>Легенда:</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ 
-                        width: '20px', 
-                        height: '20px', 
-                        backgroundColor: '#fff3cd', 
-                        border: '2px dashed #ffc107',
-                        borderRadius: '4px'
-                      }}></div>
-                      <span style={{ fontSize: '13px', color: '#856404', fontWeight: '600' }}>
-                        🔄 Заполняется сейчас (обновляется каждую секунду)
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ 
-                        width: '20px', 
-                        height: '20px', 
-                        backgroundColor: '#d4edda', 
-                        border: '2px solid #28a745',
-                        borderRadius: '4px'
-                      }}></div>
-                      <span style={{ fontSize: '13px', color: '#155724', fontWeight: '600' }}>
-                        ✅ Завершенная регистрация
-                      </span>
-                    </div>
-                  </div>
+            //       {/* Легенда */}
+            //       <div style={{
+            //         backgroundColor: 'white',
+            //         border: '2px solid #dee2e6',
+            //         borderRadius: '8px',
+            //         padding: '15px',
+            //         marginBottom: '15px',
+            //         display: 'flex',
+            //         gap: '20px',
+            //         flexWrap: 'wrap',
+            //         alignItems: 'center'
+            //       }}>
+            //         <div style={{ fontWeight: '700', color: '#2c3e50', fontSize: '14px' }}>Легенда:</div>
+            //         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            //           <div style={{ 
+            //             width: '20px', 
+            //             height: '20px', 
+            //             backgroundColor: '#fff3cd', 
+            //             border: '2px dashed #ffc107',
+            //             borderRadius: '4px'
+            //           }}></div>
+            //           <span style={{ fontSize: '13px', color: '#856404', fontWeight: '600' }}>
+            //             🔄 Заполняется сейчас (обновляется каждую секунду)
+            //           </span>
+            //         </div>
+            //         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            //           <div style={{ 
+            //             width: '20px', 
+            //             height: '20px', 
+            //             backgroundColor: '#d4edda', 
+            //             border: '2px solid #28a745',
+            //             borderRadius: '4px'
+            //           }}></div>
+            //           <span style={{ fontSize: '13px', color: '#155724', fontWeight: '600' }}>
+            //             ✅ Завершенная регистрация
+            //           </span>
+            //         </div>
+            //       </div>
 
-                  <div className="table-scroll-container" style={{
-                    backgroundColor: 'white',
-                    border: '2px solid #dee2e6',
-                    borderRadius: '8px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-                  }}>
-                    <table style={{
-                      width: '100%',
-                      borderCollapse: 'collapse',
-                      fontSize: '13px',
-                      minWidth: '1800px'
-                    }}>
-                      <thead>
-                        <tr style={{ backgroundColor: '#2c3e50' }}>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>ID</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Имя</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Фамилия</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Телефон</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Email</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дата рождения</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Страна</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Город</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Улица</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дом</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Индекс</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Предпочтения</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>🎟️ Промокод</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Статус</th>
-                          <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дата регистрации</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {exportData.length === 0 ? (
-                          <tr>
-                            <td style={{ padding: '12px', borderBottom: '1px solid #bdc3c7', color: '#2c3e50', fontWeight: '600', textAlign: 'center', backgroundColor: '#ecf0f1' }} colSpan={15}>
-                              📭 Данные отсутствуют
-                            </td>
-                          </tr>
-                        ) : (
-                          exportData.map((item, index) => {
-                            const isDraft = item.isDraft || item.status === 'Заполняется';
-                            const rowBgColor = isDraft 
-                              ? (index % 2 === 0 ? '#fff8e1' : '#fff3cd') 
-                              : (index % 2 === 0 ? '#f8f9fa' : '#ffffff');
+            //       <div className="table-scroll-container" style={{
+            //         backgroundColor: 'white',
+            //         border: '2px solid #dee2e6',
+            //         borderRadius: '8px',
+            //         boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            //       }}>
+            //         <table style={{
+            //           width: '100%',
+            //           borderCollapse: 'collapse',
+            //           fontSize: '13px',
+            //           minWidth: '1800px'
+            //         }}>
+            //           <thead>
+            //             <tr style={{ backgroundColor: '#2c3e50' }}>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>ID</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Имя</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Фамилия</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Телефон</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Email</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дата рождения</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Страна</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Город</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Улица</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дом</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Индекс</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Предпочтения</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>🎟️ Промокод</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Статус</th>
+            //               <th style={{ padding: '10px 8px', textAlign: 'left', borderBottom: '2px solid #34495e', fontWeight: '700', color: '#ecf0f1', fontSize: '13px', whiteSpace: 'nowrap' }}>Дата регистрации</th>
+            //             </tr>
+            //           </thead>
+            //           <tbody>
+            //             {exportData.length === 0 ? (
+            //               <tr>
+            //                 <td style={{ padding: '12px', borderBottom: '1px solid #bdc3c7', color: '#2c3e50', fontWeight: '600', textAlign: 'center', backgroundColor: '#ecf0f1' }} colSpan={15}>
+            //                   📭 Данные отсутствуют
+            //                 </td>
+            //               </tr>
+            //             ) : (
+            //               exportData.map((item, index) => {
+            //                 const isDraft = item.isDraft || item.status === 'Заполняется';
+            //                 const rowBgColor = isDraft 
+            //                   ? (index % 2 === 0 ? '#fff8e1' : '#fff3cd') 
+            //                   : (index % 2 === 0 ? '#f8f9fa' : '#ffffff');
                             
-                            // Разбиваем имя на части
-                            const nameParts = (item.name || '').split(' ');
-                            const firstName = nameParts[0] || '';
-                            const lastName = nameParts.slice(1).join(' ') || '';
+            //                 // Разбиваем имя на части
+            //                 const nameParts = (item.name || '').split(' ');
+            //                 const firstName = nameParts[0] || '';
+            //                 const lastName = nameParts.slice(1).join(' ') || '';
                             
-                            return (
-                              <tr 
-                                key={item.id || index} 
-                                style={{ 
-                                  backgroundColor: rowBgColor,
-                                  borderLeft: isDraft ? '4px solid #ffc107' : 'none',
-                                  animation: isDraft ? 'pulse 2s ease-in-out infinite' : 'none'
-                                }}
-                              >
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '12px', whiteSpace: 'nowrap' }}>
-                                  {isDraft ? '🔄 ' : ''}{item.id}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '600', fontSize: '13px' }}>
-                                  {isDraft && '✏️ '}{firstName}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '600', fontSize: '13px' }}>
-                                  {lastName}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
-                                  {item.phone || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
-                                  {item.email || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
-                                  {item.birthDate || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
-                                  {item.country || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
-                                  {item.city || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
-                                  {item.street || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', textAlign: 'center' }}>
-                                  {item.houseNumber || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
-                                  {item.postalCode || '-'}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', maxWidth: '150px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                  {item.preferences || item.feedback || '-'}
-                                </td>
-                                <td style={{ 
-                                  padding: '8px', 
-                                  borderBottom: '1px solid #dee2e6', 
-                                  fontWeight: '700', 
-                                  fontSize: '14px',
-                                  whiteSpace: 'nowrap',
-                                  backgroundColor: isDraft ? '#fff3cd' : '#d4edda',
-                                  color: isDraft ? '#856404' : '#155724'
-                                }}>
-                                  {item.promoCode || (isDraft ? '⏳ В процессе...' : '-')}
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', fontWeight: '500', fontSize: '12px' }}>
-                                  <span style={{ 
-                                    padding: '4px 8px', 
-                                    borderRadius: '4px', 
-                                    backgroundColor: isDraft ? '#fff3cd' : (item.status === 'Активный' ? '#d4edda' : '#f8d7da'),
-                                    color: isDraft ? '#856404' : (item.status === 'Активный' ? '#155724' : '#721c24'),
-                                    fontSize: '11px',
-                                    fontWeight: '600',
-                                    border: isDraft ? '2px dashed #ffc107' : 'none',
-                                    whiteSpace: 'nowrap'
-                                  }}>
-                                    {isDraft && '⏳ '}{item.status}
-                                  </span>
-                                </td>
-                                <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '12px', whiteSpace: 'nowrap' }}>
-                                  {new Date(item.registrationDate).toLocaleString('ru-RU', {
-                                    year: 'numeric',
-                                    month: '2-digit',
-                                    day: '2-digit',
-                                    hour: '2-digit',
-                                    minute: '2-digit'
-                                  })}
-                                </td>
-                              </tr>
-                            );
-                          })
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+            //                 return (
+            //                   <tr 
+            //                     key={item.id || index} 
+            //                     style={{ 
+            //                       backgroundColor: rowBgColor,
+            //                       borderLeft: isDraft ? '4px solid #ffc107' : 'none',
+            //                       animation: isDraft ? 'pulse 2s ease-in-out infinite' : 'none'
+            //                     }}
+            //                   >
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '12px', whiteSpace: 'nowrap' }}>
+            //                       {isDraft ? '🔄 ' : ''}{item.id}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '600', fontSize: '13px' }}>
+            //                       {isDraft && '✏️ '}{firstName}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '600', fontSize: '13px' }}>
+            //                       {lastName}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
+            //                       {item.phone || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
+            //                       {item.email || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
+            //                       {item.birthDate || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
+            //                       {item.country || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
+            //                       {item.city || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px' }}>
+            //                       {item.street || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', textAlign: 'center' }}>
+            //                       {item.houseNumber || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', whiteSpace: 'nowrap' }}>
+            //                       {item.postalCode || '-'}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '13px', maxWidth: '150px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            //                       {item.preferences || item.feedback || '-'}
+            //                     </td>
+            //                     <td style={{ 
+            //                       padding: '8px', 
+            //                       borderBottom: '1px solid #dee2e6', 
+            //                       fontWeight: '700', 
+            //                       fontSize: '14px',
+            //                       whiteSpace: 'nowrap',
+            //                       backgroundColor: isDraft ? '#fff3cd' : '#d4edda',
+            //                       color: isDraft ? '#856404' : '#155724'
+            //                     }}>
+            //                       {item.promoCode || (isDraft ? '⏳ В процессе...' : '-')}
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', fontWeight: '500', fontSize: '12px' }}>
+            //                       <span style={{ 
+            //                         padding: '4px 8px', 
+            //                         borderRadius: '4px', 
+            //                         backgroundColor: isDraft ? '#fff3cd' : (item.status === 'Активный' ? '#d4edda' : '#f8d7da'),
+            //                         color: isDraft ? '#856404' : (item.status === 'Активный' ? '#155724' : '#721c24'),
+            //                         fontSize: '11px',
+            //                         fontWeight: '600',
+            //                         border: isDraft ? '2px dashed #ffc107' : 'none',
+            //                         whiteSpace: 'nowrap'
+            //                       }}>
+            //                         {isDraft && '⏳ '}{item.status}
+            //                       </span>
+            //                     </td>
+            //                     <td style={{ padding: '8px', borderBottom: '1px solid #dee2e6', color: isDraft ? '#856404' : '#2c3e50', fontWeight: '500', fontSize: '12px', whiteSpace: 'nowrap' }}>
+            //                       {new Date(item.registrationDate).toLocaleString('ru-RU', {
+            //                         year: 'numeric',
+            //                         month: '2-digit',
+            //                         day: '2-digit',
+            //                         hour: '2-digit',
+            //                         minute: '2-digit'
+            //                       })}
+            //                     </td>
+            //                   </tr>
+            //                 );
+            //               })
+            //             )}
+            //           </tbody>
+            //         </table>
+            //       </div>
+            //     </div>
                 
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                  gap: '20px'
-                }}>
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h4 style={{ color: '#495057', margin: '0 0 15px 0' }}>📈 График активности</h4>
-                    <div style={{
-                      height: '150px',
-                      backgroundColor: 'white',
-                      border: '1px solid #dee2e6',
-                      borderRadius: '5px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#333', fontWeight: '500'
-                    }}>
-                      📊 График будет здесь
-                    </div>
-                  </div>
+            //     <div style={{
+            //       display: 'grid',
+            //       gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            //       gap: '20px'
+            //     }}>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h4 style={{ color: '#495057', margin: '0 0 15px 0' }}>📈 График активности</h4>
+            //         <div style={{
+            //           height: '150px',
+            //           backgroundColor: 'white',
+            //           border: '1px solid #dee2e6',
+            //           borderRadius: '5px',
+            //           display: 'flex',
+            //           alignItems: 'center',
+            //           justifyContent: 'center',
+            //           color: '#333', fontWeight: '500'
+            //         }}>
+            //           📊 График будет здесь
+            //         </div>
+            //       </div>
                   
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h4 style={{ color: '#2c3e50', margin: '0 0 15px 0', fontSize: '16px', fontWeight: '700' }}>⚡ Быстрый доступ</h4>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <button style={{
-                        padding: '12px 16px',
-                        backgroundColor: '#e3f2fd',
-                        border: '2px solid #2196f3',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        fontSize: '14px',
-                        textAlign: 'left',
-                        transition: 'all 0.3s ease',
-                        color: '#1565c0',
-                        fontWeight: '600'
-                      }}
-                      onMouseOver={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.backgroundColor = '#bbdefb';
-                        target.style.transform = 'translateY(-1px)';
-                      }}
-                      onMouseOut={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.backgroundColor = '#e3f2fd';
-                        target.style.transform = 'translateY(0)';
-                      }}
-                      onClick={handleMainPage}>
-                        🏠 Главная страница
-                      </button>
-                      <button style={{
-                        padding: '12px 16px',
-                        backgroundColor: '#e8f5e8',
-                        border: '2px solid #4caf50',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        fontSize: '14px',
-                        textAlign: 'left',
-                        transition: 'all 0.3s ease',
-                        color: '#2e7d32',
-                        fontWeight: '600'
-                      }}
-                      onMouseOver={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.backgroundColor = '#a5d6a7';
-                        target.style.transform = 'translateY(-1px)';
-                      }}
-                      onMouseOut={(e) => {
-                        const target = e.target as HTMLButtonElement;
-                        target.style.backgroundColor = '#e8f5e8';
-                        target.style.transform = 'translateY(0)';
-                      }}
-                      onClick={handleUsersPage}>
-                        👥 Пользователи
-                      </button>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h4 style={{ color: '#2c3e50', margin: '0 0 15px 0', fontSize: '16px', fontWeight: '700' }}>⚡ Быстрый доступ</h4>
+            //         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            //           <button style={{
+            //             padding: '12px 16px',
+            //             backgroundColor: '#e3f2fd',
+            //             border: '2px solid #2196f3',
+            //             borderRadius: '8px',
+            //             cursor: 'pointer',
+            //             fontSize: '14px',
+            //             textAlign: 'left',
+            //             transition: 'all 0.3s ease',
+            //             color: '#1565c0',
+            //             fontWeight: '600'
+            //           }}
+            //           onMouseOver={(e) => {
+            //             const target = e.target as HTMLButtonElement;
+            //             target.style.backgroundColor = '#bbdefb';
+            //             target.style.transform = 'translateY(-1px)';
+            //           }}
+            //           onMouseOut={(e) => {
+            //             const target = e.target as HTMLButtonElement;
+            //             target.style.backgroundColor = '#e3f2fd';
+            //             target.style.transform = 'translateY(0)';
+            //           }}
+            //           onClick={handleMainPage}>
+            //             🏠 Главная страница
+            //           </button>
+            //           <button style={{
+            //             padding: '12px 16px',
+            //             backgroundColor: '#e8f5e8',
+            //             border: '2px solid #4caf50',
+            //             borderRadius: '8px',
+            //             cursor: 'pointer',
+            //             fontSize: '14px',
+            //             textAlign: 'left',
+            //             transition: 'all 0.3s ease',
+            //             color: '#2e7d32',
+            //             fontWeight: '600'
+            //           }}
+            //           onMouseOver={(e) => {
+            //             const target = e.target as HTMLButtonElement;
+            //             target.style.backgroundColor = '#a5d6a7';
+            //             target.style.transform = 'translateY(-1px)';
+            //           }}
+            //           onMouseOut={(e) => {
+            //             const target = e.target as HTMLButtonElement;
+            //             target.style.backgroundColor = '#e8f5e8';
+            //             target.style.transform = 'translateY(0)';
+            //           }}
+            //           onClick={handleUsersPage}>
+            //             👥 Пользователи
+            //           </button>
                       
-                    </div>
-                  </div>
-                </div>
+            //         </div>
+            //       </div>
+            //     </div>
                 
-                {/* Индикатор активной секции */}
-                {activeSection && (
-                  <div style={{
-                    backgroundColor: '#d4edda',
-                    border: '2px solid #28a745',
-                    borderRadius: '8px',
-                    padding: '15px',
-                    marginBottom: '20px',
-                    textAlign: 'center'
-                  }}>
-                    <h4 style={{ color: '#155724', margin: '0 0 10px 0', fontSize: '16px', fontWeight: '700' }}>
-                      ✅ Активная секция: {activeSection}
-                    </h4>
-                    <p style={{ color: '#155724', margin: '0 0 10px 0', fontSize: '14px' }}>
-                      Секция успешно активирована! Проверьте консоль для подробностей.
-                    </p>
-                    <div style={{ 
-                      display: 'flex', 
-                      justifyContent: 'center', 
-                      gap: '20px', 
-                      marginTop: '10px',
-                      flexWrap: 'wrap'
-                    }}>
-                      <div style={{ 
-                        backgroundColor: '#c3e6cb', 
-                        padding: '8px 12px', 
-                        borderRadius: '6px',
-                        fontSize: '12px',
-                        fontWeight: '600',
-                        color: '#155724'
-                      }}>
-                        📊 Всего записей: {formSubmissions.length}
-                      </div>
-                      <div style={{ 
-                        backgroundColor: '#c3e6cb', 
-                        padding: '8px 12px', 
-                        borderRadius: '6px',
-                        fontSize: '12px',
-                        fontWeight: '600',
-                        color: '#155724'
-                      }}>
-                        🔍 Показано: {exportData.length}
-                      </div>
-                      <div style={{ 
-                        backgroundColor: '#c3e6cb', 
-                        padding: '8px 12px', 
-                        borderRadius: '6px',
-                        fontSize: '12px',
-                        fontWeight: '600',
-                        color: '#155724'
-                      }}>
-                        🎯 Категория: {selectedCategory}
-                      </div>
-                    </div>
-                  </div>
-                )}
+            //     {/* Индикатор активной секции */}
+            //     {activeSection && (
+            //       <div style={{
+            //         backgroundColor: '#d4edda',
+            //         border: '2px solid #28a745',
+            //         borderRadius: '8px',
+            //         padding: '15px',
+            //         marginBottom: '20px',
+            //         textAlign: 'center'
+            //       }}>
+            //         <h4 style={{ color: '#155724', margin: '0 0 10px 0', fontSize: '16px', fontWeight: '700' }}>
+            //           ✅ Активная секция: {activeSection}
+            //         </h4>
+            //         <p style={{ color: '#155724', margin: '0 0 10px 0', fontSize: '14px' }}>
+            //           Секция успешно активирована! Проверьте консоль для подробностей.
+            //         </p>
+            //         <div style={{ 
+            //           display: 'flex', 
+            //           justifyContent: 'center', 
+            //           gap: '20px', 
+            //           marginTop: '10px',
+            //           flexWrap: 'wrap'
+            //         }}>
+            //           <div style={{ 
+            //             backgroundColor: '#c3e6cb', 
+            //             padding: '8px 12px', 
+            //             borderRadius: '6px',
+            //             fontSize: '12px',
+            //             fontWeight: '600',
+            //             color: '#155724'
+            //           }}>
+            //             📊 Всего записей: {formSubmissions.length}
+            //           </div>
+            //           <div style={{ 
+            //             backgroundColor: '#c3e6cb', 
+            //             padding: '8px 12px', 
+            //             borderRadius: '6px',
+            //             fontSize: '12px',
+            //             fontWeight: '600',
+            //             color: '#155724'
+            //           }}>
+            //             🔍 Показано: {exportData.length}
+            //           </div>
+            //           <div style={{ 
+            //             backgroundColor: '#c3e6cb', 
+            //             padding: '8px 12px', 
+            //             borderRadius: '6px',
+            //             fontSize: '12px',
+            //             fontWeight: '600',
+            //             color: '#155724'
+            //           }}>
+            //             🎯 Категория: {selectedCategory}
+            //           </div>
+            //         </div>
+            //       </div>
+            //     )}
 
-                {/* Панель настроек удалена */}
+            //     {/* Панель настроек удалена */}
 
-                {/* Дополнительные виджеты и секции */}
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                  gap: '20px',
-                  marginTop: '30px'
-                }}>
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h3 style={{ 
-                      color: '#333', 
-                      margin: '0 0 15px 0',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      fontSize: '18px',
-                      fontWeight: '700',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>👥 Управление пользователями</h3>
-                    <div style={{ marginBottom: '15px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Активные пользователи:</span>
-                        <strong style={{ color: '#28a745' }}>0</strong>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Новые за неделю:</span>
-                        <strong style={{ color: '#007bff' }}>0</strong>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Заблокированные:</span>
-                        <strong style={{ color: '#dc3545' }}>0</strong>
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#007bff',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        👥 Все пользователи
-                      </button>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        ➕ Добавить
-                      </button>
-                    </div>
-                  </div>
+            //     {/* Дополнительные виджеты и секции */}
+            //     <div style={{
+            //       display: 'grid',
+            //       gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            //       gap: '20px',
+            //       marginTop: '30px'
+            //     }}>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h3 style={{ 
+            //           color: '#333', 
+            //           margin: '0 0 15px 0',
+            //           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //           WebkitBackgroundClip: 'text',
+            //           WebkitTextFillColor: 'transparent',
+            //           fontSize: '18px',
+            //           fontWeight: '700',
+            //           textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}>👥 Управление пользователями</h3>
+            //         <div style={{ marginBottom: '15px' }}>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Активные пользователи:</span>
+            //             <strong style={{ color: '#28a745' }}>0</strong>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Новые за неделю:</span>
+            //             <strong style={{ color: '#007bff' }}>0</strong>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Заблокированные:</span>
+            //             <strong style={{ color: '#dc3545' }}>0</strong>
+            //           </div>
+            //         </div>
+            //         <div style={{ display: 'flex', gap: '8px' }}>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#007bff',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             👥 Все пользователи
+            //           </button>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#28a745',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             ➕ Добавить
+            //           </button>
+            //         </div>
+            //       </div>
                   
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h3 style={{ 
-                      color: '#333', 
-                      margin: '0 0 15px 0',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      fontSize: '18px',
-                      fontWeight: '700',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>📊 Аналитика и отчеты</h3>
-                    <div style={{ marginBottom: '15px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Просмотры сегодня:</span>
-                        <strong style={{ color: '#17a2b8' }}>0</strong>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Конверсия:</span>
-                        <strong style={{ color: '#ffc107' }}>0%</strong>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Среднее время:</span>
-                        <strong style={{ color: '#6f42c1' }}>0 мин</strong>
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#17a2b8',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        📈 Отчеты
-                      </button>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#6f42c1',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        📊 Графики
-                      </button>
-                    </div>
-                  </div>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h3 style={{ 
+            //           color: '#333', 
+            //           margin: '0 0 15px 0',
+            //           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //           WebkitBackgroundClip: 'text',
+            //           WebkitTextFillColor: 'transparent',
+            //           fontSize: '18px',
+            //           fontWeight: '700',
+            //           textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}>📊 Аналитика и отчеты</h3>
+            //         <div style={{ marginBottom: '15px' }}>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Просмотры сегодня:</span>
+            //             <strong style={{ color: '#17a2b8' }}>0</strong>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Конверсия:</span>
+            //             <strong style={{ color: '#ffc107' }}>0%</strong>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Среднее время:</span>
+            //             <strong style={{ color: '#6f42c1' }}>0 мин</strong>
+            //           </div>
+            //         </div>
+            //         <div style={{ display: 'flex', gap: '8px' }}>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#17a2b8',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             📈 Отчеты
+            //           </button>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#6f42c1',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             📊 Графики
+            //           </button>
+            //         </div>
+            //       </div>
                   
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h3 style={{ 
-                      color: '#333', 
-                      margin: '0 0 15px 0',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      fontSize: '18px',
-                      fontWeight: '700',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>🔧 Мониторинг системы</h3>
-                    <div style={{ marginBottom: '15px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Статус сервера:</span>
-                        <span style={{ color: '#28a745', fontSize: '14px' }}>✅ Онлайн</span>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Использование CPU:</span>
-                        <span style={{ color: '#ffc107', fontSize: '14px' }}>0%</span>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Свободная память:</span>
-                        <span style={{ color: '#007bff', fontSize: '14px' }}>0 MB</span>
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        🔄 Обновить
-                      </button>
-                      <button style={{
-                        flex: 1,
-                        padding: '8px',
-                        backgroundColor: '#dc3545',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}>
-                        🚨 Алерты
-                      </button>
-                    </div>
-                  </div>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h3 style={{ 
+            //           color: '#333', 
+            //           margin: '0 0 15px 0',
+            //           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //           WebkitBackgroundClip: 'text',
+            //           WebkitTextFillColor: 'transparent',
+            //           fontSize: '18px',
+            //           fontWeight: '700',
+            //           textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}>🔧 Мониторинг системы</h3>
+            //         <div style={{ marginBottom: '15px' }}>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Статус сервера:</span>
+            //             <span style={{ color: '#28a745', fontSize: '14px' }}>✅ Онлайн</span>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Использование CPU:</span>
+            //             <span style={{ color: '#ffc107', fontSize: '14px' }}>0%</span>
+            //           </div>
+            //           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            //             <span style={{ color: '#333', fontWeight: '500', fontSize: '14px' }}>Свободная память:</span>
+            //             <span style={{ color: '#007bff', fontSize: '14px' }}>0 MB</span>
+            //           </div>
+            //         </div>
+            //         <div style={{ display: 'flex', gap: '8px' }}>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#28a745',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             🔄 Обновить
+            //           </button>
+            //           <button style={{
+            //             flex: 1,
+            //             padding: '8px',
+            //             backgroundColor: '#dc3545',
+            //             color: 'white',
+            //             border: 'none',
+            //             borderRadius: '4px',
+            //             fontSize: '12px',
+            //             cursor: 'pointer'
+            //           }}>
+            //             🚨 Алерты
+            //           </button>
+            //         </div>
+            //       </div>
                   
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    backdropFilter: 'blur(15px)',
-                    padding: '20px',
-                    borderRadius: '15px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <h3 style={{ 
-                      color: '#333', 
-                      margin: '0 0 15px 0',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      fontSize: '18px',
-                      fontWeight: '700',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>📝 Логи и события</h3>
-                    <div style={{ marginBottom: '15px', maxHeight: '250px', overflowY: 'auto' }}>
-                      <div style={{ 
-                        padding: '10px 12px', 
-                        backgroundColor: '#f8f9fa', 
-                        borderRadius: '6px', 
-                        marginBottom: '8px',
-                        fontSize: '14px',
-                        border: '2px solid #28a745',
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                        color: '#155724'
-                      }}>
-                        <span style={{ color: '#28a745', fontSize: '16px', fontWeight: 'bold' }}>✅</span> <strong>Система запущена</strong>
-                      </div>
-                      <div style={{ 
-                        padding: '10px 12px', 
-                        backgroundColor: '#e7f3ff', 
-                        borderRadius: '6px', 
-                        marginBottom: '8px',
-                        fontSize: '14px',
-                        border: '2px solid #007bff',
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                        color: '#004085'
-                      }}>
-                        <span style={{ color: '#007bff', fontSize: '16px', fontWeight: 'bold' }}>ℹ️</span> <strong>База данных подключена</strong>
-                      </div>
-                      <div style={{ 
-                        padding: '10px 12px', 
-                        backgroundColor: '#fff3cd', 
-                        borderRadius: '6px',
-                        fontSize: '14px',
-                        border: '2px solid #ffc107',
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                        color: '#856404'
-                      }}>
-                        <span style={{ color: '#ffc107', fontSize: '16px', fontWeight: 'bold' }}>⚠️</span> <strong>Нет новых событий</strong>
-                      </div>
-                    </div>
-                    <button style={{
-                      width: '100%',
-                      padding: '12px',
-                      backgroundColor: '#6c757d',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '6px',
-                      fontSize: '14px',
-                      cursor: 'pointer',
-                      fontWeight: '500',
-                      transition: 'all 0.3s ease',
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}
-                    onMouseOver={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#5a6268';
-                      target.style.transform = 'translateY(-1px)';
-                    }}
-                    onMouseOut={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#6c757d';
-                      target.style.transform = 'translateY(0)';
-                    }}
-                    onClick={handleViewAllLogs}>
-                      📋 Просмотреть все логи
-                    </button>
-                  </div>
-                </div>
+            //       <div style={{
+            //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            //         backdropFilter: 'blur(15px)',
+            //         padding: '20px',
+            //         borderRadius: '15px',
+            //         border: '1px solid rgba(255, 255, 255, 0.3)',
+            //         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            //         transition: 'all 0.3s ease'
+            //       }}>
+            //         <h3 style={{ 
+            //           color: '#333', 
+            //           margin: '0 0 15px 0',
+            //           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            //           WebkitBackgroundClip: 'text',
+            //           WebkitTextFillColor: 'transparent',
+            //           fontSize: '18px',
+            //           fontWeight: '700',
+            //           textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}>📝 Логи и события</h3>
+            //         <div style={{ marginBottom: '15px', maxHeight: '250px', overflowY: 'auto' }}>
+            //           <div style={{ 
+            //             padding: '10px 12px', 
+            //             backgroundColor: '#f8f9fa', 
+            //             borderRadius: '6px', 
+            //             marginBottom: '8px',
+            //             fontSize: '14px',
+            //             border: '2px solid #28a745',
+            //             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            //             color: '#155724'
+            //           }}>
+            //             <span style={{ color: '#28a745', fontSize: '16px', fontWeight: 'bold' }}>✅</span> <strong>Система запущена</strong>
+            //           </div>
+            //           <div style={{ 
+            //             padding: '10px 12px', 
+            //             backgroundColor: '#e7f3ff', 
+            //             borderRadius: '6px', 
+            //             marginBottom: '8px',
+            //             fontSize: '14px',
+            //             border: '2px solid #007bff',
+            //             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            //             color: '#004085'
+            //           }}>
+            //             <span style={{ color: '#007bff', fontSize: '16px', fontWeight: 'bold' }}>ℹ️</span> <strong>База данных подключена</strong>
+            //           </div>
+            //           <div style={{ 
+            //             padding: '10px 12px', 
+            //             backgroundColor: '#fff3cd', 
+            //             borderRadius: '6px',
+            //             fontSize: '14px',
+            //             border: '2px solid #ffc107',
+            //             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            //             color: '#856404'
+            //           }}>
+            //             <span style={{ color: '#ffc107', fontSize: '16px', fontWeight: 'bold' }}>⚠️</span> <strong>Нет новых событий</strong>
+            //           </div>
+            //         </div>
+            //         <button style={{
+            //           width: '100%',
+            //           padding: '12px',
+            //           backgroundColor: '#6c757d',
+            //           color: 'white',
+            //           border: 'none',
+            //           borderRadius: '6px',
+            //           fontSize: '14px',
+            //           cursor: 'pointer',
+            //           fontWeight: '500',
+            //           transition: 'all 0.3s ease',
+            //           boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            //         }}
+            //         onMouseOver={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#5a6268';
+            //           target.style.transform = 'translateY(-1px)';
+            //         }}
+            //         onMouseOut={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#6c757d';
+            //           target.style.transform = 'translateY(0)';
+            //         }}
+            //         onClick={handleViewAllLogs}>
+            //           📋 Просмотреть все логи
+            //         </button>
+            //       </div>
+            //     </div>
                 
-                {/* Секция с дополнительными инструментами */}
-                <div style={{
-                  backgroundColor: '#f8f9fa',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  border: '1px solid #dee2e6',
-                  marginTop: '30px'
-                }}>
-                  <h3 style={{ color: '#2c3e50', margin: '0 0 20px 0', fontSize: '18px', fontWeight: '700' }}>🛠️ Дополнительные инструменты</h3>
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: '15px'
-                  }}>
-                    <button style={{
-                      padding: '15px',
-                      backgroundColor: '#e3f2fd',
-                      border: '2px solid #2196f3',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseOver={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#bbdefb';
-                      target.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseOut={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#e3f2fd';
-                      target.style.transform = 'translateY(0)';
-                    }}
-                    onClick={handleTechnicalSupport}>
-                      <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔧</div>
-                      <div style={{ fontWeight: '700', marginBottom: '4px', color: '#1565c0', fontSize: '14px' }}>Техническая поддержка</div>
-                      <div style={{ fontSize: '12px', color: '#0d47a1', fontWeight: '600' }}>Помощь и диагностика</div>
-                    </button>
+            //     {/* Секция с дополнительными инструментами */}
+            //     <div style={{
+            //       backgroundColor: '#f8f9fa',
+            //       padding: '20px',
+            //       borderRadius: '8px',
+            //       border: '1px solid #dee2e6',
+            //       marginTop: '30px'
+            //     }}>
+            //       <h3 style={{ color: '#2c3e50', margin: '0 0 20px 0', fontSize: '18px', fontWeight: '700' }}>🛠️ Дополнительные инструменты</h3>
+            //       <div style={{
+            //         display: 'grid',
+            //         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            //         gap: '15px'
+            //       }}>
+            //         <button style={{
+            //           padding: '15px',
+            //           backgroundColor: '#e3f2fd',
+            //           border: '2px solid #2196f3',
+            //           borderRadius: '8px',
+            //           cursor: 'pointer',
+            //           textAlign: 'left',
+            //           transition: 'all 0.2s ease'
+            //         }}
+            //         onMouseOver={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#bbdefb';
+            //           target.style.transform = 'translateY(-2px)';
+            //         }}
+            //         onMouseOut={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#e3f2fd';
+            //           target.style.transform = 'translateY(0)';
+            //         }}
+            //         onClick={handleTechnicalSupport}>
+            //           <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔧</div>
+            //           <div style={{ fontWeight: '700', marginBottom: '4px', color: '#1565c0', fontSize: '14px' }}>Техническая поддержка</div>
+            //           <div style={{ fontSize: '12px', color: '#0d47a1', fontWeight: '600' }}>Помощь и диагностика</div>
+            //         </button>
                     
-                    <button style={{
-                      padding: '15px',
-                      backgroundColor: '#f3e5f5',
-                      border: '2px solid #9c27b0',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseOver={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#ce93d8';
-                      target.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseOut={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#f3e5f5';
-                      target.style.transform = 'translateY(0)';
-                    }}
-                    onClick={handleDesignSettings}>
-                      <div style={{ fontSize: '24px', marginBottom: '8px' }}>🎨</div>
-                      <div style={{ fontWeight: '700', marginBottom: '4px', color: '#7b1fa2', fontSize: '14px' }}>Настройки дизайна</div>
-                      <div style={{ fontSize: '12px', color: '#4a148c', fontWeight: '600' }}>Темы и оформление</div>
-                    </button>
+            //         <button style={{
+            //           padding: '15px',
+            //           backgroundColor: '#f3e5f5',
+            //           border: '2px solid #9c27b0',
+            //           borderRadius: '8px',
+            //           cursor: 'pointer',
+            //           textAlign: 'left',
+            //           transition: 'all 0.2s ease'
+            //         }}
+            //         onMouseOver={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#ce93d8';
+            //           target.style.transform = 'translateY(-2px)';
+            //         }}
+            //         onMouseOut={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#f3e5f5';
+            //           target.style.transform = 'translateY(0)';
+            //         }}
+            //         onClick={handleDesignSettings}>
+            //           <div style={{ fontSize: '24px', marginBottom: '8px' }}>🎨</div>
+            //           <div style={{ fontWeight: '700', marginBottom: '4px', color: '#7b1fa2', fontSize: '14px' }}>Настройки дизайна</div>
+            //           <div style={{ fontSize: '12px', color: '#4a148c', fontWeight: '600' }}>Темы и оформление</div>
+            //         </button>
                     
-                    <button style={{
-                      padding: '15px',
-                      backgroundColor: '#e8f5e8',
-                      border: '2px solid #4caf50',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseOver={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#a5d6a7';
-                      target.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseOut={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#e8f5e8';
-                      target.style.transform = 'translateY(0)';
-                    }}
-                    onClick={handleSecuritySettings}>
-                      <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔒</div>
-                      <div style={{ fontWeight: '700', marginBottom: '4px', color: '#2e7d32', fontSize: '14px' }}>Безопасность</div>
-                      <div style={{ fontSize: '12px', color: '#1b5e20', fontWeight: '600' }}>Настройки безопасности</div>
-                    </button>
+            //         <button style={{
+            //           padding: '15px',
+            //           backgroundColor: '#e8f5e8',
+            //           border: '2px solid #4caf50',
+            //           borderRadius: '8px',
+            //           cursor: 'pointer',
+            //           textAlign: 'left',
+            //           transition: 'all 0.2s ease'
+            //         }}
+            //         onMouseOver={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#a5d6a7';
+            //           target.style.transform = 'translateY(-2px)';
+            //         }}
+            //         onMouseOut={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#e8f5e8';
+            //           target.style.transform = 'translateY(0)';
+            //         }}
+            //         onClick={handleSecuritySettings}>
+            //           <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔒</div>
+            //           <div style={{ fontWeight: '700', marginBottom: '4px', color: '#2e7d32', fontSize: '14px' }}>Безопасность</div>
+            //           <div style={{ fontSize: '12px', color: '#1b5e20', fontWeight: '600' }}>Настройки безопасности</div>
+            //         </button>
                     
-                    <button style={{
-                      padding: '15px',
-                      backgroundColor: '#fff3e0',
-                      border: '2px solid #ff9800',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseOver={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#ffcc02';
-                      target.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseOut={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.backgroundColor = '#fff3e0';
-                      target.style.transform = 'translateY(0)';
-                    }}
-                    onClick={handleMobileSettings}>
-                      <div style={{ fontSize: '24px', marginBottom: '8px' }}>📱</div>
-                      <div style={{ fontWeight: '700', marginBottom: '4px', color: '#ef6c00', fontSize: '14px' }}>Мобильная версия</div>
-                      <div style={{ fontSize: '12px', color: '#e65100', fontWeight: '600' }}>Настройки для мобильных</div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            //         <button style={{
+            //           padding: '15px',
+            //           backgroundColor: '#fff3e0',
+            //           border: '2px solid #ff9800',
+            //           borderRadius: '8px',
+            //           cursor: 'pointer',
+            //           textAlign: 'left',
+            //           transition: 'all 0.2s ease'
+            //         }}
+            //         onMouseOver={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#ffcc02';
+            //           target.style.transform = 'translateY(-2px)';
+            //         }}
+            //         onMouseOut={(e) => {
+            //           const target = e.target as HTMLButtonElement;
+            //           target.style.backgroundColor = '#fff3e0';
+            //           target.style.transform = 'translateY(0)';
+            //         }}
+            //         onClick={handleMobileSettings}>
+            //           <div style={{ fontSize: '24px', marginBottom: '8px' }}>📱</div>
+            //           <div style={{ fontWeight: '700', marginBottom: '4px', color: '#ef6c00', fontSize: '14px' }}>Мобильная версия</div>
+            //           <div style={{ fontSize: '12px', color: '#e65100', fontWeight: '600' }}>Настройки для мобильных</div>
+            //         </button>
+            //       </div>
+            //     </div>
+            //   </div>
+            // </div>
+            <EnhancedAdminPanel onLogout={handleAdminLogout} submissions={formSubmissions} />
           ) : (
             <section className="card card--registration">
               <h2 className="card__title">{t("registration.cardTitle")}</h2>
@@ -1849,3 +1852,4 @@ export default function App() {
     </div>
   );
 }
+
