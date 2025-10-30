@@ -4194,7 +4194,8 @@ app.get("/api/owner/profile", async (req, res) => {
     }
 
     // Проверяем новый токен (email владельца)
-    const owner = await prisma.owner.findUnique({
+   console.log(ownerToken);
+   const owner = await prisma.owner.findUnique({
       where: { email: ownerToken },
     });
 
