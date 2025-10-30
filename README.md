@@ -213,5 +213,10 @@ DATABASE_URL="file:./prisma/dev.db"
 SMTP_HOST=smtp.sendgrid.net
 SMTP_PORT=465
 SMTP_USER=apikey
-SMTP_PASS=41cf7b310f781b709f7f8d2b4e8c2b08
-SMTP_FROM="Sushi Icon Promo karpenko.k.a.07@gmail.com"
+SMTP_PASS='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'
+SMTP_FROM='karpenko.k.a.07@gmail.com'
+SENDGRID_API_KEY='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'
+NODE_ENV='development'
+SENDGRID_FROM_EMAIL='karpenko.k.a.07@gmail.com'
+
+
