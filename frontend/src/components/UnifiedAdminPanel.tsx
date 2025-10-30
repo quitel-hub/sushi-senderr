@@ -252,18 +252,39 @@ const UnifiedAdminPanel: React.FC<UnifiedAdminPanelProps> = ({ onLogout }) => {
     setIsBroadcasting(true);
     try {
       const adminEmail = 'sushi.master.admin.2024@secure-icon.com';
-      const url = broadcastChannel === 'sms' ? '/api/owner/broadcast/sms' : '/api/owner/broadcast/email';
-      const response = await fetch(url, {
+      
+      // --- НАЧАЛО ИСПРАВЛЕНИЯ ---
+      
+      let url: string;
+      let requestBody: string;
+
+      if (broadcastChannel === 'email') {
+        // Используем НОВЫЙ endpoint и payload для SendGrid (Email)
+        url = '/api/admin/broadcast';
+        requestBody = JSON.stringify({
+          userIds: selectedRecipients, // Payload для SendGrid
+          subject: broadcastMessage.title,
+          htmlContent: broadcastMessage.body
+        });
+      } else {
+        // Оставляем СТАРУЮ логику для SMS
+        url = '/api/owner/broadcast/sms';
+        requestBody = JSON.stringify({ // Payload для SMS
+          title: broadcastMessage.title,
+          body: broadcastMessage.body,
+          recipientIds: selectedRecipients,
+        });
+      }
+      
+      // --- КОНЕЦ ИСПРАВЛЕНИЯ ---
+
+      const response = await fetch(url, { // <--- Используем 'url'
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'x-owner-token': adminEmail
         },
-        body: JSON.stringify({
-          title: broadcastMessage.title,
-          body: broadcastMessage.body,
-          recipientIds: selectedRecipients,
-        })
+        body: requestBody // <--- Используем 'requestBody'
       });
 
       const result = await response.json();

@@ -1713,7 +1713,6 @@ app.post("/api/admin/broadcast", authenticateSession, async (req, res) => {
     const customers = await prisma.customer.findMany({
       where: {
         id: { in: userIds },
-        email: { not: null } // Выбираем только тех, у кого есть email
       },
       select: {
         email: true // Выбираем только email
