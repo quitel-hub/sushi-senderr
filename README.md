@@ -204,3 +204,14 @@ Give a ⭐️ if this project helped you!
 
 Made with ❤️ for Sushi Icon Restaurant
 
+.env file
+TWILIO_ACCOUNT_SID=AC4c64739b8103027493baef5821d96eb4
+TWILIO_AUTH_TOKEN=41cf7b310f781b709f7f8d2b4e8c2b08
+TWILIO_MESSAGING_SERVICE_SID=MG65c13efcbd4f70cdacc132e6248ddb7f
+TWILIO_WHATSAPP_FROM_NUMBER=whatsapp:+14155238886
+DATABASE_URL="file:./prisma/dev.db"
+SMTP_HOST=smtp.sendgrid.net
+SMTP_PORT=465
+SMTP_USER=apikey
+SMTP_PASS=41cf7b310f781b709f7f8d2b4e8c2b08
+SMTP_FROM="Sushi Icon Promo karpenko.k.a.07@gmail.com"
