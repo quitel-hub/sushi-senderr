@@ -189,7 +189,7 @@ export function LanguageSwitcher() {
   };
 
   // Обработка движения во время перетаскивания
-  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleDragMove = (e: MouseEvent | TouchEvent)  => {
     if (!isDragging) return;
     
     e.preventDefault();
@@ -331,9 +331,9 @@ export function LanguageSwitcher() {
         if (scrollVelocity > 0) {
           const steps = Math.ceil(scrollVelocity);
           if (scrollVelocity > 0) {
-            handleScrollDown(steps);
+            handleScrollDown();
           } else {
-            handleScrollUp(steps);
+            handleScrollUp();
           }
         }
       }, 50);

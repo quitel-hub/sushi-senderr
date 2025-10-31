@@ -30,6 +30,7 @@ type RegistrationFormState = {
   postalCode: string;
   preferredFood: string;
   feedback: string;
+  discountCode: string;
 };
 
 type BroadcastFormState = {
@@ -162,6 +163,7 @@ const defaultRegistrationFormState: RegistrationFormState = {
   postalCode: "",
   preferredFood: "",
   feedback: "",
+  discountCode: "",
 };
 
 const defaultBroadcastFormState: BroadcastFormState = {
@@ -615,7 +617,7 @@ export default function App() {
               </section>
             ) : (
               <section className="owner-section">
-                {isOwnerAuthed ? (
+                {ownerProfile ? (
                   <EnhancedAdminPanel adminToken={ownerProfile.email} onLogout={handleOwnerLogout} />
                 ) : showUnauthorizedPage ? (
                   <div className="card card--unauthorized">
