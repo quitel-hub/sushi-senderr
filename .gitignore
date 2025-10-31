@@ -36,7 +36,7 @@ frontend/build/
 Thumbs.db
 
 # Generated files
-generated/
+# generated/
 
 # Temporary files
 *.tmp
