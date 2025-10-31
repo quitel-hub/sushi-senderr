@@ -2044,7 +2044,7 @@ app.use(express.static(path.join(__dirname, 'frontend/dist')));
 // --- НОВЫЙ БЛОК: "Catch-all" роут ---
 // Этот роут должен быть ПОСЛЕ всех API-роутов, но ПЕРЕД app.listen
 // Он перенаправляет все остальные запросы на твой index.html
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
 });
 
