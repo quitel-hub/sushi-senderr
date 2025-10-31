@@ -11,13 +11,16 @@ import geoip from "geoip-lite";
 import https from "https";
 import http from "http";
 import sgMail from '@sendgrid/mail'; // --- НОВОЕ: Импорт SendGrid (ESM) ---
+import path from "path";
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY); // --- НОВОЕ: Конфигурация SendGrid ---
 
 const app = express();
 const prisma = new PrismaClient();
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const OWNER_TOKEN = process.env.OWNER_TOKEN;
 
 const twilioClient = process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN
@@ -789,7 +792,7 @@ const ownerVerifySchema = z.object({
 
 // Жестко заданные данные администратора - максимально сложные для безопасности
 const ADMIN_CREDENTIALS = {
-  email: "sushi.master.admin.2024@secure-icon.com",
+  email: "karpenko.k.a.07@gmail.com",
   accessCode: "SUSHI-MASTER-2024-X9K7",
   password: "SushiMaster2024!@#$%^&*()_+{}|:<>?[]\\;',./",
   name: "Главный администратор"
@@ -2033,8 +2036,18 @@ app.post("/api/verify-email", async (req, res) => {
     return res.status(500).json({ success: false, message: "Ошибка сервера при верификации." });
   }
 });
+// --- НОВЫЙ БЛОК: Раздача статики (Frontend) ---
+// Этот код будет обслуживать "сборку" твоего React-приложения
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
+// -------------------------------------------
 
-// --- КОНЕЦ НОВОГО ЭНДПОИНТА ---
+// --- НОВЫЙ БЛОК: "Catch-all" роут ---
+// Этот роут должен быть ПОСЛЕ всех API-роутов, но ПЕРЕД app.listen
+// Он перенаправляет все остальные запросы на твой index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
+});
+
 
 const PORT = process.env.PORT || 3000;
 
