@@ -1,5 +1,7 @@
 
 
+
+
 // import React, { useState, useCallback, useEffect, useMemo, type FormEvent } from "react";
 // import { useTranslation } from "react-i18next";
 
@@ -13,10 +15,13 @@
 // import { InteractiveHoverButton } from "./components/ui/interactive-hover-button";
 // import ThankYouPage from "./components/ThankYouPage";
 // import { EnhancedAdminPanel } from './components/EnhancedAdminPanel';
-// // Тип Submission больше не нужен в этом файле
-// // type Submission = { ... };
+// // ... (импорты)
 // import NetherlandsAddressInput from "./components/NetherlandsAddressInput";
 // import AccessDenied from "./components/AccessDenied";
+
+// // ... (type RegistrationFormState) ...
+// // ... (type StatusState) ...
+// // ... (const defaultFormState) ...
 
 // type RegistrationFormState = {
 //   firstName: string;
@@ -56,6 +61,7 @@
 //   discountCode: "",
 // };
 
+
 // export default function App() {
 //   const { t } = useTranslation();
 //   const [formState, setFormState] = useState<RegistrationFormState>(defaultFormState);
@@ -64,6 +70,7 @@
 //   const [showThankYou, setShowThankYou] = useState(false);
   
 //   // --- УПРАВЛЕНИЕ АДМИНКОЙ ---
+//   // ... (весь блок админки без изменений) ...
 //   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 //   const [adminToken, setAdminToken] = useState<string | null>(null); // Храним токен
 //   const [showAdminLogin, setShowAdminLogin] = useState(false);
@@ -76,30 +83,32 @@
 //   const [adminError, setAdminError] = useState('');
 //   const [isAdminLoading, setIsAdminLoading] = useState(false);
 //   const [showAccessDenied, setShowAccessDenied] = useState(false);
-//   // -------------------------
+  
+//   // --- НОВЫЕ СОСТОЯНИЯ ДЛЯ ВЕРИФИКАЦИИ ---
+//   const [showVerification, setShowVerification] = useState(false);
+//   const [verificationData, setVerificationData] = useState<{customerId: string, email: string} | null>(null);
+//   const [verificationCode, setVerificationCode] = useState("");
+//   const [verificationError, setVerificationError] = useState("");
+//   // -----------------------------------
   
 //   // Состояние для автосохранения черновиков
 //   const [draftId, setDraftId] = useState<string | null>(null);
   
-//   // Состояние для валидации адреса
+//   // ... (addressValidation, fieldErrors, regexes, generateLocalDiscountCode, validateForm, handleInputChange) ...
+//   // ... (ОНИ ОСТАЮТСЯ БЕЗ ИЗМЕНЕНИЙ) ...
 //   const [addressValidation, setAddressValidation] = useState({
 //     isValid: false,
 //     errors: [] as string[]
 //   });
-
-//   // Ошибки полей формы
 //   const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof RegistrationFormState, string>>>({});
-
 //   const lettersOnlyRegex = useMemo(() => /^[\p{L}]+(?:[-\s'][\p{L}]+)*$/u, []);
 //   const emailRegex = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, []);
-
 //   const generateLocalDiscountCode = () => {
 //     const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 //     let code = "";
 //     for (let i = 0; i < 8; i++) code += alphabet[Math.floor(Math.random() * alphabet.length)];
 //     return code;
 //   };
-
 //   const validateForm = useCallback(() => {
 //     const errors: Partial<Record<keyof RegistrationFormState, string>> = {};
 
@@ -133,17 +142,18 @@
 //     setFieldErrors(errors);
 //     return Object.keys(errors).length === 0;
 //   }, [formState, addressValidation.isValid, t, lettersOnlyRegex, emailRegex]);
-
 //   const handleInputChange = useCallback((field: keyof RegistrationFormState, value: string) => {
 //     setFormState(prev => ({ ...prev, [field]: value }));
 //   }, []);
 
+//   // --- ИЗМЕНЕНИЕ: handleSubmit ---
 //   const handleSubmit = useCallback(async (e: FormEvent) => {
 //     e.preventDefault();
 //     const ok = validateForm();
 //     if (!ok) return;
 //     setIsSubmitting(true);
 //     setStatus(null);
+//     setFieldErrors({}); // Очищаем старые ошибки
 
 //     try {
 //       const response = await fetch("/api/register", {
@@ -156,35 +166,8 @@
 
 //       const data = await response.json();
 
-//       if (response.ok) {
-//         // Удаляем черновик после успешной отправки
-//         if (draftId) {
-//           try {
-//             await fetch(`/api/form-draft/${draftId}`, { method: 'DELETE' });
-//             setDraftId(null);
-//           } catch (error) {
-//             console.error('Ошибка удаления черновика:', error);
-//           }
-//         }
-
-//         setStatus({
-//           type: "success",
-//           message: t("registration.success.message"),
-//           details: data.discountCode ? t("registration.success.discountCode", { code: data.discountCode }) : undefined,
-//         });
-//         // Показываем ThankYou с промокодом от сервера
-//         setShowThankYou(true);
-//         setFormState(prev => ({
-//           ...defaultFormState,
-//           discountCode: data.discountCode || prev.discountCode,
-//           firstName: prev.firstName,
-//           lastName: prev.lastName,
-//           phoneNumber: prev.phoneNumber,
-//           email: prev.email,
-//         }));
-//       } else {
-//         // Оффлайн/резервный успех без сетевой ошибки
-//         const localCode = generateLocalDiscountCode();
+//       if (response.ok && data.status === "pending_verification") {
+//         // --- НОВЫЙ ПОТОК: ПОКАЗАТЬ ВЕРИФИКАЦИЮ ---
         
 //         // Удаляем черновик
 //         if (draftId) {
@@ -195,61 +178,94 @@
 //             console.error('Ошибка удаления черновика:', error);
 //           }
 //         }
+        
+//         // Показываем экран верификации
+//         setVerificationData({ customerId: data.customerId, email: data.email });
+//         setShowVerification(true);
+//         // ------------------------------------------
 
+//       } else if (response.ok && data.status === "exists") {
+//         // Пользователь уже существует
 //         setStatus({
-//           type: "success",
-//           message: t("registration.success.message"),
-//           details: t("registration.success.discountCode", { code: localCode })
+//           type: "error", // Используем 'error' для этого случая
+//           message: t("registration.alreadyRegistered"), // Нужен ключ "Пользователь с этим номером уже зарегистрирован"
+//           details: data.discountCode ? t("registration.success.discountCode", { code: data.discountCode }) : undefined,
 //         });
-//         setShowThankYou(true);
+        
+//       } else {
+//         // Другие ошибки от сервера (напр. "email_exists" или 400)
+//         setStatus({
+//           type: "error",
+//           message: data.message || t("registration.error.serverError"), // Нужен ключ "Ошибка сервера"
+//         });
+//         // Если ошибка валидации (напр. email), отображаем ее
+//         if (data.errors?.fieldErrors?.email) {
+//             setFieldErrors(prev => ({ ...prev, email: data.errors.fieldErrors.email[0] }));
+//         }
+//       }
+//     } catch (error) {
+//       // Ошибка сети
+//       console.error('Registration submit error:', error);
+//       setStatus({
+//         type: "error",
+//         message: t("registration.error.networkTitle"), // Нужен ключ "Ошибка сети"
+//         details: t("registration.error.networkDetails") // Нужен ключ "Проверьте соединение"
+//       });
+//     } finally {
+//       setIsSubmitting(false);
+//     }
+//   }, [formState, t, validateForm, draftId]);
+//   // ---------------------------------
+  
+//   // --- НОВАЯ ФУНКЦИЯ: handleVerificationSubmit ---
+//   const handleVerificationSubmit = async (e: FormEvent) => {
+//    e.preventDefault();
+//     if (!verificationData) return;
+//     setIsSubmitting(true); // Используем тот же лоадер
+//     setVerificationError("");
+
+//     try {
+//       const response = await fetch("/api/verify-email", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({
+//           customerId: verificationData.customerId,
+//           code: verificationCode.trim() // <-- ИСПРАВЛЕНИЕ 1: Добавили .trim() здесь
+//         })
+//       });
+      
+//       const data = await response.json();
+
+//       if (response.ok && data.success) {
+//         // УСПЕХ!
+//         setShowVerification(false);
+//         setVerificationData(null);
+        
+//         // Готовим данные для страницы "Спасибо"
 //         setFormState(prev => ({
 //           ...defaultFormState,
-//           discountCode: localCode,
+//           discountCode: data.discountCode, // Получаем промокод из ответа
 //           firstName: prev.firstName,
 //           lastName: prev.lastName,
 //           phoneNumber: prev.phoneNumber,
 //           email: prev.email,
 //         }));
+//         setShowThankYou(true); // Показываем страницу "Спасибо"
+        
+//       } else {
+//         // Ошибка (напр. неверный код)
+//         setVerificationError(data.message || t("registration.validation.invalidCode")); // Нужен ключ "Неверный код"
 //       }
-//     } catch {
-//       // Оффлайн/резервный успех без показа сетевой ошибки
-//       const localCode = generateLocalDiscountCode();
-      
-//       // Удаляем черновик
-//       if (draftId) {
-//         try {
-//           await fetch(`/api/form-draft/${draftId}`, { method: 'DELETE' });
-//           setDraftId(null);
-//         } catch (error) {
-//           console.error('Ошибка удаления черновика:', error);
-//         }
-//       }
-
-//       setStatus({
-//         type: "success",
-//         message: t("registration.success.message"),
-//         details: t("registration.success.discountCode", { code: localCode })
-//       });
-//       setShowThankYou(true);
-//       setFormState(prev => ({
-//         ...defaultFormState,
-//         discountCode: localCode,
-//         firstName: prev.firstName,
-//         lastName: prev.lastName,
-//         phoneNumber: prev.phoneNumber,
-//         email: prev.email,
-//       }));
+//     } catch (err) {
+//       // Ошибка сети
+//       setVerificationError(t("registration.error.networkTitle")); // Нужен ключ "Ошибка сети"
 //     } finally {
 //       setIsSubmitting(false);
 //     }
-//   }, [formState, t, validateForm, draftId]);
+//   };
+//   // -------------------------------------------
 
-//   // ----------------------------------------------------------------
-//   // --- ЛОГИКА АДМИН-ПАНЕЛИ (ИСПРАВЛЕНО) ---
-//   // ----------------------------------------------------------------
-
-//   // УДАЛЕНА УЯЗВИМОСТЬ: Убраны жестко заданные ADMIN_CREDENTIALS
-
+//   // ... (ЛОГИКА АДМИН-ПАНЕЛИ остается без изменений) ...
 //   const handleAdminInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     const { name, value } = e.target;
 //     setAdminFormData(prev => ({
@@ -258,8 +274,6 @@
 //     }));
 //     if (adminError) setAdminError('');
 //   };
-
-//   // ИСПРАВЛЕНО: Логин теперь происходит на сервере
 //   const handleAdminLogin = async (e: React.FormEvent) => {
 //     e.preventDefault();
 //     setIsAdminLoading(true);
@@ -300,8 +314,6 @@
 //       setIsAdminLoading(false);
 //     }
 //   };
-
-//   // ИСПРАВЛЕНО: Logout очищает токен
 //   const handleAdminLogout = () => {
 //     localStorage.removeItem('adminSessionToken');
 //     localStorage.removeItem('adminLoginTime');
@@ -315,8 +327,6 @@
 //     setAdminFormData({ email: '', accessCode: '', password: '' });
 //     setAdminError('');
 //   };
-
-//   // ИСПРАВЛЕНО: Проверка аутентификации при загрузке
 //   useEffect(() => {
 //     const checkAuth = () => {
 //       const token = localStorage.getItem('adminSessionToken');
@@ -344,19 +354,10 @@
 
 //     checkAuth();
 //   }, []); // Пустой массив, выполняется 1 раз при загрузке
-
-//   // УДАЛЕНО: `useEffect` для загрузки /api/submissions.
-//   // Эта логика должна быть ВНУТРИ EnhancedAdminPanel.
-
-//   // ----------------------------------------------------------------
-//   // --- КОНЕЦ ЛОГИКИ АДМИН-ПАНЕЛИ ---
-//   // ----------------------------------------------------------------
-
-
-//   // Автосохранение черновика формы каждую секунду
+//   // ... (useEffect для автосохранения остается без изменений) ...
 //   useEffect(() => {
 //     // Не сохраняем черновик, если форма не заполняется или уже показана страница благодарности
-//     if (showThankYou || showAdminLogin || showAdminPanel || showAccessDenied) {
+//     if (showThankYou || showAdminLogin || showAdminPanel || showAccessDenied || showVerification) { // --- ДОБАВЛЕНО showVerification
 //       return;
 //     }
 
@@ -399,7 +400,7 @@
 //     const intervalId = setInterval(saveDraft, 1000);
 
 //     return () => clearInterval(intervalId);
-//   }, [formState, draftId, showThankYou, showAdminLogin, showAdminPanel, showAccessDenied]);
+//   }, [formState, draftId, showThankYou, showAdminLogin, showAdminPanel, showAccessDenied, showVerification]); // --- ДОБАВЛЕНО showVerification
 
 
 //   if (showThankYou) {
@@ -413,23 +414,130 @@
 //     }} />;
 //   }
 
-//   // --- ЛОГИКА РЕНДЕРИНГА ---
-//   // Теперь она стала чище
+//   // --- ЛОГИКА РЕНДЕРИНГА (ИЗМЕНЕНИЕ) ---
   
 //   const renderContent = () => {
 //     if (isAdminAuthenticated && showAdminPanel) {
-//       // Если АДМИН: показываем панель
+//       // Админ-панель
 //       return (
 //         <EnhancedAdminPanel 
-//           // Мы добавим эти props в EnhancedAdminPanel на следующем шаге
 //           adminToken={adminToken} 
 //           onLogout={handleAdminLogout} 
 //         />
 //       );
 //     }
     
+//     // --- НОВЫЙ БЛОК: Экран верификации ---
+//     if (showVerification && verificationData) {
+//       return (
+//         <section className="card card--admin-login" style={{ // Используем стиль карточки админа
+//           backgroundColor: '#1a1a1a',
+//           border: '2px solid #ffffff',
+//           borderRadius: '12px',
+//           padding: '30px',
+//           boxShadow: '0 8px 32px rgba(0,0,0,0.5)'
+//         }}>
+//           <h2 className="card__title" style={{ 
+//             color: '#ffffff', 
+//             fontSize: '24px',
+//             fontWeight: '700',
+//             textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+//             marginBottom: '20px'
+//           }}>
+//             {t("registration.verify.title")}
+//           </h2>
+//           <p style={{ 
+//             textAlign: 'center', 
+//             color: '#ffffff', 
+//             marginBottom: '30px',
+//             fontSize: '16px',
+//             textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+//           }}>
+//             {t("registration.verify.instructions", { email: verificationData.email })}
+//           </p>
+          
+//           <form onSubmit={handleVerificationSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+//             <div>
+//               <label style={{ 
+//                 display: 'block', 
+//                 fontWeight: '600', 
+//                 color: '#ffffff', 
+//                 fontSize: '16px',
+//                 marginBottom: '8px',
+//                 textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+//               }}>
+//                 {t("registration.verify.codeLabel")} *
+//               </label>
+//               <input
+//                 type="text"
+//                 name="verificationCode"
+//                 placeholder="123456"
+//                 value={verificationCode}
+//                 onChange={(e) => setVerificationCode(e.target.value.trim())}
+//                 required
+//                 maxLength={6}
+//                 style={{
+//                   width: '100%',
+//                   padding: '12px',
+//                   border: '2px solid #ffffff',
+//                   borderRadius: '6px',
+//                   fontSize: '16px',
+//                   boxSizing: 'border-box',
+//                   backgroundColor: '#ffffff',
+//                   color: '#000000',
+//                   textAlign: 'center',
+//                   letterSpacing: '0.5em'
+//                 }}
+//               />
+//             </div>
+            
+//             {verificationError && (
+//               <div style={{
+//                 padding: '12px',
+//                 backgroundColor: '#dc3545',
+//                 border: '2px solid #ffffff',
+//                 borderRadius: '6px',
+//                 color: '#ffffff',
+//                 fontSize: '16px',
+//                 textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+//                 fontWeight: '600'
+//               }}>
+//                 {verificationError}
+//               </div>
+//             )}
+            
+//             <div style={{
+//               display: 'flex',
+//               gap: '15px',
+//               justifyContent: 'center',
+//               flexWrap: 'wrap'
+//             }}>
+//               <InteractiveHoverButton 
+//                 text={isSubmitting ? t("registration.actions.submitting") : t("registration.verify.submitButton")}
+//                 className="button button--primary"
+//                 type="submit"
+//                 disabled={isSubmitting}
+//               />
+//               <InteractiveHoverButton 
+//                 text={t("registration.verify.cancelButton")}
+//                 className="button button--secondary"
+//                 onClick={() => {
+//                   setShowVerification(false);
+//                   setVerificationData(null);
+//                   setVerificationCode("");
+//                   setVerificationError("");
+//                   // Возвращаемся к форме
+//                 }}
+//               />
+//             </div>
+//           </form>
+//         </section>
+//       );
+//     }
+//     // --- КОНЕЦ НОВОГО БЛОКА ---
+    
 //     if (showAdminLogin) {
-//       // Если ПОКАЗ ФОРМЫ ВХОДА: показываем форму входа
+//       // Форма входа админа (без изменений)
 //       return (
 //         <section className="card card--admin-login" style={{
 //           backgroundColor: '#1a1a1a',
@@ -438,7 +546,8 @@
 //           padding: '30px',
 //           boxShadow: '0 8px 32px rgba(0,0,0,0.5)'
 //         }}>
-//           <h2 className="card__title" style={{ 
+//           {/* ... (весь код формы входа админа) ... */}
+//            <h2 className="card__title" style={{ 
 //             color: '#ffffff', 
 //             fontSize: '24px',
 //             fontWeight: '700',
@@ -600,7 +709,7 @@
 //       );
 //     }
 
-//     // Во всех остальных случаях (не админ, не логин) показываем ФОРМУ РЕГИСТРАЦИИ
+//     // Форма регистрации (без изменений)
 //     return (
 //       <>
 //         <div className="header__title">
@@ -683,6 +792,9 @@
 //                 placeholder={t("registration.placeholders.phone")}
 //                 countryCode={formState.country}
 //               />
+//                {fieldErrors.phoneNumber && (
+//                 <div className="form__hint form__hint--error">{fieldErrors.phoneNumber}</div>
+//               )}
 //             </div>
 
 //             <div className="form__row">
@@ -764,20 +876,18 @@
 //   return (
 //     <div className="app">
 //       <div className="app__content">
+//         {/* ... (header, admin-controls, LanguageSwitcher) ... */}
 //         <header className="app__header">
 //           <div className="header__content"></div>
 //         </header>
         
-//         {/* Кнопка администратора */}
 //         <div className="admin-controls">
 //           <button 
 //             className="admin-toggle-btn"
 //             onClick={() => {
 //               if (isAdminAuthenticated) {
-//                 // Если уже в админке, кнопка просто скрывает/показывает панель
 //                 setShowAdminPanel(!showAdminPanel); 
 //               } else {
-//                 // Если не в админке, кнопка показывает форму входа
 //                 setShowAdminLogin(true);
 //                 setShowAdminPanel(false);
 //               }
@@ -800,7 +910,6 @@
 //   );
 // }
 
-
 import React, { useState, useCallback, useEffect, useMemo, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -814,14 +923,13 @@ import DatePicker from "./components/DatePicker";
 import { InteractiveHoverButton } from "./components/ui/interactive-hover-button";
 import ThankYouPage from "./components/ThankYouPage";
 import { EnhancedAdminPanel } from './components/EnhancedAdminPanel';
-// ... (импорты)
 import NetherlandsAddressInput from "./components/NetherlandsAddressInput";
 import AccessDenied from "./components/AccessDenied";
 
-// ... (type RegistrationFormState) ...
-// ... (type StatusState) ...
-// ... (const defaultFormState) ...
+// --- НОВЫЙ ИМПОРТ ---
+import AdminLogin from "./components/AdminLogin"; // <-- Он у вас был, и это правильно!
 
+// --- (типы и defaultFormState остаются без изменений) ---
 type RegistrationFormState = {
   firstName: string;
   lastName: string;
@@ -867,34 +975,25 @@ export default function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<StatusState | null>(null);
   const [showThankYou, setShowThankYou] = useState(false);
-  
+
   // --- УПРАВЛЕНИЕ АДМИНКОЙ ---
-  // ... (весь блок админки без изменений) ...
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   const [adminToken, setAdminToken] = useState<string | null>(null); // Храним токен
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
-  const [adminFormData, setAdminFormData] = useState({
-    email: '',
-    accessCode: '',
-    password: ''
-  });
-  const [adminError, setAdminError] = useState('');
-  const [isAdminLoading, setIsAdminLoading] = useState(false);
   const [showAccessDenied, setShowAccessDenied] = useState(false);
-  
-  // --- НОВЫЕ СОСТОЯНИЯ ДЛЯ ВЕРИФИКАЦИИ ---
+
+  // --- (Мы удалили adminFormData, adminError, isAdminLoading, т.к. они теперь внутри AdminLogin.tsx) ---
+
+  // --- НОВЫЕ СОСТОЯНИЯ ДЛЯ ВЕРИФИКАЦИИ (остаются) ---
   const [showVerification, setShowVerification] = useState(false);
   const [verificationData, setVerificationData] = useState<{customerId: string, email: string} | null>(null);
   const [verificationCode, setVerificationCode] = useState("");
   const [verificationError, setVerificationError] = useState("");
-  // -----------------------------------
-  
-  // Состояние для автосохранения черновиков
+
   const [draftId, setDraftId] = useState<string | null>(null);
-  
-  // ... (addressValidation, fieldErrors, regexes, generateLocalDiscountCode, validateForm, handleInputChange) ...
-  // ... (ОНИ ОСТАЮТСЯ БЕЗ ИЗМЕНЕНИЙ) ...
+
+  // --- (Валидация и инпуты остаются без изменений) ---
   const [addressValidation, setAddressValidation] = useState({
     isValid: false,
     errors: [] as string[]
@@ -920,7 +1019,6 @@ export default function App() {
     if (!formState.country) {
       errors.country = t('registration.validation.country.required');
     }
-    // Phone: basic length check based on digits
     const phoneDigits = (formState.phoneNumber || '').replace(/\D/g, '');
     if (!phoneDigits || phoneDigits.length < 7 || phoneDigits.length > 15) {
       errors.phoneNumber = t('registration.validation.phone.length');
@@ -929,9 +1027,7 @@ export default function App() {
       errors.email = t('registration.validation.email.invalid');
     }
 
-    // Address validation comes from child component
     if (!addressValidation.isValid) {
-      // Помечаем поля адреса как ошибочные, чтобы подсветить блок адреса
       if (!formState.postalCode) errors.postalCode = t('registration.validation.postalCode.format');
       if (!formState.street) errors.street = t('registration.validation.street.required');
       if (!formState.city) errors.city = t('registration.validation.city.required');
@@ -945,14 +1041,14 @@ export default function App() {
     setFormState(prev => ({ ...prev, [field]: value }));
   }, []);
 
-  // --- ИЗМЕНЕНИЕ: handleSubmit ---
+  // --- (handleSubmit остается без изменений) ---
   const handleSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
     const ok = validateForm();
     if (!ok) return;
     setIsSubmitting(true);
     setStatus(null);
-    setFieldErrors({}); // Очищаем старые ошибки
+    setFieldErrors({});
 
     try {
       const response = await fetch("/api/register", {
@@ -966,9 +1062,6 @@ export default function App() {
       const data = await response.json();
 
       if (response.ok && data.status === "pending_verification") {
-        // --- НОВЫЙ ПОТОК: ПОКАЗАТЬ ВЕРИФИКАЦИЮ ---
-        
-        // Удаляем черновик
         if (draftId) {
           try {
             await fetch(`/api/form-draft/${draftId}`, { method: 'DELETE' });
@@ -977,50 +1070,40 @@ export default function App() {
             console.error('Ошибка удаления черновика:', error);
           }
         }
-        
-        // Показываем экран верификации
         setVerificationData({ customerId: data.customerId, email: data.email });
         setShowVerification(true);
-        // ------------------------------------------
-
       } else if (response.ok && data.status === "exists") {
-        // Пользователь уже существует
-        setStatus({
-          type: "error", // Используем 'error' для этого случая
-          message: t("registration.alreadyRegistered"), // Нужен ключ "Пользователь с этим номером уже зарегистрирован"
-          details: data.discountCode ? t("registration.success.discountCode", { code: data.discountCode }) : undefined,
-        });
-        
-      } else {
-        // Другие ошибки от сервера (напр. "email_exists" или 400)
         setStatus({
           type: "error",
-          message: data.message || t("registration.error.serverError"), // Нужен ключ "Ошибка сервера"
+          message: t("registration.alreadyRegistered"),
+          details: data.discountCode ? t("registration.success.discountCode", { code: data.discountCode }) : undefined,
         });
-        // Если ошибка валидации (напр. email), отображаем ее
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message || t("registration.error.serverError"),
+        });
         if (data.errors?.fieldErrors?.email) {
             setFieldErrors(prev => ({ ...prev, email: data.errors.fieldErrors.email[0] }));
         }
       }
     } catch (error) {
-      // Ошибка сети
       console.error('Registration submit error:', error);
       setStatus({
         type: "error",
-        message: t("registration.error.networkTitle"), // Нужен ключ "Ошибка сети"
-        details: t("registration.error.networkDetails") // Нужен ключ "Проверьте соединение"
+        message: t("registration.error.networkTitle"),
+        details: t("registration.error.networkDetails")
       });
     } finally {
       setIsSubmitting(false);
     }
   }, [formState, t, validateForm, draftId]);
-  // ---------------------------------
-  
-  // --- НОВАЯ ФУНКЦИЯ: handleVerificationSubmit ---
+
+  // --- (handleVerificationSubmit остается без изменений) ---
   const handleVerificationSubmit = async (e: FormEvent) => {
    e.preventDefault();
     if (!verificationData) return;
-    setIsSubmitting(true); // Используем тот же лоадер
+    setIsSubmitting(true);
     setVerificationError("");
 
     try {
@@ -1029,106 +1112,72 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           customerId: verificationData.customerId,
-          code: verificationCode.trim() // <-- ИСПРАВЛЕНИЕ 1: Добавили .trim() здесь
+          code: verificationCode.trim()
         })
       });
-      
+
       const data = await response.json();
 
       if (response.ok && data.success) {
-        // УСПЕХ!
         setShowVerification(false);
         setVerificationData(null);
-        
-        // Готовим данные для страницы "Спасибо"
         setFormState(prev => ({
           ...defaultFormState,
-          discountCode: data.discountCode, // Получаем промокод из ответа
+          discountCode: data.discountCode,
           firstName: prev.firstName,
           lastName: prev.lastName,
           phoneNumber: prev.phoneNumber,
           email: prev.email,
         }));
-        setShowThankYou(true); // Показываем страницу "Спасибо"
-        
+        setShowThankYou(true);
       } else {
-        // Ошибка (напр. неверный код)
-        setVerificationError(data.message || t("registration.validation.invalidCode")); // Нужен ключ "Неверный код"
+        setVerificationError(data.message || t("registration.validation.invalidCode"));
       }
     } catch (err) {
-      // Ошибка сети
-      setVerificationError(t("registration.error.networkTitle")); // Нужен ключ "Ошибка сети"
+      setVerificationError(t("registration.error.networkTitle"));
     } finally {
       setIsSubmitting(false);
     }
   };
-  // -------------------------------------------
 
-  // ... (ЛОГИКА АДМИН-ПАНЕЛИ остается без изменений) ...
-  const handleAdminInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setAdminFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    if (adminError) setAdminError('');
-  };
-  const handleAdminLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsAdminLoading(true);
-    setAdminError('');
+  // --- НОВАЯ ФУНКЦИЯ ДЛЯ ОБРАБОТКИ УСПЕШНОГО ВХОДА ---
+  // AdminLogin.tsx вызовет эту функцию, когда 2FA будет пройдена
+  const handleAdminLoginSuccess = (isAuthenticated: boolean) => {
+    if (isAuthenticated) {
+      // AdminLogin сохранил токен, нам нужно его прочитать
+      const token = localStorage.getItem('adminToken');
 
-    try {
-      // Отправляем данные на сервер для проверки
-      const response = await fetch("/api/owner/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adminFormData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success && data.token) {
-        // Успех! Сохраняем ТОКЕН (ID сессии)
-        localStorage.setItem('adminSessionToken', data.token);
-        localStorage.setItem('adminLoginTime', new Date().toISOString());
-        
-        setAdminToken(data.token);
-        setIsAdminAuthenticated(true);
-        setShowAdminPanel(true); // Показываем панель
-        setShowAdminLogin(false); // Скрываем форму входа
-      } else {
-        // Ошибка от сервера
-        setAdminError(data.message || 'Ошибка входа');
-        if (response.status === 401) {
-          setShowAccessDenied(true); // Показываем экран "Доступ запрещен"
-        }
-      }
-    } catch (err) {
-      console.error('Login error:', err);
-      setAdminError('Ошибка сети при попытке входа');
-    } finally {
-      setIsAdminLoading(false);
+      setIsAdminAuthenticated(true);
+      setAdminToken(token); // Устанавливаем токен в состояние App.tsx
+      setShowAdminPanel(true); // Показываем панель
+      setShowAdminLogin(false); // Скрываем форму входа
+    } else {
+      // Это может быть вызвано, если onLogin(false) будет вызван из AdminLogin (например, при выходе)
+      setIsAdminAuthenticated(false);
+      setShowAdminPanel(false);
+      setShowAdminLogin(false);
     }
   };
+  // --------------------------------------------------
+
+  // --- (Мы удалили старые handleAdminInputChange и handleAdminLogin) ---
+
+  // --- (handleAdminLogout остается) ---
   const handleAdminLogout = () => {
-    localStorage.removeItem('adminSessionToken');
+    localStorage.removeItem('adminToken'); // Используем 'adminToken'
     localStorage.removeItem('adminLoginTime');
-    // (Удаляем старый флаг, если он был)
-    localStorage.removeItem('adminAuthenticated'); 
-    
+    localStorage.removeItem('adminAuthenticated'); // Старый флаг
+
     setIsAdminAuthenticated(false);
     setAdminToken(null);
     setShowAdminLogin(false);
     setShowAdminPanel(false);
-    setAdminFormData({ email: '', accessCode: '', password: '' });
-    setAdminError('');
   };
+
+  // --- (useEffect для проверки Auth немного изменен) ---
   useEffect(() => {
     const checkAuth = () => {
-      const token = localStorage.getItem('adminSessionToken');
+      const token = localStorage.getItem('adminToken'); // <-- ИЩЕМ 'adminToken'
       const loginTime = localStorage.getItem('adminLoginTime');
 
       if (token && loginTime) {
@@ -1136,15 +1185,12 @@ export default function App() {
         const now = new Date();
         const hoursDiff = (now.getTime() - loginDate.getTime()) / (1000 * 60 * 60);
 
-        // Сессия действительна 24 часа
         if (hoursDiff < 24) {
           setIsAdminAuthenticated(true);
           setAdminToken(token);
-          // Если мы аутентифицированы, сразу покажем панель
           setShowAdminPanel(true); 
         } else {
-          // Сессия истекла
-          handleAdminLogout(); // Используем нашу функцию очистки
+          handleAdminLogout();
         }
       } else {
         setIsAdminAuthenticated(false);
@@ -1152,15 +1198,14 @@ export default function App() {
     };
 
     checkAuth();
-  }, []); // Пустой массив, выполняется 1 раз при загрузке
-  // ... (useEffect для автосохранения остается без изменений) ...
+  }, []);
+
+  // --- (useEffect для автосохранения остается без изменений) ---
   useEffect(() => {
-    // Не сохраняем черновик, если форма не заполняется или уже показана страница благодарности
-    if (showThankYou || showAdminLogin || showAdminPanel || showAccessDenied || showVerification) { // --- ДОБАВЛЕНО showVerification
+    if (showThankYou || showAdminLogin || showAdminPanel || showAccessDenied || showVerification) {
       return;
     }
 
-    // Проверяем, есть ли хоть какие-то данные для сохранения
     const hasData = formState.firstName || formState.lastName || formState.email || 
                     formState.phoneNumber || formState.country || formState.city;
 
@@ -1191,15 +1236,10 @@ export default function App() {
         console.error('Ошибка автосохранения черновика:', error);
       }
     };
-
-    // Сохраняем сразу при первом заполнении
     saveDraft();
-
-    // Затем каждую секунду
     const intervalId = setInterval(saveDraft, 1000);
-
     return () => clearInterval(intervalId);
-  }, [formState, draftId, showThankYou, showAdminLogin, showAdminPanel, showAccessDenied, showVerification]); // --- ДОБАВЛЕНО showVerification
+  }, [formState, draftId, showThankYou, showAdminLogin, showAdminPanel, showAccessDenied, showVerification]);
 
 
   if (showThankYou) {
@@ -1213,8 +1253,8 @@ export default function App() {
     }} />;
   }
 
-  // --- ЛОГИКА РЕНДЕРИНГА (ИЗМЕНЕНИЕ) ---
-  
+  // --- ГЛАВНОЕ ИЗМЕНЕНИЕ В РЕНДЕРЕ ---
+
   const renderContent = () => {
     if (isAdminAuthenticated && showAdminPanel) {
       // Админ-панель
@@ -1225,11 +1265,11 @@ export default function App() {
         />
       );
     }
-    
-    // --- НОВЫЙ БЛОК: Экран верификации ---
+
+    // --- (Экран верификации пользователя остается) ---
     if (showVerification && verificationData) {
       return (
-        <section className="card card--admin-login" style={{ // Используем стиль карточки админа
+        <section className="card card--admin-login" style={{
           backgroundColor: '#1a1a1a',
           border: '2px solid #ffffff',
           borderRadius: '12px',
@@ -1254,7 +1294,7 @@ export default function App() {
           }}>
             {t("registration.verify.instructions", { email: verificationData.email })}
           </p>
-          
+
           <form onSubmit={handleVerificationSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div>
               <label style={{ 
@@ -1289,7 +1329,7 @@ export default function App() {
                 }}
               />
             </div>
-            
+
             {verificationError && (
               <div style={{
                 padding: '12px',
@@ -1304,7 +1344,7 @@ export default function App() {
                 {verificationError}
               </div>
             )}
-            
+
             <div style={{
               display: 'flex',
               gap: '15px',
@@ -1325,7 +1365,6 @@ export default function App() {
                   setVerificationData(null);
                   setVerificationCode("");
                   setVerificationError("");
-                  // Возвращаемся к форме
                 }}
               />
             </div>
@@ -1333,180 +1372,17 @@ export default function App() {
         </section>
       );
     }
-    // --- КОНЕЦ НОВОГО БЛОКА ---
-    
+    // ------------------------------------
+
+    // --- ИЗМЕНЕНИЕ ЗДЕСЬ ---
     if (showAdminLogin) {
-      // Форма входа админа (без изменений)
+      // Теперь мы рендерим компонент AdminLogin
+      // и передаем ему нашу новую функцию
       return (
-        <section className="card card--admin-login" style={{
-          backgroundColor: '#1a1a1a',
-          border: '2px solid #ffffff',
-          borderRadius: '12px',
-          padding: '30px',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.5)'
-        }}>
-          {/* ... (весь код формы входа админа) ... */}
-           <h2 className="card__title" style={{ 
-            color: '#ffffff', 
-            fontSize: '24px',
-            fontWeight: '700',
-            textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-            marginBottom: '20px'
-          }}>
-            Вход администратора
-          </h2>
-          <p style={{ 
-            textAlign: 'center', 
-            color: '#ffffff', 
-            marginBottom: '30px',
-            fontSize: '16px',
-            textShadow: '0 1px 2px rgba(0,0,0,0.3)'
-          }}>
-            Введите данные для входа в панель администратора
-          </p>
-          
-          <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div>
-              <label style={{ 
-                display: 'block', 
-                fontWeight: '600', 
-                color: '#ffffff', 
-                fontSize: '16px',
-                marginBottom: '8px',
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)'
-              }}>
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Введите email"
-                value={adminFormData.email}
-                onChange={handleAdminInputChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #ffffff',
-                  borderRadius: '6px',
-                  fontSize: '16px',
-                  boxSizing: 'border-box',
-                  backgroundColor: '#ffffff',
-                  color: '#000000'
-                }}
-              />
-            </div>
-            
-            <div>
-              <label style={{ 
-                display: 'block', 
-                fontWeight: '600', 
-                color: '#ffffff', 
-                fontSize: '16px',
-                marginBottom: '8px',
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)'
-              }}>
-                Код доступа
-              </label>
-              <input
-                type="text"
-                name="accessCode"
-                placeholder="Введите код доступа"
-                value={adminFormData.accessCode}
-                onChange={handleAdminInputChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #ffffff',
-                  borderRadius: '6px',
-                  fontSize: '16px',
-                  boxSizing: 'border-box',
-                  backgroundColor: '#ffffff',
-                  color: '#000000'
-                }}
-              />
-            </div>
-            
-            <div>
-              <label style={{ 
-                display: 'block', 
-                fontWeight: '600', 
-                color: '#ffffff', 
-                fontSize: '16px',
-                marginBottom: '8px',
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)'
-              }}>
-                Пароль
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Введите пароль"
-                value={adminFormData.password}
-                onChange={handleAdminInputChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #ffffff',
-                  borderRadius: '6px',
-                  fontSize: '16px',
-                  boxSizing: 'border-box',
-                  backgroundColor: '#ffffff',
-                  color: '#000000'
-                }}
-              />
-            </div>
-            
-            {adminError && (
-              <div style={{
-                padding: '12px',
-                backgroundColor: '#dc3545',
-                border: '2px solid #ffffff',
-                borderRadius: '6px',
-                color: '#ffffff',
-                fontSize: '16px',
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                fontWeight: '600'
-              }}>
-                {adminError}
-              </div>
-            )}
-            
-            <div style={{
-              display: 'flex',
-              gap: '15px',
-              justifyContent: 'center',
-              flexWrap: 'wrap'
-            }}>
-              <InteractiveHoverButton 
-                text={isAdminLoading ? 'Вход...' : 'Войти в панель администратора'}
-                className="button button--primary"
-                type="submit"
-                disabled={isAdminLoading}
-              />
-              <InteractiveHoverButton 
-                text="← Назад к форме"
-                className="button button--secondary"
-                onClick={() => setShowAdminLogin(false)}
-              />
-            </div>
-          </form>
-          
-          <div style={{ 
-            marginTop: '10px', 
-            textAlign: 'center',
-            fontSize: '14px',
-            color: '#ffffff',
-            textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-            fontWeight: '500'
-          }}>
-            Только для авторизованных администраторов
-          </div>
-        </section>
+        <AdminLogin onLogin={handleAdminLoginSuccess} />
       );
     }
+    // --- КОНЕЦ ИЗМЕНЕНИЯ ---
 
     // Форма регистрации (без изменений)
     return (
@@ -1521,7 +1397,7 @@ export default function App() {
         </div>
         <section className="card card--registration">
           <h2 className="card__title">{t("registration.cardTitle")}</h2>
-          
+
           {status && (
             <div className={`status status--${status.type}`}>
               <p className="status__message">{status.message}</p>
@@ -1530,7 +1406,6 @@ export default function App() {
           )}
 
           <form className="form" onSubmit={handleSubmit}>
-            {/* ... (ВЕСЬ КОД ФОРМЫ РЕГИСТРАЦИИ ОСТАЕТСЯ БЕЗ ИЗМЕНЕНИЙ) ... */}
             <div className="form__row">
               <label className="form__label" htmlFor="firstName">
                 {t("registration.fields.firstName")} *
@@ -1591,9 +1466,9 @@ export default function App() {
                 placeholder={t("registration.placeholders.phone")}
                 countryCode={formState.country}
               />
-               {fieldErrors.phoneNumber && (
-                <div className="form__hint form__hint--error">{fieldErrors.phoneNumber}</div>
-              )}
+                {fieldErrors.phoneNumber && (
+                  <div className="form__hint form__hint--error">{fieldErrors.phoneNumber}</div>
+                )}
             </div>
 
             <div className="form__row">
@@ -1675,11 +1550,10 @@ export default function App() {
   return (
     <div className="app">
       <div className="app__content">
-        {/* ... (header, admin-controls, LanguageSwitcher) ... */}
         <header className="app__header">
           <div className="header__content"></div>
         </header>
-        
+
         <div className="admin-controls">
           <button 
             className="admin-toggle-btn"
@@ -1696,7 +1570,7 @@ export default function App() {
             ⚙️
           </button>
         </div>
-        
+
         <LanguageSwitcher />
 
         <main className="app__main">
