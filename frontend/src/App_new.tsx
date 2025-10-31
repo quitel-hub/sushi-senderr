@@ -421,7 +421,7 @@ export default function App() {
   }
 
   if (showThankYou) {
-    return <ThankYouPage onClose={() => setShowThankYou(false)} />;
+    return <ThankYouPage customerData={formState} onClose={() => setShowThankYou(false)} />;
   }
 
   return (
@@ -616,7 +616,7 @@ export default function App() {
             ) : (
               <section className="owner-section">
                 {isOwnerAuthed ? (
-                  <EnhancedAdminPanel adminToken={adminToken} onLogout={handleAdminLogout} />
+                  <EnhancedAdminPanel adminToken={ownerProfile.email} onLogout={handleOwnerLogout} />
                 ) : showUnauthorizedPage ? (
                   <div className="card card--unauthorized">
                     <div className="unauthorized-page">
