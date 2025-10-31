@@ -26,7 +26,7 @@ export function TextShimmer({
   }, [children, spread]);
 
   return (
-    <MotionComponent
+    <MotionComponent>
       className={cn(
         "relative inline-block bg-[length:250%_100%,auto] bg-clip-text",
         "text-transparent [--base-color:#a1a1aa] [--base-gradient-color:#000]",
@@ -45,8 +45,8 @@ export function TextShimmer({
         "--spread": `${dynamicSpread}px`,
         backgroundImage: `var(--bg), linear-gradient(var(--base-color), var(--base-color))`,
         
-      }}
-    >
+      } as any}
+    
       {children}
     </MotionComponent>
   );
