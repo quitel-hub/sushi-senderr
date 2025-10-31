@@ -358,10 +358,41 @@
       "titlePlaceholder": "Enter title...",
       "bodyLabel": "Message text:",
       "bodyPlaceholder": "Enter message text...",
-      "sendButton": "📢 Send to all customers",
+      "sendButton1": "📢 Send to all customers",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Error sending message"
+      "error": "Error sending message",
+      "targetedTitle": "Targeted Broadcast (to selected clients)",
+      "targetedDesc": "Select a channel and clients from the list below to send them a message.",
+      "channel": "Channel",
+      "recipients": "Recipients",
+      "selectAll": "Select All",
+      "clearAll": "Clear Selection",
+      "sendButton2": "Send to {{count}} recipients",
+
+      "massTitle": "Mass Broadcast (to all subscribers)",
+      "massDesc": "Use this form to send a message to all subscribed customers.",
+
+      "massSms": {
+        "title": "Mass SMS Broadcast",
+        "bodyLabel": "SMS Text:",
+        "placeholder": "Enter SMS text... (e.g., 'We have new promotions!')",
+        "button": "Send SMS to all {{count}} clients",
+        "errorNoMessage": "Please enter an SMS message",
+        "confirm": "Are you sure you want to send an SMS to {{count}} clients?",
+        "success": "Mass SMS broadcast complete."
+      },
+      "massWhatsApp": {
+        "title": "Mass WhatsApp Broadcast",
+        "bodyLabel": "WhatsApp Text:",
+        "placeholder": "Enter WhatsApp text...",
+        "button": "Send WhatsApp to all {{count}} clients",
+        "errorNoMessage": "Please enter a WhatsApp message",
+        "confirm": "Are you sure you want to send a WhatsApp message to {{count}} clients?",
+        "success": "Mass WhatsApp broadcast complete.",
+        "warningTitle": "⚠️ WARNING: WhatsApp Limitations",
+        "warningBody": "Mass broadcasting of free-form text will ONLY work for users who have messaged you on WhatsApp in the last 24 hours. All others will fail, and your account may be banned for spam. Use with extreme caution."
+      }
     },
     "synced": {
       "title": "Synced form data",
