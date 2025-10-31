@@ -16,7 +16,7 @@ export default defineConfig({
   server: {
     // Listen on localhost only to avoid network interface errors
     host: '127.0.0.1',
-    https: false,
+    // https: false,
     port: 5190,
     strictPort: false,
     proxy: {
