@@ -385,7 +385,7 @@ export default function App() {
       } else {
         setBroadcastStatus({ type: "error", message: result.message });
       }
-    } catch (error) {
+    } catch (err) {
       setBroadcastStatus({ type: "error", message: "Помилка підключення до сервера" });
     } finally {
       setIsBroadcasting(false);
