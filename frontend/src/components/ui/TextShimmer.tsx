@@ -44,7 +44,8 @@ export function TextShimmer({
       style={{
         "--spread": `${dynamicSpread}px`,
         backgroundImage: `var(--bg), linear-gradient(var(--base-color), var(--base-color))`,
-      }}
+        
+      } as any}
     >
       {children}
     </MotionComponent>

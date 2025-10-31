@@ -421,7 +421,7 @@ export default function App() {
   }
 
   if (showThankYou) {
-    return <ThankYouPage onBack={() => setShowThankYou(false)} />;
+    return <ThankYouPage onClose={() => setShowThankYou(false)} />;
   }
 
   return (
@@ -436,7 +436,7 @@ export default function App() {
             <div className="header__logo">
               <img src="/src/assets/sushi-icon-logo.svg" alt="Sushi Logo" className="logo" />
               <h1 className="header__title">
-                <ParticleTextEffect text="SUSHI ICON" />
+                <ParticleTextEffect words = {["SUSHI ICON"]} />
               </h1>
             </div>
             <LanguageSwitcher />
@@ -514,7 +514,7 @@ export default function App() {
                     <SimplePhoneInput
                       value={formState.phoneNumber}
                       onChange={(value) => handleFormChange("phoneNumber", value)}
-                      country={formState.country}
+                      countryCode={formState.country}
                     />
                   </div>
 
@@ -616,7 +616,7 @@ export default function App() {
             ) : (
               <section className="owner-section">
                 {isOwnerAuthed ? (
-                  <EnhancedAdminPanel />
+                  <EnhancedAdminPanel adminToken={adminToken} onLogout={handleAdminLogout} />
                 ) : showUnauthorizedPage ? (
                   <div className="card card--unauthorized">
                     <div className="unauthorized-page">
